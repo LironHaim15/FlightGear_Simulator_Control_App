@@ -18,10 +18,11 @@
             <ColumnDefinition Width="408*"/>
             <ColumnDefinition Width="279*"/>
         </Grid.ColumnDefinitions>
+        <Button Content="Load Detection Algo" HorizontalAlignment="Left" Visibility="Visible" Margin="111,10,0,0" VerticalAlignment="Top" Width="124" Height="20" Click="Load_Click" Grid.Column="1"/>
         <Button Content="Connect" HorizontalAlignment="Left" Visibility="{Binding VM_ConnectVisibility, FallbackValue=Hidden}" Margin="10,9,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="Connect_Click"/>
-        <Button Content="Settings" HorizontalAlignment="Left" Visibility="{Binding VM_SettingsVisibility, FallbackValue=Visible}" Margin="110,10,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="Settings_Click"/>
+        <Button Content="Settings" HorizontalAlignment="Left" Visibility="{Binding VM_SettingsVisibility, FallbackValue=Visible}" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="Settings_Click" Grid.Column="1"/>
         <Border BorderBrush="Black" BorderThickness="1" Height="443" Margin="10,10,10,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Viewbox Margin="0,0,-1,-1">
+            <Viewbox Margin="0,0,-1,-1" HorizontalAlignment="Left" VerticalAlignment="Center">
                 <local:Anomalies x:Name="anomaliesUC" />
             </Viewbox>
         </Border>
@@ -39,7 +40,8 @@
         </Border>
 
 
-        <Button Content="Disconnect" Grid.Column="1" Visibility="{Binding VM_DisconnectVisibility, FallbackValue=Hidden}" HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top" Width="75" Click="Disconnect_Click" Height="20"/>
+        <Button Content="Disconnect" Visibility="{Binding VM_DisconnectVisibility, FallbackValue=Hidden}" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" Width="75" Click="Disconnect_Click" Height="20"/>
+
         <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" Margin="9,9,0,0" Grid.Row="2" Grid.RowSpan="2" Height="247" VerticalAlignment="Top" HorizontalAlignment="Left" Width="261">
             <Viewbox Margin="0,0,0,-1" Height="246" VerticalAlignment="Top" HorizontalAlignment="Left" Width="259">
                 <local:Dashboard x:Name="dashboardUC" Height="242" Width="274" />

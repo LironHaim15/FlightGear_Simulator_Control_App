@@ -21,6 +21,7 @@ namespace Proj1.Models
         private Dictionary<string, int> joystickFeatures;
         private bool connected;
         private bool settingsOK;
+        private bool algoritmLoaded;
         private Socket fgClient;
         private DataModel() {
             currentLine = 0;
@@ -29,6 +30,7 @@ namespace Proj1.Models
             dashboardFeatures = new Dictionary<string, int>();
             joystickFeatures = new Dictionary<string, int>();
             connected = false;
+            algoritmLoaded = false;
             settingsOK = false;
             maxLines = 0;
         }
@@ -46,7 +48,7 @@ namespace Proj1.Models
         {
             get { return currentLine; }
             set { currentLine = value;
-                NotifyPropertyChangedDashboard("CurrentUpdated");
+                NotifyPropertyChanged("CurrentUpdated");
             }
         }
         public  int MaxLines
@@ -97,24 +99,16 @@ namespace Proj1.Models
             set { settingsOK = value;
                 NotifyPropertyChanged("SettingsVisibility");
                 NotifyPropertyChanged("ConnectVisibility");
+                if (settingsOK == true)
+                    NotifyPropertyChanged("SettingsOK");
+
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;
-        public event PropertyChangedEventHandler PropertyChangedDash;
         public void NotifyPropertyChanged(string propName)
         {
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
-        }
-        /*public void NotifyPropertyChangedPlayBar(string propName)
-        {
-            if (this.PropertyChanged != null)
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
-        }*/
-        public void NotifyPropertyChangedDashboard(string propName)
-        {
-            if (this.PropertyChangedDash != null)
-                this.PropertyChangedDash(this, new PropertyChangedEventArgs(propName));
         }
     }
 }

@@ -51,10 +51,6 @@ namespace Proj1.Models
         {
             //Process.Start("D:\\Program Files\\FlightGear 2020.3.6\\bin\\fgfs.exe");// --generic=socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm = null");
             //System.Diagnostics.Process.Start(@"D:\\Program Files\\FlightGear 2020.3.6\\bin\\fgfs.exe");
-
-            //Thread.Sleep(20000);
-            // IPHostEntry ipHost = Dns.GetHostEntry("localhost");
-           
             try
             {
                 IPAddress ipAddr = IPAddress.Parse(ip);
@@ -73,16 +69,6 @@ namespace Proj1.Models
                 DataModel.Instance.Socket = client;
                 DataModel.Instance.Connected = true;
                 // We print EndPoint information  
-                // that we are connected 
-                //Console.WriteLine("Socket connected to -> {0} ",
-                              //fgClient.RemoteEndPoint.ToString());
-                
-
-                // Close Socket using  
-                // the method Close() 
-
-                //fgClient.Shutdown(SocketShutdown.Both);
-                //fgClient.Close();
 
             }
             // Manage of Socket's Exceptions 

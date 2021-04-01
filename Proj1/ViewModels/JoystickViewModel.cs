@@ -20,7 +20,7 @@ namespace Proj1.VeiwModels
             {
                 NotifyPropertyChanged("VM_" + e.PropertyName);
             };
-            this.dmodel.PropertyChangedDash += delegate (Object sender, PropertyChangedEventArgs e)
+            this.dmodel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
 
                 NotifyPropertyChanged("VM_" + e.PropertyName);

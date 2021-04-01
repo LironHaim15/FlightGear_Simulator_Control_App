@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Proj1.ViewModels;
 using Proj1.Models;
@@ -18,16 +17,24 @@ using Proj1.Models;
 namespace Proj1
 {
     /// <summary>
-    /// Interaction logic for Anomalies.xaml
+    /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Anomalies : UserControl
+    public partial class LoadDLL : Window
     {
-        private AnomaliesViewModel vm;
-        public Anomalies()
+        private LoadViewModel vm;
+        public LoadDLL()
         {
             InitializeComponent();
-            vm = new AnomaliesViewModel(new AnomaliesModel());
+            vm = new LoadViewModel(new LoadModel());
             DataContext = vm;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (vm.load())
+            {
+                this.Close();
+            }
         }
     }
 }

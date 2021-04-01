@@ -139,7 +139,6 @@ namespace Proj1.Models
                         byte[] byteData = Encoding.ASCII.GetBytes(stringData[CurrentLine] + "\r\n");
                         int sent = client.Send(byteData);
                         CurrentLine++;
-                        //Console.WriteLine(sleepSpeed);
                         Thread.Sleep(sleepSpeed);
                     }
                 }

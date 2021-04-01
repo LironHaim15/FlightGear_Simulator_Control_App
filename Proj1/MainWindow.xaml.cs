@@ -46,5 +46,9 @@ namespace Proj1
             vm.disconnect();
         }
 
+        private void Load_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

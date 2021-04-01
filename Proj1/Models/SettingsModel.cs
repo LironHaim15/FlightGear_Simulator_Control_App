@@ -28,8 +28,6 @@ namespace Proj1
        
         public SettingsModel() { DataModel.Instance.SettingsOK = false; }
 
-        private bool csvNormalOK;
-
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
         {

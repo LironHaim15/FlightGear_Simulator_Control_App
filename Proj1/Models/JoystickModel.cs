@@ -62,40 +62,27 @@ namespace Proj1.Models
         }
         public void getCurrentLine()
         {
-            Console.WriteLine(joystickFeatures.Count);
             if (joystickFeatures.Count == 0 || data == null)
             {
                 data = DataModel.Instance.CsvData;
                 return;
             }
             double temp;
-            foreach (var item in joystickFeatures)
-            {
-                Console.WriteLine(item);
-            }
             int line = DataModel.Instance.CurrentLine;
             if (joystickFeatures["aileron"] != -1)
             {
                 temp = data[line][joystickFeatures["aileron"]];
-                Console.WriteLine("LeftRight: "+temp);
                 MoveLeftRight = 32 + temp * 32;
             }
             if (joystickFeatures["elevator"] != -1)
             {
                 temp = data[line][joystickFeatures["elevator"]];
-                Console.WriteLine("UpDown: " + temp);
                 MoveUpDown = 32 + temp * 32;
             }
             if (joystickFeatures["throttle"] != -1)
-            {
                 Throttle = data[line][joystickFeatures["throttle"]];
-                Console.WriteLine("Throttle: " + Throttle);
-            }
             if (joystickFeatures["rudder"] != -1)
-            {
                 Rudder = data[line][joystickFeatures["rudder"]];
-                Console.WriteLine("Rudder: " + Rudder);
-            }
         }
     }
 }
