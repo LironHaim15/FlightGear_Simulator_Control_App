@@ -12,6 +12,7 @@ namespace Proj1.ViewModels
     {
         private LoadModel lmodel;
         private DataModel dmodel;
+        private string loadPath;
         public LoadViewModel(LoadModel lm)
         {
             this.lmodel = lm;
@@ -27,9 +28,28 @@ namespace Proj1.ViewModels
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-        public bool load()
+        public string VM_ErrorLabel
         {
-            return true;
+            get { return lmodel.Error; }
+        }
+        
+        public string VM_LoadPath
+        {
+            //get { return lmodel.LoadPath; }
+            set
+            {
+                loadPath = value;
+                //lmodel.update(value);
+            }
+        }
+        public bool load(string path)
+        {
+            if (lmodel.update(path))
+            {
+                dmodel.DLLPath = path;
+                return true;
+            }
+            return false;
         }
     }
 }

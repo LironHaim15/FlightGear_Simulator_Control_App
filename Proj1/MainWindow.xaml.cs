@@ -48,7 +48,8 @@ namespace Proj1
 
         private void Load_Click(object sender, RoutedEventArgs e)
         {
-
+            LoadDLLWindow lwindow = new LoadDLLWindow();
+            lwindow.Show();
         }
     }
 }

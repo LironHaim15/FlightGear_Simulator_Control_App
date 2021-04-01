@@ -1,4 +1,4 @@
-﻿<Window x:Class="Proj1.LoadDLL"
+﻿<Window x:Class="Proj1.LoadDLLWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -12,9 +12,9 @@
             <RowDefinition Height="40*"/>
             <RowDefinition Height="68*"/>
         </Grid.RowDefinitions>
-        <Button Content="Load" HorizontalAlignment="Left" Height="24" Margin="500,34,0,0" Grid.Row="2" VerticalAlignment="Top" Width="131" Click="Button_Click"/>
-        <TextBox x:Name="dllPath" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="472" Margin="23,7,0,0" Grid.Row="1"/>
-        <Button Content="Browse" HorizontalAlignment="Left" Height="24" Margin="500,7,0,0" Grid.Row="1" VerticalAlignment="Top" Width="131"/>
+        <Button Content="Load" HorizontalAlignment="Left" Height="24" Margin="500,34,0,0" Grid.Row="2" VerticalAlignment="Top" Width="131" Click="Load_Click"/>
+        <TextBox x:Name="dllPath" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="472" Margin="23,7,0,0" Grid.Row="1"/>
+        <Button Content="Browse" HorizontalAlignment="Left" Height="24" Margin="500,7,0,0" Grid.Row="1" VerticalAlignment="Top" Width="131" Click="Browse_Click"/>
         <Label x:Name="ErrorLabel" Content="{Binding VM_ErrorLabel}" HorizontalAlignment="Left" Height="48" Margin="23,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="472"/>
         <Label Content="Please Enter Detection Algorithm" HorizontalAlignment="Left" Height="25" Margin="23,10,0,0" VerticalAlignment="Top" Width="472"/>
     </Grid>

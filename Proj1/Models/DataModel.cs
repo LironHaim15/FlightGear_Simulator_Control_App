@@ -19,6 +19,7 @@ namespace Proj1.Models
         private List<string> featuresNames;
         private Dictionary<string,int> dashboardFeatures;
         private Dictionary<string, int> joystickFeatures;
+        private string dllPath;
         private bool connected;
         private bool settingsOK;
         private bool algoritmLoaded;
@@ -33,6 +34,7 @@ namespace Proj1.Models
             algoritmLoaded = false;
             settingsOK = false;
             maxLines = 0;
+            dllPath = null;
         }
         public static DataModel Instance
         {
@@ -103,6 +105,11 @@ namespace Proj1.Models
                     NotifyPropertyChanged("SettingsOK");
 
             }
+        }
+        public string DLLPath
+        {
+            get { return dllPath; }
+            set { dllPath = value; }
         }
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)

@@ -100,8 +100,8 @@
     <Compile Include="ConnectWindow.xaml.cs">
       <DependentUpon>ConnectWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LoadDLL.xaml.cs">
-      <DependentUpon>LoadDLL.xaml</DependentUpon>
+    <Compile Include="LoadDLLWindow.xaml.cs">
+      <DependentUpon>LoadDLLWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Anomalies.xaml">
       <SubType>Designer</SubType>
@@ -141,7 +141,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LoadDLL.xaml">
+    <Page Include="LoadDLLWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

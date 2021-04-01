@@ -19,22 +19,31 @@ namespace Proj1
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class LoadDLL : Window
+    public partial class LoadDLLWindow : Window
     {
         private LoadViewModel vm;
-        public LoadDLL()
+        //private string extension;
+        public LoadDLLWindow()
         {
             InitializeComponent();
             vm = new LoadViewModel(new LoadModel());
             DataContext = vm;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Load_Click(object sender, RoutedEventArgs e)
         {
-            if (vm.load())
+            if (vm.load(dllPath.Text))
             {
                 this.Close();
             }
+        }
+
+        private void Browse_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFileDlg = new Microsoft.Win32.OpenFileDialog();
+            Nullable<bool> result = openFileDlg.ShowDialog();
+            if (result == true)
+                dllPath.Text = System.IO.Path.GetFullPath(openFileDlg.FileName);
         }
     }
 }
