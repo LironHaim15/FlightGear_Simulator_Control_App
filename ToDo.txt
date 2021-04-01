@@ -1,0 +1,12 @@
+- Check for Try/Catches not handled.
+- Maybe create 'back' button between 'settings' to continue.
+- Print paths in settings text boxes.
+- Disconnect from socket on window's exit
+- Check if starting from line 0 or 1.
+- Maybe add apply function by pressing 'Enter'.
+- Make abstarct class for INotifyPropertyChanged
+- Create observer/observable interface instead of the slider nonsense
+- CHECK WITH ELI ABOUT THE VALUES OF AILERON AND ELEVATOR (Between -1 and 1???)
+- Give names to tags in XAMLs
+- Make joystick's movement more harsh??
+- Make it LOOK GOOD :)

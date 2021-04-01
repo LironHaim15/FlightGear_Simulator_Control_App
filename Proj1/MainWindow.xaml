@@ -1,0 +1,50 @@
+﻿<Window x:Class="Proj1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proj1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="634" Width="919">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="300*"/>
+            <RowDefinition Height="163*"/>
+            <RowDefinition Height="103*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="224*"/>
+            <ColumnDefinition Width="408*"/>
+            <ColumnDefinition Width="279*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Connect" HorizontalAlignment="Left" Visibility="{Binding VM_ConnectVisibility, FallbackValue=Hidden}" Margin="10,9,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="Connect_Click"/>
+        <Button Content="Settings" HorizontalAlignment="Left" Visibility="{Binding VM_SettingsVisibility, FallbackValue=Visible}" Margin="110,10,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="Settings_Click"/>
+        <Border BorderBrush="Black" BorderThickness="1" Height="443" Margin="10,10,10,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <Viewbox Margin="0,0,-1,-1">
+                <local:Anomalies x:Name="anomaliesUC" />
+            </Viewbox>
+        </Border>
+
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" HorizontalAlignment="Left" Height="285" Margin="8,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="261">
+            <Viewbox Margin="-1,0,0,-1">
+                <local:Joystick x:Name="joystickUC"/>
+            </Viewbox>
+        </Border>
+
+        <Border BorderBrush="Black" BorderThickness="1" Margin="10" Grid.Row="3" Grid.ColumnSpan="2">
+            <Viewbox Margin="0,-28,-1,-18">
+                <local:PlayBar x:Name="playbarUC" Height="91" Width="670" />
+            </Viewbox>
+        </Border>
+
+
+        <Button Content="Disconnect" Grid.Column="1" Visibility="{Binding VM_DisconnectVisibility, FallbackValue=Hidden}" HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top" Width="75" Click="Disconnect_Click" Height="20"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" Margin="9,9,0,0" Grid.Row="2" Grid.RowSpan="2" Height="247" VerticalAlignment="Top" HorizontalAlignment="Left" Width="261">
+            <Viewbox Margin="0,0,0,-1" Height="246" VerticalAlignment="Top" HorizontalAlignment="Left" Width="259">
+                <local:Dashboard x:Name="dashboardUC" Height="242" Width="274" />
+            </Viewbox>
+        </Border>
+
+    </Grid>
+</Window>
