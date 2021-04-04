@@ -8,6 +8,7 @@ using System.Net;
 using System.Diagnostics;
 using System.Net.Sockets;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using System.Threading;
 using System.Windows;
 
@@ -136,6 +137,7 @@ namespace Proj1.Models
                     Socket client = DataModel.Instance.Socket;
                     while (ToPlay)
                     {
+
                         byte[] byteData = Encoding.ASCII.GetBytes(stringData[CurrentLine] + "\r\n");
                         int sent = client.Send(byteData);
                         CurrentLine++;

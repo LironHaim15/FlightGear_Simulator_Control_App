@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Net.Sockets;
+using OxyPlot;
+using System.Collections.Generic;
 
 
 namespace Proj1.Models
@@ -13,6 +15,12 @@ namespace Proj1.Models
     {
         private static DataModel dm;
         private int currentLine;
+        // for grph
+        private bool changeChoise;
+        private string nameChoise;
+        private List<DataPoint> pointsSeries1;
+        private List<DataPoint> pointsSeries2;
+
         private int maxLines;
         private double[][] csvData;
         private List<string> stringData;
@@ -35,6 +43,8 @@ namespace Proj1.Models
             settingsOK = false;
             maxLines = 0;
             dllPath = null;
+            changeChoise = false;
+            nameChoise = "";
         }
         public static DataModel Instance
         {
@@ -110,6 +120,17 @@ namespace Proj1.Models
         {
             get { return dllPath; }
             set { dllPath = value; }
+        }
+        // for grph
+        public bool ChangeChoise
+        {
+            get { return changeChoise; }
+            set { changeChoise = value; }
+        }
+        public string NameChoise
+        {
+            get { return nameChoise; }
+            set { nameChoise = value; }
         }
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)

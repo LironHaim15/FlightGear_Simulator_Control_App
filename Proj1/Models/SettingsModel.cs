@@ -115,6 +115,7 @@ namespace Proj1
             if (!Directory.Exists(xmlDestPath))
             {
                 errorExist = true;
+               
                 errorMessage += "FlightGear Location (Protol Folder)\n";
             }
 
@@ -128,12 +129,12 @@ namespace Proj1
                 try
                 {
                     //Copy XML file to FG Protocols folder
-                    File.Copy(xmlPath, xmlDestPath + "\\playback_small.xml", true);
+                    //File.Copy(xmlPath, xmlDestPath + "\\playback_small.xml", true);
 
                     //Get XML Labels and save them in data model.
                     XmlDocument xml = new XmlDocument();
                     xmlDestPath += "\\playback_small.xml";
-                    xml.Load(xmlDestPath);
+                    xml.Load(xmlPath);
                     XmlNodeList nodes = xml.SelectNodes("//output");
                     List<string> featuresNames = DataModel.Instance.FeaturesNames;
                     Dictionary<string, int> featNamesMap = new Dictionary<string, int>();

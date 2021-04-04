@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Proj1.ViewModels;
 using Proj1.Models;
+using OxyPlot;
+using OxyPlot.Wpf;
 
 namespace Proj1
 {
@@ -28,6 +30,11 @@ namespace Proj1
             InitializeComponent();
             vm = new AnomaliesViewModel(new AnomaliesModel());
             DataContext = vm;
+
+        }
+        private void FeaturesListBox_Click(object sender, RoutedEventArgs e)
+        {
+            vm.updth(FeaturesListBox.SelectedItem.ToString());
         }
     }
 }

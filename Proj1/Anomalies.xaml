@@ -1,6 +1,7 @@
 ﻿<UserControl x:Class="Proj1.Anomalies"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:oxy="http://oxyplot.org/wpf"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Proj1"
@@ -9,6 +10,7 @@
     <Grid>
         <ListBox x:Name="FeaturesListBox" ItemsSource="{Binding VM_FeaturesList}" HorizontalAlignment="Left" Height="246" Margin="10,10,0,0" VerticalAlignment="Top" Width="263" FontSize="9">
         </ListBox>
+        <oxy:PlotView Model="{Binding VM_TMP}" />
 
     </Grid>
 </UserControl>
