@@ -22,44 +22,57 @@ namespace Proj1.ViewModels
             };
             this.dmodel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
-                
                 NotifyPropertyChanged("VM_" + e.PropertyName);
             };
         }
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
         {
-            if (propName== "VM_CurrentUpdated")
+            if (propName== "VM_CurrentUpdate")
                 dashmodel.getCurrentLine();
             else if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
 
-        public double VM_Altimeter
+        public string VM_Altimeter
         {
-            get { return dashmodel.Altimeter; }
+            get { return string.Format("{0:0.000}", dashmodel.Altimeter) + " ft."; }
         }
-        public double VM_Airspeed
+        public string VM_Airspeed
         {
-            get { return dashmodel.Airspeed; }
+            get { return string.Format("{0:0.000}", dashmodel.Airspeed) +" kt."; }
         }
-        public double VM_Direction
+        public string VM_Direction
         {
-            get { return dashmodel.Direction; }
+            get { return string.Format("{0:0.0000}", dashmodel.Direction) + "°"; }
         }
-        public double VM_Pitch
+        public string VM_Pitch
         {
-            get { return dashmodel.Pitch; }
+            get { return string.Format("{0:0.0000}", dashmodel.Pitch) + "°"; }
         }
-        public double VM_Roll
+        public string VM_Roll
         {
-            get { return dashmodel.Roll; }
+            get { return string.Format("{0:0.0000}", dashmodel.Roll) + "°"; }
         }
-        public double VM_Yaw
+        public string VM_Yaw
         {
-            get { return dashmodel.Yaw; }
+            get { return string.Format("{0:0.0000}", dashmodel.Yaw) + "°"; }
         }
-
-
+        public double VM_SpeedClockDeg
+        {
+            get { return dashmodel.SpeedClockDeg; }
+        }
+        public double VM_AltSmall
+        {
+            get { return dashmodel.AltSmall; }
+        }
+        public double VM_AltBig
+        {
+            get { return dashmodel.AltBig; }
+        }
+        public double VM_Compass
+        {
+            get { return dashmodel.Compass; }
+        }
     }
 }

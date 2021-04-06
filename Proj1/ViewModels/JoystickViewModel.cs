@@ -29,7 +29,7 @@ namespace Proj1.VeiwModels
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
         {
-            if (propName == "VM_CurrentUpdated")
+            if (propName == "VM_CurrentUpdate")
                 jmodel.getCurrentLine();
             else if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));

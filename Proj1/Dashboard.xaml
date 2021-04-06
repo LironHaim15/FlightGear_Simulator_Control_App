@@ -4,34 +4,108 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Proj1"
-             mc:Ignorable="d" Height="235" Width="300">
-    <Grid  VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="235" Width="300
-           ">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="0*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="32*"/>
-            <ColumnDefinition Width="29*"/>
-        </Grid.ColumnDefinitions>
-        <Label Content="Altitude:" Grid.Column="1" VerticalAlignment="Bottom" Height="40" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Air-Speed:" Grid.Column="1" Grid.Row="1" Margin="0,1,0,0" Height="38" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Direction:" Grid.Column="1" VerticalAlignment="Top" Height="39" Grid.Row="2" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Pitch:" Grid.Column="1" VerticalAlignment="Top" Height="39" Grid.Row="3" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Roll:" Grid.Column="1" VerticalAlignment="Top" Height="39" Grid.Row="4" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Yaw:" Grid.Column="1" VerticalAlignment="Top" Height="39" Grid.Row="5" FontSize="24" FontWeight="Bold"/>
-        <Label Content="{Binding VM_Altimeter}" Grid.Column="2" FontSize="24"/>
-        <Label Content="{Binding VM_Airspeed}" Grid.Column="2" Grid.Row="1" FontSize="24" Margin="0,1,0,0"/>
-        <Label Content="{Binding VM_Direction}" Grid.Column="2" Grid.Row="2" FontSize="24"/>
-        <Label Content="{Binding VM_Pitch}" Grid.Column="2" Grid.Row="3" FontSize="24"/>
-        <Label Content="{Binding VM_Roll}" Grid.Column="2" Grid.Row="4" FontSize="24"/>
-        <Label Content="{Binding VM_Yaw}" Grid.Column="2" Grid.Row="5" FontSize="24"/>
+             mc:Ignorable="d" Height="579" Width="326">
+    <Grid  Height="579" Width="326" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+
+        <Label Content="Altitude:" VerticalAlignment="Bottom" Height="40" FontSize="24" FontWeight="Bold" Foreground="White" Margin="45,0,153,382"/>
+        <Label Content="Air-Speed:" Margin="138,0,-138,0" Height="38" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Foreground="White"/>
+        <Label Content="Direction:" VerticalAlignment="Top" Height="39" FontSize="24" FontWeight="Bold" Foreground="White" Margin="177,269,10,0"/>
+        <Label Content="Pitch:" VerticalAlignment="Top" Height="39" FontSize="24" FontWeight="Bold" Foreground="White" Margin="31,413,212,0"/>
+        <Label Content="Roll:" VerticalAlignment="Top" Height="39" FontSize="24" FontWeight="Bold" Foreground="White" Margin="13,493,249,0"/>
+        <Label Content="Yaw:" VerticalAlignment="Top" Height="39" FontSize="24" FontWeight="Bold" Foreground="White" Margin="163,533,101,0"/>
+        <Label Content="{Binding VM_Altimeter}" FontSize="16" Foreground="White" Margin="10,197,160,345"/>
+        <Label Content="{Binding VM_Airspeed}" FontSize="16" Foreground="White" Canvas.Left="54" Canvas.Top="79" Margin="150,43,61,501"/>
+
+        <Label Content="{Binding VM_Direction}" FontSize="16" Foreground="White" Margin="184,313,0,232"/>
+        <Label Content="{Binding VM_Pitch}" FontSize="16" Foreground="White" Margin="103,421,80,107"/>
+        <Label Content="{Binding VM_Roll}" FontSize="16" Foreground="White" Margin="71,502,133,46"/>
+        <Label Content="{Binding VM_Yaw}" FontSize="16" Foreground="White" Margin="223,543,10,8"/>
+
+
+        <Canvas HorizontalAlignment="Left" Height="178" Margin="-9,10,0,0" VerticalAlignment="Top" Width="182">
+            <Image Source="/Resources/clock_speed_nohog.png" Height="132" Width="172" />
+            <Ellipse Fill="#FF9C2A11" HorizontalAlignment="Left" Height="14" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="14" Grid.RowSpan="2" Canvas.Left="80" Canvas.Top="60"/>
+            <Rectangle Fill="#FFD66A10" HorizontalAlignment="Left" Height="5" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" Width="54" RadiusY="5.833" RadiusX="5.833" RenderTransformOrigin="0.998,0.501" Canvas.Left="34" Canvas.Top="64">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="{Binding VM_SpeedClockDeg}"/>
+                        <TranslateTransform X="-0.002" Y="0.214"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Canvas>
+
+
+
+        <Canvas HorizontalAlignment="Left" Height="178" Margin="144,103,0,0" VerticalAlignment="Top" Width="182">
+            <Image Source="/Resources/Altimeter.png" Height="136" Width="138" Canvas.Left="34" Canvas.Top="10" />
+
+            <Ellipse HorizontalAlignment="Left" Height="14" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="14" Grid.RowSpan="2" Canvas.Left="95" Canvas.Top="71">
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF8B8B8B" Offset="0"/>
+                        <GradientStop Color="#FF58ABFF" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Rectangle HorizontalAlignment="Left" Height="5" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" Width="54" RadiusY="26.5" RadiusX="26.5" RenderTransformOrigin="0.998,0.501" Canvas.Left="48" Canvas.Top="76" Fill="#FF2939A0">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="{Binding VM_AltBig}"/>
+                        <TranslateTransform X="-0.002" Y="0.214"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle HorizontalAlignment="Left" Height="7" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" Width="35" RadiusY="7.502" RadiusX="7.502" RenderTransformOrigin="0.998,0.501" Canvas.Left="67" Canvas.Top="75" Fill="#FF303A7E">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="{Binding VM_AltSmall}"/>
+                        <TranslateTransform X="-0.002" Y="0.214"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Canvas>
+
+
+        <Canvas HorizontalAlignment="Left" Height="189" Margin="-9,224,0,0" VerticalAlignment="Top" Width="215">
+
+            <Image Source="/Resources/compass.png" RenderTransformOrigin="0.5,0.5" Canvas.Left="32" Canvas.Top="10" Height="166" Width="156" >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-141.726"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+
+            <Ellipse Fill="#FFF99D89" HorizontalAlignment="Left" Height="5" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="5" Grid.RowSpan="2" Canvas.Left="107" Canvas.Top="92"/>
+            <Rectangle Fill="#FFF50D0D" HorizontalAlignment="Left" Height="4" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.998,0.501" Canvas.Left="46" Canvas.Top="92" RadiusY="26.5" RadiusX="26.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="{Binding VM_Compass}"/>
+                        <TranslateTransform X="-0.002" Y="0.214"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Canvas>
+        <Canvas HorizontalAlignment="Left" Height="203" Margin="119,376,0,0" VerticalAlignment="Top" Width="197">
+            <Image Source="/Resources/pitch_yaw_roll.png" Height="167" Width="166" Canvas.Top="10" Canvas.Left="31" />
+
+
+        </Canvas>
+
+
+
+
     </Grid>
 </UserControl>

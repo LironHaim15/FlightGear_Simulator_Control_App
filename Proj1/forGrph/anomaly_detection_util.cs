@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace Proj1.forGrph
 {
-    class anomaly_detection_util
+    static class anomaly_detection_util
     {
-
-        float avg(float[] x, int size)
+        private static double avg(double[] x, int size)
         {
-            float sum = 0;
+            double sum = 0;
             for (int i = 0; i < size; sum += x[i], i++) ;
             return sum / size;
         }
 
         // returns the variance of X and Y
-        float var(float[] x, int size)
+        private static double var(double[] x, int size)
         {
-            float av = avg(x, size);
-            float sum = 0;
+            double av = avg(x, size);
+            double sum = 0;
+            if (size - av * av==0)
+                return 0;
             for (int i = 0; i < size; i++)
             {
                 sum += x[i] * x[i];
@@ -29,58 +30,57 @@ namespace Proj1.forGrph
         }
 
         // returns the covariance of X and Y
-        float cov(float[] x, float[] y, int size)
+        private static double cov(double[] x, double[] y, int size)
         {
-            float sum = 0;
+            double sum = 0;
             for (int i = 0; i < size; i++)
             {
                 sum += x[i] * y[i];
             }
             sum /= size;
-
             return sum - avg(x, size) * avg(y, size);
         }
 
 
         // returns the Pearson correlation coefficient of X and Y
-        float pearson(float[] x, float[] y, int size)
+        public static double pearson(double[] x, double[] y, int size)
         {
-            return cov(x, y, size) / ((float)Math.Sqrt(var(x, size)) * (float)Math.Sqrt(var(y, size)));
+            double c = cov(x, y, size);
+            double a = (Math.Sqrt(var(x, size)) * Math.Sqrt(var(y, size)));
+            if (c == 0 || a == 0)
+                return 0;
+            return c / (Math.Sqrt(var(x, size)) * Math.Sqrt(var(y, size)));
         }
-        int MostPersonIndex(float [][]data,int sizeRow,int sizeCol,int j)
+        public static int mostPearsonIndex(double [,]data,int sizeRow,int sizeCol,int j)
         {
+
             int index = j;
-            float max = 0;
-            for (int i = 0; i < sizeRow; i++)
+            double max = 0;
+            for (int i = 0; i < sizeCol; i++)
             {
-                float result = Math.Abs(pearson(data[i], data[j], sizeRow));
-                if (result > max && i != j)
+                double result = Math.Abs(pearson(Enumerable.Range(0, data.GetLength(0)).Select(x => data[x, i]).ToArray(),
+                    Enumerable.Range(0, data.GetLength(0)).Select(x => data[x, j]).ToArray(),
+                    sizeRow));
+                if ((result >= max || double.IsInfinity(result) )&& i != j)
                 {
                     index = i;
                     max = result;
                 }
-
             }
+            Console.WriteLine("max correlation: "+ max);
             return index;
         }
 
         // performs a linear regression and returns the line equation
-        Line linear_reg(Point[] points, int size)
+        public static Line linear_reg(double[] x,double[] y, int size)
         {
-            float[] x = new float[size];
-            float[] y = new float[size];
-
-            for (int i = 0; i < size; i++)
-            {
-                x[i] = points[i].X;
-                y[i] = points[i].Y;
-            }
-            float a = cov(x, y, size) / var(x, size);
-            float b = avg(y, size) - a * (avg(x, size));
-
+            double a;
+            if (var(x, size)==0)
+                a= 0;
+            else
+                a = cov(x, y, size) / var(x, size);
+            double b = avg(y, size) - a * (avg(x, size));
             return new Line(a, b);
         }
-
-
     }
 }

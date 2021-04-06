@@ -16,15 +16,15 @@ namespace Proj1.Models
         private double rudder;
         private double aileronLeftRight;
         private double elevatorUpDown;
-        private double[][] data;
+        private double[,] data;
         private Dictionary<string, int> joystickFeatures;
         public JoystickModel() {
             data = null;
             joystickFeatures = DataModel.Instance.JoystickFeatures;
-            throttle = 0;
-            rudder = 0;
-            aileronLeftRight = 0;
-            elevatorUpDown = 0;
+            Throttle = 0;
+            Rudder = 0;
+            MoveLeftRight = 32;
+            MoveUpDown = 32;
         }
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
@@ -62,27 +62,30 @@ namespace Proj1.Models
         }
         public void getCurrentLine()
         {
-            if (joystickFeatures.Count == 0 || data == null)
+            /*if (joystickFeatures.Count == 0 || data == null || data!=)
             {
                 data = DataModel.Instance.CsvData;
                 return;
-            }
+            }*/
+            data = DataModel.Instance.CsvData;
+            if (joystickFeatures.Count == 0 || data == null)
+                return;
             double temp;
             int line = DataModel.Instance.CurrentLine;
             if (joystickFeatures["aileron"] != -1)
             {
-                temp = data[line][joystickFeatures["aileron"]];
-                MoveLeftRight = 32 + temp * 32;
+                temp = data[line,joystickFeatures["aileron"]];
+                MoveLeftRight = 32 + temp * 38;
             }
             if (joystickFeatures["elevator"] != -1)
             {
-                temp = data[line][joystickFeatures["elevator"]];
-                MoveUpDown = 32 + temp * 32;
+                temp = data[line,joystickFeatures["elevator"]];
+                MoveUpDown = 32 + temp * 38;
             }
             if (joystickFeatures["throttle"] != -1)
-                Throttle = data[line][joystickFeatures["throttle"]];
+                Throttle = data[line,joystickFeatures["throttle"]];
             if (joystickFeatures["rudder"] != -1)
-                Rudder = data[line][joystickFeatures["rudder"]];
+                Rudder = data[line,joystickFeatures["rudder"]];
         }
     }
 }

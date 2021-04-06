@@ -15,12 +15,20 @@ namespace Proj1.Models
         private double pitch;
         private double roll;
         private double yaw;
-        private double[][] data;
+        private double speedClockDeg;
+        private double altiHundreds;
+        private double altiThousands;
+        private double compass;
+        private double[,] data;
         private Dictionary<string,int> dashboardFeatures;
         public DashboardModel() { 
             dashboardFeatures = DataModel.Instance.DashboardFeatures;
             data = null;
-        }
+            SpeedClockDeg = -43;
+            AltSmall=0;
+            AltBig=0;
+            Compass = 0;
+    }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
@@ -28,17 +36,62 @@ namespace Proj1.Models
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
+        public double SpeedClockDeg
+        {
+            get { return speedClockDeg; }
+            set
+            {
+                speedClockDeg = value;
+                NotifyPropertyChanged("SpeedClockDeg");
+            }
+        }
+        public double AltBig
+        {
+            get { return altiHundreds; }
+            set {
+                altiHundreds = value;
+                NotifyPropertyChanged("AltBig");
+            }
+        }
+        public double AltSmall
+        {
+            get { return altiThousands; }
+            set {
+                altiThousands = value;
+                NotifyPropertyChanged("AltSmall");
+            }
+        }
         public double Altimeter
         {
             get { return altimeter; }
             set { altimeter = value;
+                if (altimeter > 0)
+                {
+                    AltBig = 90 + ((altimeter % 1000) * 0.36);
+                    AltSmall = 90 + altimeter * 0.036;
+                }
+                else
+                { 
+                    AltBig = 90;
+                    AltSmall = 90;
+                }    
                 NotifyPropertyChanged("Altimeter");
+            }
+        }
+        public double Compass
+        {
+            get { return compass; }
+            set
+            {
+                compass = value;
+                NotifyPropertyChanged("Compass");
             }
         }
         public double Airspeed
         {
             get { return airspeed; }
             set { airspeed = value;
+                SpeedClockDeg = -43 + (airspeed / DataModel.Instance.MaxSpeed)*270;
                 NotifyPropertyChanged("Airspeed");
             }
         }
@@ -46,6 +99,7 @@ namespace Proj1.Models
         {
             get { return direction; }
             set { direction = value;
+                Compass = 90 + direction;
                 NotifyPropertyChanged("Direction");
             }
         }
@@ -72,24 +126,22 @@ namespace Proj1.Models
         }
         public void getCurrentLine()
         {
-            if (dashboardFeatures.Count == 0 || data ==null)
-            {
-                data = DataModel.Instance.CsvData;
+            data = DataModel.Instance.CsvData;
+            if (dashboardFeatures.Count == 0 || data == null)
                 return;
-            }
             int line = DataModel.Instance.CurrentLine;
             if (dashboardFeatures["altimeter"]!=-1)
-                Altimeter = data[line][dashboardFeatures["altimeter"]];
+                Altimeter = data[line,dashboardFeatures["altimeter"]];
             if (dashboardFeatures["airspeed"] != -1)
-                Airspeed = data[line][dashboardFeatures["airspeed"]];
+                Airspeed = data[line,dashboardFeatures["airspeed"]];
             if (dashboardFeatures["direction"] != -1)
-                Direction = data[line][dashboardFeatures["direction"]];
+                Direction = data[line,dashboardFeatures["direction"]];
             if (dashboardFeatures["pitch"] != -1)
-                Pitch = data[line][dashboardFeatures["pitch"]];
+                Pitch = data[line,dashboardFeatures["pitch"]];
             if (dashboardFeatures["roll"] != -1)
-                Roll = data[line][dashboardFeatures["roll"]];
+                Roll = data[line,dashboardFeatures["roll"]];
             if (dashboardFeatures["yaw"] != -1)
-                Yaw = data[line][dashboardFeatures["yaw"]];
+                Yaw = data[line,dashboardFeatures["yaw"]];
         }
     }
 }

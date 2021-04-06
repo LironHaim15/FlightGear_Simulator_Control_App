@@ -8,18 +8,16 @@ namespace Proj1.forGrph
 {
     class Line
     {
-		private float a, b;
+		private double a, b;
         public Line() {
             a = 0;
 			b = 0;
 		}
-
-		public Line(float a, float b)  {
+		public Line(double a, double b)  {
             this.a = a;
 			this.b = b;
 		}
-
-		float f(float x)
+		public double f(double x)
 		{
 			return a * x + b;
 		}

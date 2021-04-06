@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Net.Sockets;
 using OxyPlot;
-using System.Collections.Generic;
+using System.Threading;
 
 
 namespace Proj1.Models
@@ -15,36 +15,36 @@ namespace Proj1.Models
     {
         private static DataModel dm;
         private int currentLine;
-        // for grph
-        private bool changeChoise;
-        private string nameChoise;
-        private List<DataPoint> pointsSeries1;
-        private List<DataPoint> pointsSeries2;
-
+        private bool changeChoice;
+        private string nameChoice;
+        private Thread thread;
         private int maxLines;
-        private double[][] csvData;
+        private double[,] csvData;
         private List<string> stringData;
         private List<string> featuresNames;
         private Dictionary<string,int> dashboardFeatures;
         private Dictionary<string, int> joystickFeatures;
-        private string dllPath;
         private bool connected;
         private bool settingsOK;
-        private bool algoritmLoaded;
+        private bool dllLoaded;
+        private Dictionary<int, List<string>> anomalies;
+        private List<string> anomaliesList;
         private Socket fgClient;
+        private double maxSpeed;
         private DataModel() {
             currentLine = 0;
             stringData = new List<string>();
             featuresNames = new List<string>();
             dashboardFeatures = new Dictionary<string, int>();
             joystickFeatures = new Dictionary<string, int>();
+            anomalies = new Dictionary<int, List<string>>();
             connected = false;
-            algoritmLoaded = false;
+            anomaliesList = new List<string>();
             settingsOK = false;
             maxLines = 0;
-            dllPath = null;
-            changeChoise = false;
-            nameChoise = "";
+            dllLoaded = false;
+            changeChoice = false;
+            nameChoice = "";
         }
         public static DataModel Instance
         {
@@ -55,12 +55,16 @@ namespace Proj1.Models
                 return dm;
             }
         }
-
         public int CurrentLine
         {
             get { return currentLine; }
-            set { currentLine = value;
-                NotifyPropertyChanged("CurrentUpdated");
+            set
+            {
+                if (currentLine != value)
+                {
+                    currentLine = value;
+                    NotifyPropertyChanged("CurrentUpdate");
+                }
             }
         }
         public  int MaxLines
@@ -70,7 +74,12 @@ namespace Proj1.Models
                 NotifyPropertyChanged("MaxLines");
             }
         }
-        public double[][] CsvData
+        public double MaxSpeed
+        {
+            get { return maxSpeed; }
+            set { maxSpeed=value; }
+        }
+        public double[,] CsvData
         {
             get { return csvData; }
             set { csvData = value; }
@@ -91,46 +100,112 @@ namespace Proj1.Models
         {
             get { return joystickFeatures; }
         }
+        public Dictionary<int, List<string>> Anomalies
+        {
+            get { return anomalies; }
+        }
+        public List<string> AnomaliesList
+        {
+            get { return anomaliesList; }
+        }
         public Socket Socket
         {
             get { return fgClient; }
             set { fgClient = value; }
         }
+        public Thread Thread
+        {
+            get { return thread; }
+            set { thread = value; }
+        }
+        public void closeThread()
+        {
+            if(thread!=null)
+                thread.Join();
+        }
+        public void setCurrentLine(int line)
+        {
+            CurrentLine = line;
+            NotifyPropertyChanged("CurrentChanged");
+        }
+        public bool DllLoaded
+        {
+            get { return dllLoaded; }
+            set
+            {
+                Console.WriteLine("loaded!");
+                foreach (var item in anomaliesList)
+                {
+                    Console.WriteLine(item);
+                }
+                dllLoaded = value;
+                NotifyPropertyChanged("DllLoaded");
+            }
+        }
         public bool Connected
         {
             get { return connected; }
             set { connected = value;
-                NotifyPropertyChanged("DisconnectVisibility");
-                NotifyPropertyChanged("ConnectVisibility");
-                NotifyPropertyChanged("SettingsVisibility");
+                NotifyPropertyChanged("DisconnectEnable");
+                NotifyPropertyChanged("ConnectEnable");
+                NotifyPropertyChanged("SettingsEnable");
+                NotifyPropertyChanged("DashboardVisibility");
+                NotifyPropertyChanged("JoystickVisibility");
+                NotifyPropertyChanged("PlaybarVisibility");
+                NotifyPropertyChanged("AnomaliesVisibility");
             }
         }
         public bool SettingsOK
         {
             get { return settingsOK; }
             set { settingsOK = value;
-                NotifyPropertyChanged("SettingsVisibility");
-                NotifyPropertyChanged("ConnectVisibility");
+                NotifyPropertyChanged("SettingsEnabley");
+                NotifyPropertyChanged("ConnectEnable");
+                NotifyPropertyChanged("LoadEnable");
                 if (settingsOK == true)
                     NotifyPropertyChanged("SettingsOK");
-
             }
         }
-        public string DLLPath
+
+        public void softReset()
         {
-            get { return dllPath; }
-            set { dllPath = value; }
+            SettingsOK = false;
+            Connected = false;
+            CurrentLine = 0;
+            changeChoice = false;
+            nameChoice = "";
         }
-        // for grph
-        public bool ChangeChoise
+        public void hardReset()
         {
-            get { return changeChoise; }
-            set { changeChoise = value; }
+            currentLine = 0;
+            changeChoice = false;
+            nameChoice = null;
+            thread = null;
+            maxLines = 0;
+            csvData = null;
+            stringData.Clear();
+            featuresNames.Clear();
+            dashboardFeatures.Clear();
+            joystickFeatures.Clear();
+            connected = false;
+            settingsOK = false;
+            dllLoaded = false;
+            anomalies.Clear();
+            anomaliesList.Clear();
+            fgClient = null;
+            NotifyPropertyChanged("Restart");
+    }
+        // for graph
+        public bool ChangeChoice
+        {
+            get { return changeChoice; }
+            set { changeChoice = value; }
         }
-        public string NameChoise
+
+        public string NameChoice
         {
-            get { return nameChoise; }
-            set { nameChoise = value; }
+            get { return nameChoice; }
+            set { nameChoice = value; }
         }
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)

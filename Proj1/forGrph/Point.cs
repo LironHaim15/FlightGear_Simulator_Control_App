@@ -8,29 +8,22 @@ namespace Proj1.forGrph
 {
     class Point
     {
-        private float x, y;
-        public Point(float x, float y)
+        private double x, y;
+        public Point(double x, double y)
         {
             this.x = x;
             this.y = y;
         }
-        public float X
+        public double X
         {
             get { return x; }
-            set
-            {
-                x = value;
-
-            }
+            set { x = value; }
         }
 
-        public float Y
+        public double Y
         {
             get { return y; }
-            set
-            {
-                y = value;
-            }
+            set { y = value; }
         }
 
     }

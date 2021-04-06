@@ -60,7 +60,7 @@ namespace Proj1.Models
             {
                 currentLine = value;
                 CurrentTime = TimeSpan.FromSeconds(currentLine / lineFreq);
-                if (currentLine >= MaxLines) {
+                if (currentLine >= MaxLines-1) {
                     ToPlay = false; }
                 DataModel.Instance.CurrentLine = currentLine;
                 NotifyPropertyChanged("CurrentLine");
@@ -112,32 +112,27 @@ namespace Proj1.Models
             int lines = CurrentLine + (amount * lineFreq);
             if (lines <= 0)
                 CurrentLine = 0;
-            else if (lines >= MaxLines)
-                CurrentLine = MaxLines;
+            else if (lines >= MaxLines-1)
+                CurrentLine = MaxLines-1;
             else
                 CurrentLine = lines;
         }
 
         public void play()
         {
-            if (ToPlay == true)
+            if (ToPlay == true || CurrentLine >= MaxLines - 1)
             {
                 return;
             }
-            /*if (thread != null)
-            {
-                Console.WriteLine("thread is not null, alive status: "+thread.IsAlive);
-            }*/
-
             ToPlay = true;
             thread = new Thread(() =>
             {
                 try
                 {
                     Socket client = DataModel.Instance.Socket;
-                    while (ToPlay)
+                    while (ToPlay && DataModel.Instance.Connected)
                     {
-
+                        // CATCH EX IF PLAY BEFORE CONNECTION
                         byte[] byteData = Encoding.ASCII.GetBytes(stringData[CurrentLine] + "\r\n");
                         int sent = client.Send(byteData);
                         CurrentLine++;
@@ -146,10 +141,22 @@ namespace Proj1.Models
                 }
                 catch {
                     Console.WriteLine(CurrentLine);
+                    Console.WriteLine("HERE");
                 } // TO COMPLETE
             });
+            DataModel.Instance.Thread = thread;
             thread.Start();
         }
-
+        public void restart()
+        {
+            CurrentTime = new TimeSpan(0, 0, 0);
+            PlaySpeed = 1.0;
+            currentLine = 0;
+            sleepSpeed = 1000 / lineFreq;
+            toPlay = false;
+            MaxLines = 0;
+            stringData = DataModel.Instance.StringData;
+            NotifyPropertyChanged("CurrentLine");
+        }
     }
 }

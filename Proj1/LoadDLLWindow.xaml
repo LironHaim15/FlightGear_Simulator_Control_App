@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proj1"
         mc:Ignorable="d"
-        Title="Load .dll File" Height="197.708" Width="654.875">
+        Title="Load .dll File" Height="202.62" Width="654.875" Background="#FF4B4B4B">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="35*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="68*"/>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="41*"/>
         </Grid.RowDefinitions>
         <Button Content="Load" HorizontalAlignment="Left" Height="24" Margin="500,34,0,0" Grid.Row="2" VerticalAlignment="Top" Width="131" Click="Load_Click"/>
         <TextBox x:Name="dllPath" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="472" Margin="23,7,0,0" Grid.Row="1"/>
         <Button Content="Browse" HorizontalAlignment="Left" Height="24" Margin="500,7,0,0" Grid.Row="1" VerticalAlignment="Top" Width="131" Click="Browse_Click"/>
-        <Label x:Name="ErrorLabel" Content="{Binding VM_ErrorLabel}" HorizontalAlignment="Left" Height="48" Margin="23,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="472"/>
-        <Label Content="Please Enter Detection Algorithm" HorizontalAlignment="Left" Height="25" Margin="23,10,0,0" VerticalAlignment="Top" Width="472"/>
+        <Label x:Name="ErrorLabel" Content="{Binding VM_ErrorLabel}" HorizontalAlignment="Left" Height="48" Margin="23,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="472" Foreground="White"/>
+        <Label Content="Please Enter Detection Algorithm:" HorizontalAlignment="Left" Height="32" Margin="23,10,0,0" VerticalAlignment="Top" Width="472" Foreground="White"/>
     </Grid>
 </Window>

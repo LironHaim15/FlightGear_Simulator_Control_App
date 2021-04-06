@@ -12,7 +12,6 @@ namespace Proj1.ViewModels
     {
         private LoadModel lmodel;
         private DataModel dmodel;
-        private string loadPath;
         public LoadViewModel(LoadModel lm)
         {
             this.lmodel = lm;
@@ -33,20 +32,11 @@ namespace Proj1.ViewModels
             get { return lmodel.Error; }
         }
         
-        public string VM_LoadPath
-        {
-            //get { return lmodel.LoadPath; }
-            set
-            {
-                loadPath = value;
-                //lmodel.update(value);
-            }
-        }
         public bool load(string path)
         {
             if (lmodel.update(path))
             {
-                dmodel.DLLPath = path;
+                dmodel.DllLoaded = true;
                 return true;
             }
             return false;

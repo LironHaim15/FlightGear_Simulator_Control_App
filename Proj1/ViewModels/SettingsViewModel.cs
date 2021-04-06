@@ -26,50 +26,29 @@ namespace Proj1
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
 
-        private string csvNormalPath;
         public string VM_CsvNormalPath
         {
-            get { return csvNormalPath; }
-            set { csvNormalPath = value;
-                smodel.updatePath(csvNormalPath, csvTestPath, flightGearPath, xmlPath);
-            }
+            get { return smodel.CsvNormalPath; }
+            set { smodel.CsvNormalPath = value; }
         }
-        private string csvTestPath;
         public string VM_CsvTestPath
         {
-            get { return csvTestPath; }
-            set
-            {
-                csvTestPath = value;
-                smodel.updatePath(csvNormalPath, csvTestPath, flightGearPath, xmlPath);
-            }
+            get { return smodel.CsvTestPath; }
+            set { smodel.CsvTestPath = value; }
         }
-        private string flightGearPath;
         public string VM_FlightGearPath
         {
-            get { return flightGearPath; }
-            set
-            {
-                flightGearPath = value;
-                smodel.updatePath(csvNormalPath, csvTestPath, flightGearPath, xmlPath);
-            }
+            get { return smodel.FlightGearPath; }
+            set { smodel.FlightGearPath = value; }
         }
-        private string xmlPath;
-        public string VM_XmlPath
-        {
-            get { return xmlPath; }
-            set
-            {
-                xmlPath = value;
-                smodel.updatePath(csvNormalPath, csvTestPath, flightGearPath, xmlPath);
-            }
-        }
-
         public string VM_ErrorLabel
         {
             get { return smodel.Error; }
         }
-
+        public void browse(string type)
+        {
+            smodel.browse(type);
+        }
         public bool check()
         {
             return smodel.isEverythingOK();

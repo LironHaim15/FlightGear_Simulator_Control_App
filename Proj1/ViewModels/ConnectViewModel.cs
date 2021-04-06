@@ -28,24 +28,20 @@ namespace Proj1.ViewModels
         {
             get { return cmodel.Error; }
         }
-        private string ip, port;
         public string VM_IP
         {
-            get { return ip; }
-            set { ip = value;
-                cmodel.update(ip, port); }
+            get { return cmodel.IP; }
+            //set { cmodel.IP = value; }
         }
         public string VM_Port
         {
-            get { return port; }
-            set
-            {
-                port = value;
-                cmodel.update(ip, port);
-            }
+            get { return cmodel.Port; }
+            //set { cmodel.Port = value; }
         }
-        public bool check()
+        public bool check(string ip,string port)
         {
+            cmodel.IP = ip;
+            cmodel.Port = port;
             return cmodel.isEverythingOK();
         }
     }

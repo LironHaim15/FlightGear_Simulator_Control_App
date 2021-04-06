@@ -18,7 +18,6 @@ namespace Proj1.ViewModels
       
         public AnomaliesViewModel(AnomaliesModel am)
         {
-            
             this.amodel = am;
             this.dmodel = DataModel.Instance;
             this.amodel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
@@ -27,7 +26,6 @@ namespace Proj1.ViewModels
             };
             this.dmodel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
-
                 NotifyPropertyChanged("VM_" + e.PropertyName);
             };
         }
@@ -37,32 +35,48 @@ namespace Proj1.ViewModels
         {
             if (propName == "VM_SettingsOK")
                 amodel.getFeatures();
+            if (propName == "VM_CurrentUpdate")
+                amodel.createGraph();
+            if (propName == "VM_DllLoaded")
+                amodel.getAnomaliesList();
             else if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-        public void updth(string selectStr)
+        public void update(string selectStr)
         {
-            if(selectStr != dmodel.NameChoise)
-            {
-                dmodel.ChangeChoise = true;
-                dmodel.NameChoise = selectStr;
-            }
-            
-
-            //amodel.updth(selectStr);
+            amodel.update(selectStr);
         }
-        public PlotModel VM_TMP
+        public void updateAnomaly(string selectStr)
+        {
+            amodel.updateAnomaly(selectStr);
+        }
+        public PlotModel VM_FeatureGraph
         {
             get
             {
-                return amodel.TMP;
+                return amodel.FeatureGraph;
             }
-            private set { }
-             }
+        }
 
+        public PlotModel VM_CorrelatedFeatureGraph
+        {
+            get
+            {
+                return amodel.CorrelatedFeatureGraph;
+            }
+        }
+
+        public PlotModel VM_RegressionGraph
+        {
+            get { return amodel.RegressionGraph; }
+        }
         public List<string> VM_FeaturesList
         {
             get { return amodel.FeaturesList; }
+        }
+        public List<string> VM_AnomaliesList
+        {
+            get { return amodel.AnomaliesList; }
         }
     }
 }

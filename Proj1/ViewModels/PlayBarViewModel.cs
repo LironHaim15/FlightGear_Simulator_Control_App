@@ -28,14 +28,21 @@ namespace Proj1.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
         {
+            if (propName == "VM_CurrentChanged")
+                pbmodel.CurrentLine = dmodel.CurrentLine;
+            if (propName == "VM_Restart")
+                pbmodel.restart();
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
 
         public int VM_MaxLines
         {
-            get { pbmodel.updateMaxLines();
-                return pbmodel.MaxLines; }
+            get
+            {
+                pbmodel.updateMaxLines();
+                return pbmodel.MaxLines - 1;
+            }
         }
         public float VM_CurrentLine
         {
@@ -87,6 +94,5 @@ namespace Proj1.ViewModels
         {
             pbmodel.CurrentLine = line;
         }
-        
     }
 }

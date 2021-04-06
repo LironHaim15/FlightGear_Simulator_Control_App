@@ -26,7 +26,11 @@ namespace Proj1
         //errors
         private string errorLabel;
        
-        public SettingsModel() { DataModel.Instance.SettingsOK = false; }
+        public SettingsModel() { DataModel.Instance.SettingsOK = false;
+            CsvNormalPath = "D:\\Desktop\\AdvancedProgramming2\\reg_flight.csv";
+            CsvTestPath = "D:\\Desktop\\AdvancedProgramming2\\anomaly_flight - Copy.csv";
+            FlightGearPath = "D:\\Program Files\\FlightGear 2020.3.6";
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
@@ -34,7 +38,6 @@ namespace Proj1
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-       
 
        public string Error
         {
@@ -43,21 +46,55 @@ namespace Proj1
                 NotifyPropertyChanged("ErrorLabel");
             }
         }
-
-        public void updatePath(string VM_csvNormalPath, string VM_csvTestPath, string VM_flightGearPath, string VM_xmlPath)
+        public string CsvNormalPath
         {
-            csvNormalPath = VM_csvNormalPath;
-            csvTestPath = VM_csvTestPath;
-            flightGearPath = VM_flightGearPath;
-            xmlPath = VM_xmlPath;
+            get { return csvNormalPath; }
+            set
+            {
+                csvNormalPath = value;
+                NotifyPropertyChanged("CsvNormalPath");
+            }
         }
-        
+        public string CsvTestPath
+        {
+            get { return csvTestPath; }
+            set
+            {
+                csvTestPath = value;
+                NotifyPropertyChanged("CsvTestPath");
+            }
+        }
+        public string FlightGearPath
+        {
+            get { return flightGearPath; }
+            set
+            {
+                flightGearPath = value;
+                NotifyPropertyChanged("FlightGearPath");
+            }
+        }
         private bool isCorrectPath(string path)
         {
             string filePath = path;
             return File.Exists(filePath);
         }
 
+        public void browse(string type)
+        {
+            Microsoft.Win32.OpenFileDialog openFileDlg = new Microsoft.Win32.OpenFileDialog();
+            Nullable<bool> result = openFileDlg.ShowDialog();
+            if (result == true)
+            {
+                if(type == "FlightGearPath")
+                    FlightGearPath= Path.GetFullPath(openFileDlg.FileName);
+                if (type == "CsvNormalPath")
+                    CsvNormalPath = Path.GetFullPath(openFileDlg.FileName);
+                if (type == "CsvTestPath")
+                    CsvTestPath = Path.GetFullPath(openFileDlg.FileName);
+                if (type == "XmlPath")
+                    xmlPath = Path.GetFullPath(openFileDlg.FileName);
+            }
+        }
         private void getDashboardFeatures()
         {   //
             // CHECK NAMES IN XML !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -71,6 +108,14 @@ namespace Proj1
             dashboard.Add("roll", list.IndexOf("roll-deg"));
             dashboard.Add("yaw", list.IndexOf("side-slip-deg"));
         }
+        private double[,] getDataArray(List<double[]> rows, int colSize)
+        {
+            double[,] data = new double[rows.Count, colSize];
+            for (int i = 0; i < data.GetLength(0); i++)
+                for (int j = 0; j < data.GetLength(1); j++)
+                    data[i, j] = (rows[i])[j];
+            return data;
+        }
         private void getJoystickFeatures()
         {   //
             // CHECK NAMES IN XML !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -81,42 +126,73 @@ namespace Proj1
             joystick.Add("elevator", list.IndexOf("elevator"));
             joystick.Add("throttle", list.IndexOf("throttle"));
             joystick.Add("rudder", list.IndexOf("rudder"));
-/*            foreach (var item in joystick)
+        }
+        private void saveMaxValues()
+        {
+            Dictionary<string, int> dashboard = DataModel.Instance.DashboardFeatures;
+            double[,] data= DataModel.Instance.CsvData;
+            if (dashboard["airspeed"] != -1)
+                DataModel.Instance.MaxSpeed = Enumerable.Range(0, data.GetLength(0)).Select(x => data[x, dashboard["airspeed"]]).ToArray().Max();
+        }
+
+        private void createInputTxt(List<string> featuresNames, List<string> stringData)
+        {
+            using (StreamWriter sw = File.CreateText("input.txt"))
             {
-                Console.WriteLine(item);
-            }*/
+                //StreamWriter sw = File.CreateText("input.txt");
+                sw.WriteLine("1");
+                //write learn data in input.txt
+                int i = 0;
+                for (; i < featuresNames.Count - 1; i++)
+                    sw.Write(featuresNames[i] + ",");
+                sw.WriteLine(featuresNames[i]);
+                string line;
+                StreamReader file = new StreamReader(@csvNormalPath);
+                //check valid path 
+                while ((line = file.ReadLine()) != null)
+                    sw.WriteLine(line);
+                sw.WriteLine("done");
+                file.Close();
+                //write test data in input.txt
+                i = 0;
+                for (; i < featuresNames.Count - 1; i++)
+                    sw.Write(featuresNames[i] + ",");
+                sw.WriteLine(featuresNames[i]);
+                foreach (string s in stringData)
+                    sw.WriteLine(s);
+                sw.WriteLine("done");
+                sw.WriteLine("3");
+                sw.WriteLine("4");
+                sw.WriteLine("6");
+                sw.Close();
+            }
         }
         public bool isEverythingOK()
         {
             bool errorExist = false;
-            string errorMessage="ERROR with the following paths:\n";
-            if (!isCorrectPath(csvTestPath))
+            string errorMessage="Error! Details:\n";
+            if (!(isCorrectPath(CsvTestPath) && string.Equals(Path.GetExtension(CsvTestPath), ".csv", StringComparison.OrdinalIgnoreCase)))
             {
-                errorMessage += "Test CSV\n";
+                errorMessage += "# Test CSV file wasn't found.\n";
                 errorExist = true;
                 // notify and change lable.
             }
-            if (!isCorrectPath(csvNormalPath))
+            if (!(isCorrectPath(CsvNormalPath) && string.Equals(Path.GetExtension(CsvNormalPath), ".csv", StringComparison.OrdinalIgnoreCase)))
             {
                 errorExist = true;
-                errorMessage += "Normal CSV\n";
+                errorMessage += "# Normal CSV file wasn't found.\n";
             }
-            if (!isCorrectPath(xmlPath))
-            {
-                errorExist = true;
-                errorMessage += "XML Location\n";
-            }
+            xmlPath = flightGearPath + "\\data\\Protocol\\playback_small.xml";
             if (!Directory.Exists(flightGearPath))
             {
                 errorExist = true;
-                errorMessage += "FlightGear Location\n";
+                errorMessage += "# FlightGear directory is incorrect.\n";
             }
-            string xmlDestPath = flightGearPath + "\\data\\Protocol";
-            if (!Directory.Exists(xmlDestPath))
+            if (!(isCorrectPath(xmlPath) && string.Equals(Path.GetExtension(xmlPath), ".xml", StringComparison.OrdinalIgnoreCase)))
             {
                 errorExist = true;
-               
-                errorMessage += "FlightGear Location (Protol Folder)\n";
+                errorMessage += "# playback__small.xml file wasn't found at\n" +
+                                " ...\\data\\protocol\\ at FlightGear directory.\n";
             }
 
             if (errorExist)
@@ -128,12 +204,12 @@ namespace Proj1
             {
                 try
                 {
+                    DataModel.Instance.hardReset();
                     //Copy XML file to FG Protocols folder
                     //File.Copy(xmlPath, xmlDestPath + "\\playback_small.xml", true);
 
                     //Get XML Labels and save them in data model.
                     XmlDocument xml = new XmlDocument();
-                    xmlDestPath += "\\playback_small.xml";
                     xml.Load(xmlPath);
                     XmlNodeList nodes = xml.SelectNodes("//output");
                     List<string> featuresNames = DataModel.Instance.FeaturesNames;
@@ -158,22 +234,19 @@ namespace Proj1
                             }
                         }
                     }
-
                     //copy test csv data to local array.
                     string csvLocation = csvTestPath;
-
+                    //Console.WriteLine("test: "+csvTestPath);
                     List<double[]> dataList = new List<double[]>();
-                    string[] lineData;
+                    string[] lineData= { };
                     List<string> stringData = DataModel.Instance.StringData;
                     string line;
-                    int amount = 0;
-                    System.IO.StreamReader file = new System.IO.StreamReader(@csvLocation);
+                    StreamReader file = new StreamReader(@csvLocation);
                     //check valid path 
                     while ((line = file.ReadLine()) != null)
                     {
                         stringData.Add(line);
                         lineData = line.Split(',');
-                        amount++;
                         List<double> listDouble = new List<double>();
                         foreach (string s in lineData)
                         {
@@ -181,10 +254,19 @@ namespace Proj1
                         }
                         dataList.Add(listDouble.ToArray());
                     }
-                    DataModel.Instance.CsvData = dataList.ToArray();
+                    //get learn data strings
+
+                    if (File.Exists("input.txt"))
+                    {
+                        File.Delete("input.txt");
+                    }
+                    file.Close();
+                    createInputTxt(featuresNames, stringData);
+                    DataModel.Instance.CsvData = getDataArray(dataList, lineData.Length);
                     DataModel.Instance.MaxLines = stringData.Count;
                     getDashboardFeatures();
                     getJoystickFeatures();
+                    saveMaxValues();
                     DataModel.Instance.SettingsOK = true;
                 }
                 catch (IOException iox)
@@ -192,17 +274,12 @@ namespace Proj1
                     Console.WriteLine(iox.Message); //CHANGE - file could not read.
                     return false;
                 }
-
                 //learn data. (requires DLL)
             }
             //    D:\Desktop\AdvancedProgramming2\reg_flight.csv
             //    D:\Desktop\AdvancedProgramming2\playback_small.xml
             //    D:\Program Files\FlightGear 2020.3.6
-
-
-            
             return true;
         }
-
     }
 }

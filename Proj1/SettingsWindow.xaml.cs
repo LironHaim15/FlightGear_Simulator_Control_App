@@ -132,5 +132,25 @@ namespace Proj1
                 this.Close();
             }
         }
+
+        private void NormalBrowse_Click(object sender, RoutedEventArgs e)
+        {
+            vm.browse("CsvNormalPath");
+        }
+
+        private void TestBrowse_Click(object sender, RoutedEventArgs e)
+        {
+            vm.browse("CsvTestPath");
+        }
+
+        private void XmlBrowse_Click(object sender, RoutedEventArgs e)
+        {
+            vm.browse("XmlPath");
+        }
+
+        private void FGpathBrowse_Click(object sender, RoutedEventArgs e)
+        {
+            vm.browse("FlightGearPath");
+        }
     }
 }

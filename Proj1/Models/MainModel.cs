@@ -9,7 +9,6 @@ namespace Proj1.Models
 {
     class MainModel
     {
-        private SettingsModel settingsModel;
         public MainModel() { }
     }
 }

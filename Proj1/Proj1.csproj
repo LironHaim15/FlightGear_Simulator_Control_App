@@ -198,5 +198,25 @@
   <ItemGroup>
     <Resource Include="Resources\Base.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\airplane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\connection.png" />
+    <Resource Include="Resources\disconnection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gears.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="plugins\CS_HybridDetecor.dll" />
+    <Content Include="plugins\CS_SimpleDetecor.dll" />
+    <Content Include="plugins\HybridDetector.dll" />
+    <Content Include="plugins\SimpleDetector.dll" />
+    <Resource Include="Resources\pitch_yaw_roll.png" />
+    <Resource Include="Resources\Altimeter.png" />
+    <Resource Include="Resources\compass.png" />
+    <Resource Include="Resources\clock_speed_nohog.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

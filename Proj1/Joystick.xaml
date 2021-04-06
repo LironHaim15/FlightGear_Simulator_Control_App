@@ -14,13 +14,27 @@
             <RowDefinition Height="149*"/>
             <RowDefinition Height="26*"/>
         </Grid.RowDefinitions>
+
         <Image Source="/Resources/base.png" Grid.Column="1" Margin="10" />
 
         <Slider Value="{Binding VM_Rudder, Mode=OneWay}" IsMoveToPointEnabled="True" HorizontalAlignment="Left" Margin="6,0,0,0" Grid.Row="1" VerticalAlignment="Top" TickFrequency="0.1" TickPlacement="BottomRight"  Width="243" Grid.Column="1" Maximum="1" Minimum="-1" IsEnabled="False"/>
-        <Slider Value="{Binding VM_Throttle, Mode=OneWay}" IsMoveToPointEnabled="True" HorizontalAlignment="Left" Margin="30,40,0,0" VerticalAlignment="Top" TickFrequency="0.1" TickPlacement="TopLeft"  Width="21" Orientation="Vertical" Height="214" Maximum="1" Minimum="-1" IsEnabled="False" LargeChange="0.01" SmallChange="0.0001"/>
+        <Slider Value="{Binding VM_Throttle, Mode=OneWay}" IsMoveToPointEnabled="True" HorizontalAlignment="Left" Margin="30,40,0,0" VerticalAlignment="Top" TickFrequency="0.1" TickPlacement="TopLeft"  Width="21" Orientation="Vertical" Height="214" Maximum="1" Minimum="0" IsEnabled="False" LargeChange="0.01" SmallChange="0.0001"/>
         <Canvas Grid.Column="1" HorizontalAlignment="Left" Height="164" Margin="45,77,0,0" VerticalAlignment="Top" Width="164">
             <Image Source="/Resources/joystick_grey.png" Grid.Column="1" Canvas.Left="{Binding VM_MoveLeftRight,FallbackValue=32}" Canvas.Top="{Binding VM_MoveUpDown,FallbackValue=32}" />
         </Canvas>
+        <Label Content="Throttle" HorizontalAlignment="Left" Margin="-22,132,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Foreground="White" FontSize="16" Grid.ColumnSpan="2" Width="74">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Rudder" HorizontalAlignment="Left" Margin="93,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Foreground="White" Grid.Column="1" Grid.Row="1" FontSize="16">
+        </Label>
+        <Label Content="Joystick" HorizontalAlignment="Left" Margin="93,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Foreground="White" Grid.Column="1" FontSize="16"/>
 
     </Grid>
 </UserControl>

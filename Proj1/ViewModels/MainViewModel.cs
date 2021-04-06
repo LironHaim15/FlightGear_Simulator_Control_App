@@ -27,18 +27,51 @@ namespace Proj1.VeiwModels
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
 
-        public string VM_ConnectVisibility
+        public bool VM_ConnectEnable
         {
             get
             {
                 if (!dmodel.SettingsOK || dmodel.Connected)
                 {
-                    return "Hidden";
+                    return false;
                 }
-                return "Visible";
+                return true;
             }
         }
-        public string VM_DisconnectVisibility
+        public bool VM_DisconnectEnable
+        {
+            get
+            {
+                if (dmodel.Connected)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+        public bool VM_SettingsEnable
+        {
+            get
+            {
+                if (dmodel.Connected)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+        public bool VM_LoadEnable
+        {
+            get
+            {
+                if (dmodel.SettingsOK)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+        public string VM_DashboardVisibility
         {
             get
             {
@@ -49,24 +82,49 @@ namespace Proj1.VeiwModels
                 return "Hidden";
             }
         }
-        public string VM_SettingsVisibility
+        public string VM_JoystickVisibility
         {
             get
             {
-                if (dmodel.SettingsOK)
+                if (dmodel.Connected)
                 {
-                    return "Hidden";
+                    return "Visible";
                 }
-                return "Visible";
+                return "Hidden";
+            }
+        }
+        public string VM_AnomaliesVisibility
+        {
+            get
+            {
+                if (dmodel.Connected)
+                {
+                    return "Visible";
+                }
+                return "Hidden";
+            }
+        }
+        public string VM_PlaybarVisibility
+        {
+            get
+            {
+                if (dmodel.Connected)
+                {
+                    return "Visible";
+                }
+                return "Hidden";
             }
         }
         public void disconnect()
         {
-            //dmodel.Socket.Shutdown(SocketShutdown.Both); CHECK IF NECCESSARY
-            dmodel.Socket.Close();
-            dmodel.Connected = false;
-            dmodel.SettingsOK = false;
+            if (dmodel.Connected)
+            {
+                //dmodel.Socket.Shutdown(SocketShutdown.Both); CHECK IF NECCESSARY
+                dmodel.Connected = false;
+                dmodel.closeThread();
+                dmodel.Socket.Close();
+                dmodel.softReset();
+            }
         }
-
     }
 }

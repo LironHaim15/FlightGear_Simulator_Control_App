@@ -34,7 +34,19 @@ namespace Proj1
         }
         private void FeaturesListBox_Click(object sender, RoutedEventArgs e)
         {
-            vm.updth(FeaturesListBox.SelectedItem.ToString());
+            vm.update(FeaturesListBox.SelectedItem.ToString());
+            Console.WriteLine(FeaturesListBox.SelectedItem.ToString());
+        }
+
+        private void FeaturesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            vm.update(FeaturesListBox.SelectedItem.ToString());
+        }
+
+        private void AnomaliesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (vm.VM_AnomaliesList.Count != 0)
+                vm.updateAnomaly(AnomaliesListBox.SelectedItem.ToString());
         }
     }
 }

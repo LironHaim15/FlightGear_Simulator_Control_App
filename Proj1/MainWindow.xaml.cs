@@ -22,23 +22,39 @@ namespace Proj1
     public partial class MainWindow : Window
     {
         MainViewModel vm;
+        ConnectWindow cwindow;
+        LoadDLLWindow lwindow;
+        SettingsWindow swindow;
         public MainWindow()
         {
             InitializeComponent();
+            cwindow = null;
+            lwindow = null;
+            swindow = null;
             vm = new MainViewModel();
             DataContext = vm;
         }
 
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            SettingsWindow swindow = new SettingsWindow();
-            swindow.Show();
+            if (swindow == null || !swindow.IsVisible)
+            {
+                swindow = new SettingsWindow();
+                swindow.Show();
+            }
+            else
+                swindow.Focus();
         }
 
         private void Connect_Click(object sender, RoutedEventArgs e)
         {
-            ConnectWindow cwindow = new ConnectWindow();
-            cwindow.Show();
+            if (cwindow == null || !cwindow.IsVisible)
+            {
+                cwindow = new ConnectWindow();
+                cwindow.Show();
+            }
+            else
+                cwindow.Focus();
         }
 
         private void Disconnect_Click(object sender, RoutedEventArgs e)
@@ -48,8 +64,24 @@ namespace Proj1
 
         private void Load_Click(object sender, RoutedEventArgs e)
         {
-            LoadDLLWindow lwindow = new LoadDLLWindow();
-            lwindow.Show();
+            if (lwindow == null || !lwindow.IsVisible)
+            {
+                lwindow = new LoadDLLWindow();
+                lwindow.Show();
+            }
+            else
+                lwindow.Focus();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            vm.disconnect();
+            if (lwindow != null || (lwindow != null && lwindow.IsVisible))
+                lwindow.Close();
+            if (swindow != null || (swindow != null && swindow.IsVisible))
+                swindow.Close();
+            if (cwindow != null || (cwindow != null && cwindow.IsVisible))
+                cwindow.Close();
         }
     }
 }

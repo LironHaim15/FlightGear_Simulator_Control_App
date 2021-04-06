@@ -21,8 +21,9 @@ namespace Proj1.Models
         private string errorLabel;
         private bool connected = false;
         public ConnectModel() {
-            port = "";
-            ip = "";
+            errorLabel = "";
+            IP = "127.0.0.1";
+            Port = "5400";
             DataModel.Instance.Connected = false;
         }
 
@@ -32,14 +33,22 @@ namespace Proj1.Models
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-
-        public void update(string VM_IP, string VM_Port)
+        public string IP
         {
-            ip = VM_IP;
-            port = VM_Port;
-            errorLabel = "";
+            get { return ip; }
+            set { ip = value;
+                NotifyPropertyChanged("IP");
+            }
         }
-
+        public string Port
+        {
+            get { return port; }
+            set
+            {
+                port = value;
+                NotifyPropertyChanged("Port");
+            }
+        }
         public string Error
         {
             get { return errorLabel; }
@@ -53,8 +62,8 @@ namespace Proj1.Models
             //System.Diagnostics.Process.Start(@"D:\\Program Files\\FlightGear 2020.3.6\\bin\\fgfs.exe");
             try
             {
-                IPAddress ipAddr = IPAddress.Parse(ip);
-                int portInt = int.Parse(port);
+                IPAddress ipAddr = IPAddress.Parse(IP);
+                int portInt = int.Parse(Port);
                 IPEndPoint localEndPoint = new IPEndPoint(ipAddr, portInt);
 
                 // Creation TCP/IP Socket using  
@@ -74,15 +83,12 @@ namespace Proj1.Models
             // Manage of Socket's Exceptions 
             catch (ArgumentNullException ane)
             {
-
-                //Console.WriteLine("ArgumentNullException : {0}", ane.ToString());
                 Error = "ERROR: Could not Connect.";
             }
 
             catch (SocketException se)
             {
                 Error = "ERROR: Could not Connect.";
-                //Console.WriteLine("SocketException : {0}", se.ToString());
             }
        /*   catch (FormatException e)
             {
@@ -91,7 +97,6 @@ namespace Proj1.Models
             catch (Exception ex)
             {
                 Error = "ERROR: Could not Connect.";
-                //Console.WriteLine("Unexpected exception : {0}", ex.ToString());
             }
             
         }

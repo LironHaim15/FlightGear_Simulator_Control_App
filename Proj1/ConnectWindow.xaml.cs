@@ -30,7 +30,7 @@ namespace Proj1
         }
         private void StartConnection_Click(object sender, RoutedEventArgs e)
         {
-            if (vm.check())
+            if (vm.check(ipTextBox.Text, portTextBox.Text))
             {
                 this.Close();
             }
