@@ -9,7 +9,7 @@
              d:DesignHeight="1200" Width="1292">
     <Grid>
         <ListBox x:Name="FeaturesListBox" ItemsSource="{Binding VM_FeaturesList}" HorizontalAlignment="Left" Height="679" Margin="10,53,0,0" VerticalAlignment="Top" Width="345" FontSize="20" SelectionChanged="FeaturesListBox_SelectionChanged"/>
-        <ListBox x:Name="AnomaliesListBox" ItemsSource="{Binding VM_AnomaliesList}" HorizontalAlignment="Left" Height="392" Margin="0,798,0,0" VerticalAlignment="Top" Width="355" FontSize="20" SelectionChanged="AnomaliesListBox_SelectionChanged"/>
+        <ListBox x:Name="AnomaliesListBox" ItemsSource="{Binding VM_AnomaliesList}" HorizontalAlignment="Left" Height="392" Margin="10,798,0,0" VerticalAlignment="Top" Width="345" FontSize="20" SelectionChanged="AnomaliesListBox_SelectionChanged"/>
 
         <oxy:PlotView Model="{Binding VM_FeatureGraph}" Margin="826,53,0,0" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left" Width="456" />
         <oxy:PlotView Model="{Binding VM_CorrelatedFeatureGraph}" Margin="382,53,0,0" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left" Width="424" />
