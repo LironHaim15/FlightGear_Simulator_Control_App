@@ -30,12 +30,10 @@ namespace Proj1
             InitializeComponent();
             vm = new AnomaliesViewModel(new AnomaliesModel());
             DataContext = vm;
-
         }
         private void FeaturesListBox_Click(object sender, RoutedEventArgs e)
         {
             vm.update(FeaturesListBox.SelectedItem.ToString());
-            Console.WriteLine(FeaturesListBox.SelectedItem.ToString());
         }
 
         private void FeaturesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -48,5 +46,6 @@ namespace Proj1
             if (vm.VM_AnomaliesList.Count != 0)
                 vm.updateAnomaly(AnomaliesListBox.SelectedItem.ToString());
         }
+
     }
 }

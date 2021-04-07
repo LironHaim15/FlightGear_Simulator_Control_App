@@ -57,6 +57,9 @@
         <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" HorizontalAlignment="Left" Height="41" Margin="10,10,0,0" VerticalAlignment="Top" Width="157">
             <Button x:Name="OpenFG" Content="Open FlightGear" Margin="9,3,9,4"/>
         </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="353,10,0,0" VerticalAlignment="Top" Width="156">
+            <Button x:Name="User_Instructions" Content="User Instructions" Margin="9,3,9,4" Click="User_Instructions_Click"/>
+        </Border>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="58,10,0,0" VerticalAlignment="Top" Width="274" Grid.Column="1">
             <Grid >
                 <Grid.ColumnDefinitions>

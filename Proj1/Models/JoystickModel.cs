@@ -27,7 +27,7 @@ namespace Proj1.Models
             MoveUpDown = 32;
         }
         public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string propName)
+        private void NotifyPropertyChanged(string propName)
         {
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
@@ -62,11 +62,6 @@ namespace Proj1.Models
         }
         public void getCurrentLine()
         {
-            /*if (joystickFeatures.Count == 0 || data == null || data!=)
-            {
-                data = DataModel.Instance.CsvData;
-                return;
-            }*/
             data = DataModel.Instance.CsvData;
             if (joystickFeatures.Count == 0 || data == null)
                 return;

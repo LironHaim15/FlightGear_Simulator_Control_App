@@ -12,20 +12,16 @@ using OxyPlot;
 namespace Proj1.Models
 {
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using OxyPlot;
     using OxyPlot.Series;
-    class AnomaliesModel:INotifyPropertyChanged
+    class AnomaliesModel : INotifyPropertyChanged
     {
         private List<string> features;
         private List<string> anomalies;
         private PlotModel featureGraph;
-        private LineSeries seriesfeatureGraph;
         private PlotModel correlatedGraph;
-        private LineSeries seriesCorrelatedGraph;
         private PlotModel regressionGraph;
-        private FunctionSeries seriesRegressionGraph;
-        private ScatterSeries pointsRegressionGraph;
-        private ScatterSeries pointsAnomaly;
         private List<int> anomaliesControl;
         private string nameChoice;
         private string nameCorrelated;
@@ -35,7 +31,17 @@ namespace Proj1.Models
         private int nameIndex;
         private int nameCorrelatedIndex;
         private DataModel dmodel;
-        
+
+        private List<DataPoint> dataPoints;
+        private string Yname;
+        private double Xmax;
+        private List<DataPoint> dataPointsCorr;
+        private string YnameCorr;
+        private double XmaxCorr;
+        private List<DataPoint> regPoints;
+        private List<ScatterPoint> anomaliesPoints;
+        private List<ScatterPoint> regDataPoints;
+        private List<ScatterPoint> temp;
         public AnomaliesModel()
         {
             features = null;
@@ -51,7 +57,7 @@ namespace Proj1.Models
             anomalies = new List<string>();
         }
         public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string propName)
+        private void NotifyPropertyChanged(string propName)
         {
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
@@ -71,11 +77,11 @@ namespace Proj1.Models
         }
         public void update(string name)
         {
-            if(nameChoice!= name)
+            if (nameChoice != name)
             {
                 NameChoice = name;
                 nameCorrelatedIndex = anomaly_detection_util.mostPearsonIndex(
-                       dmodel.CsvData,
+                       dmodel.LearnData,
                        dmodel.MaxLines,
                        dmodel.FeaturesNames.Count,
                        nameIndex);
@@ -93,11 +99,9 @@ namespace Proj1.Models
                 nameCorrelatedIndex = getNameIndex(temp[1]);
                 NameChoiceCorrelated = temp[1];
             }
-            Console.WriteLine("time: "+ time);
             dmodel.setCurrentLine((int)(time.TotalSeconds * 10));
-            Console.WriteLine(dmodel.CurrentLine);
         }
-        public string NameChoice
+        private string NameChoice
         {
             get { return nameChoice; }
             set
@@ -106,21 +110,11 @@ namespace Proj1.Models
                 {
                     nameChoice = value;
                     nameIndex = getNameIndex(nameChoice);
-                    /*if (nameChoice == "aileron") {
-                        double[,] data = DataModel.Instance.CsvData;
-                        for (int i = 0; i < 42; i++)
-                        {
-                            Console.WriteLine(DataModel.Instance.FeaturesNames[i]+": "+anomaly_detection_util.pearson(Enumerable.Range(0, data.GetLength(0)).Select(x => data[x, 0]).ToArray(),
-                    Enumerable.Range(0, data.GetLength(0)).Select(x => data[x, i]).ToArray(),
-                    DataModel.Instance.MaxLines));
-                        }
-                        
-                    }*/
                     NameChanged = true;
                 }
             }
         }
-        public string NameChoiceCorrelated
+        private string NameChoiceCorrelated
         {
             get { return nameCorrelated; }
             set
@@ -132,7 +126,7 @@ namespace Proj1.Models
             }
         }
 
-        public bool NameChanged
+        private bool NameChanged
         {
             get { return nameChanged; }
             set { nameChanged = value; }
@@ -183,6 +177,90 @@ namespace Proj1.Models
                 NotifyPropertyChanged("RegressionGraph");
             }
         }
+        public List<DataPoint> DataPoints
+        {
+            get { return dataPoints; }
+            set
+            {
+                dataPoints = value;
+                NotifyPropertyChanged("DataPoints");
+            }
+        }
+        public string AxisYTitle
+        {
+            get { return Yname; }
+            set
+            {
+                Yname = value;
+                NotifyPropertyChanged("AxisYTitle");
+            }
+        }
+        public double AxisXMax
+        {
+            get { return Xmax; }
+            set
+            {
+                Xmax = value;
+                NotifyPropertyChanged("AxisXMax");
+            }
+        }
+        public List<DataPoint> DataPointsCorr
+        {
+            get { return dataPointsCorr; }
+            set
+            {
+                dataPointsCorr = value;
+                NotifyPropertyChanged("DataPointsCorr");
+            }
+        }
+        public string AxisYTitleCorr
+        {
+            get { return YnameCorr; }
+            set
+            {
+                YnameCorr = value;
+                NotifyPropertyChanged("AxisYTitleCorr");
+            }
+        }
+        public double AxisXMaxCorr
+        {
+            get { return XmaxCorr; }
+            set
+            {
+                XmaxCorr = value;
+                NotifyPropertyChanged("AxisXMaxCorr");
+            }
+        }
+        public List<ScatterPoint> RegDataPoints
+        {
+            get
+            { return regDataPoints; }
+            set
+            {
+                regDataPoints = value;
+                NotifyPropertyChanged("RegDataPoints");
+            }
+        }
+        public List<ScatterPoint> AnomaliesPoints
+        {
+            get
+            { return anomaliesPoints; }
+            set
+            {
+                anomaliesPoints = value;
+                NotifyPropertyChanged("AnomaliesPoints");
+            }
+        }
+        public List<DataPoint> RegPoints
+        {
+            get
+            { return regPoints; }
+            set
+            {
+                regPoints = value;
+                NotifyPropertyChanged("RegPoints");
+            }
+        }
         private bool isAnomaly(int line)
         {
             if (!dmodel.Anomalies.ContainsKey(line))
@@ -191,28 +269,112 @@ namespace Proj1.Models
                 return true;
             return false;
         }
-        public PlotModel createGraph(int nameI, string name, string graphName,ref PlotModel graph, ref LineSeries series, bool createNew)
+
+        private void createGraphs(int nameI, int nameIcorr, bool createNew)
         {
-            PlotModel t;
-            if (createNew)
+            try
             {
-                t = new PlotModel { Title = graphName, TitleFontSize = 24, LegendFontSize = 24 };
-                series = new LineSeries { Title = name, MarkerType = MarkerType.Circle, FontSize= 24 };
-                series.Points.Add(new DataPoint(currentLine / 10.0, dmodel.CsvData[currentLine,nameI]));
+                if (createNew)
+                {
+                    dataPoints = new List<DataPoint>();
+                    dataPointsCorr = new List<DataPoint>();
+                    for (int i = 0; i < dmodel.MaxLines; i++)
+                    {
+                        dataPoints.Add(new DataPoint(i / 10.0, dmodel.CsvData[i, nameI]));
+                        dataPointsCorr.Add(new DataPoint(i / 10.0, dmodel.CsvData[i, nameIcorr]));
+                    }
+                    DataPoints = dataPoints;
+                    DataPointsCorr = dataPointsCorr;
+                }
+                AxisYTitle = NameChoice;
+                AxisYTitleCorr = NameChoiceCorrelated;
+                AxisXMax = currentLine / 10.0;
+                AxisXMaxCorr = currentLine / 10.0;
+            }
+            catch { }
+        }
+        private void swap(List<ScatterPoint> list1, List<ScatterPoint> list2)
+        {
+            List<ScatterPoint> newList = list1;
+            list1 = list2;
+            list2 = newList;
+        }
+        public void addSamplePoint(int cl)
+        {
+            temp = new List<ScatterPoint>();
+            if (isAnomaly(cl))
+            {
+                anomaliesControl.Add(1);
+                temp.AddRange(anomaliesPoints);
+                temp.Add(new ScatterPoint(dmodel.CsvData[cl, nameIndex],
+                                                    dmodel.CsvData[cl, nameCorrelatedIndex]));
+                AnomaliesPoints = temp;
+
             }
             else
             {
-                t = graph;
-                t.Series.Remove(series);
-                t = new PlotModel { Title = graphName , TitleFontSize= 24, LegendFontSize = 24 };
-                series.Points.Add(new DataPoint(currentLine / 10.0, dmodel.CsvData[currentLine,nameI]));
-                if (series.Points.Count >= 900)
-                    series.Points.RemoveAt(0);
+                anomaliesControl.Add(0);
+                temp.AddRange(regDataPoints);
+                temp.Add(new ScatterPoint(dmodel.CsvData[cl, nameIndex],
+                                                   dmodel.CsvData[cl, nameCorrelatedIndex]));
+                RegDataPoints = temp;
             }
-            t.Series.Add(series);
-            t.Axes.Add(new OxyPlot.Axes.LinearAxis { Position = OxyPlot.Axes.AxisPosition.Bottom, Title = "Time (seconds)", FontSize = 24 });
-            t.Axes.Add(new OxyPlot.Axes.LinearAxis { Position = OxyPlot.Axes.AxisPosition.Left, Title = name, FontSize = 24 });
-            return t;
+        }
+        private void createRegressionGraph(bool createNew)
+        {
+            if (createNew)
+            {
+                // Reset the Plot source and refresh the graph.
+                RegDataPoints = new List<ScatterPoint>();
+                AnomaliesPoints = new List<ScatterPoint>();
+                // Create new lists of points and add points to them, then notify the Plot.
+                anomaliesControl = new List<int>();
+                regDataPoints = new List<ScatterPoint>();
+                anomaliesPoints = new List<ScatterPoint>();
+                regPoints = new List<DataPoint>();
+                int cl = currentLine;
+                cl -= cl % 10;
+                int counter = 30;
+                while (cl >= 0 && counter > 0)
+                {
+                    addSamplePoint(cl);
+                    counter--;
+                    cl -= 10;
+                }
+
+                double[] X = Enumerable.Range(0, dmodel.LearnData.GetLength(0)).Select(x => dmodel.LearnData[x, nameIndex]).ToArray();
+                double[] Y = Enumerable.Range(0, dmodel.LearnData.GetLength(0)).Select(x => dmodel.LearnData[x, nameCorrelatedIndex]).ToArray();
+                double minX = X.Min(), maxX = X.Max();
+                Line reg = anomaly_detection_util.linear_reg(X, Y, dmodel.MaxLines);
+                RegPoints.Add(new DataPoint(minX, reg.f(minX)));
+                RegPoints.Add(new DataPoint(maxX, reg.f(maxX)));
+                AxisYTitle = NameChoice;
+                AxisYTitleCorr = NameChoiceCorrelated;
+                RegPoints = regPoints;
+            }
+            else if ((currentLine - currentLine % 10) != (previousLine - previousLine % 10))
+            {
+                int cl = currentLine;
+                cl -= cl % 10;
+                addSamplePoint(cl);
+                if (anomaliesControl.Count > 30)
+                {
+                    temp = new List<ScatterPoint>();
+                    if (anomaliesControl.First().Equals(0))
+                    {
+                        temp.AddRange(regDataPoints);
+                        temp.RemoveAt(0);
+                        RegDataPoints = temp;
+                    }
+                    else
+                    {
+                        temp.AddRange(anomaliesPoints);
+                        temp.RemoveAt(0);
+                        AnomaliesPoints = temp;
+                    }
+                    anomaliesControl.RemoveAt(0);
+                }
+            }
         }
         public void createGraph()
         {
@@ -222,97 +384,15 @@ namespace Proj1.Models
             currentLine = dmodel.CurrentLine;
             if (nameChanged || currentLine - previousLine != 1)
             {
-                FeatureGraph = createGraph(nameIndex, NameChoice, "Feature Choice",ref featureGraph, ref seriesfeatureGraph, true);
-                CorrelatedFeatureGraph = createGraph(nameCorrelatedIndex, nameCorrelated, "Correlated Feature", ref correlatedGraph, ref seriesCorrelatedGraph, true);
-                RegressionGraph = createRegressionGraph(ref regressionGraph, true);
+                createGraphs(nameIndex, nameCorrelatedIndex, true);
+                createRegressionGraph(true);
                 NameChanged = false;
             }
             else
             {
-                FeatureGraph = createGraph(nameIndex, NameChoice, "Feature Choice", ref featureGraph, ref seriesfeatureGraph, false);
-                CorrelatedFeatureGraph = createGraph(nameCorrelatedIndex, nameCorrelated, "Correlated Feature", ref correlatedGraph, ref seriesCorrelatedGraph, false);
-                RegressionGraph = createRegressionGraph(ref regressionGraph, false);
+                createGraphs(nameIndex, nameCorrelatedIndex, false);                //CorrelatedFeatureGraph = createGraph(nameCorrelatedIndex, nameCorrelated, "Correlated Feature", ref correlatedGraph, ref seriesCorrelatedGraph, false);
+                createRegressionGraph(false);
             }
-        }
-        public PlotModel createRegressionGraph(ref PlotModel graph, bool createNew)
-        {
-            PlotModel t = graph;
-            bool changed = false;
-            if (createNew)
-            {
-                anomaliesControl = new List<int>();
-                t = new PlotModel { Title = NameChoice+"\n"+nameCorrelated, TitleFontSize = 24, LegendFontSize= 24 };
-                seriesRegressionGraph = new FunctionSeries { Title = "Regression Line", MarkerType = MarkerType.Circle, FontSize = 24 };
-                pointsRegressionGraph = new ScatterSeries { Title = "Samples", MarkerType = MarkerType.Circle, FontSize = 24 };
-                pointsAnomaly = new ScatterSeries { Title = "Anomalies", MarkerType = MarkerType.Circle };
-                int cl = currentLine;
-                cl -= cl % 10;
-                int counter = 30;
-                while (cl >= 0 && counter > 0)
-                {
-                    if (isAnomaly(cl))
-                    {
-                        anomaliesControl.Add(1);
-                        pointsAnomaly.Points.Add(new ScatterPoint(dmodel.CsvData[cl, nameIndex],
-                        dmodel.CsvData[cl, nameCorrelatedIndex]));
-                    }
-                    else
-                    {
-                        anomaliesControl.Add(0);
-                        pointsRegressionGraph.Points.Add(new ScatterPoint(dmodel.CsvData[cl, nameIndex],
-                            dmodel.CsvData[cl, nameCorrelatedIndex]));
-                    }
-                    counter--;
-                    cl -= 10;
-                }
-                double[] X = Enumerable.Range(0, dmodel.CsvData.GetLength(0)).Select(x => dmodel.CsvData[x, nameIndex]).ToArray();
-                double[] Y = Enumerable.Range(0, dmodel.CsvData.GetLength(0)).Select(x => dmodel.CsvData[x, nameCorrelatedIndex]).ToArray();
-                double minX = X.Min(), maxX = X.Max();
-                Line reg = anomaly_detection_util.linear_reg(X, Y, dmodel.MaxLines);
-                seriesRegressionGraph.Points.Add(new DataPoint(minX, reg.f(minX)));
-                seriesRegressionGraph.Points.Add(new DataPoint(maxX, reg.f(maxX)));
-                changed = true;
-            }
-            else if ((currentLine-currentLine%10) != (previousLine-previousLine % 10))
-            {
-                t.Series.Remove(pointsRegressionGraph);
-                t.Series.Remove(seriesRegressionGraph);
-                t.Series.Remove(pointsAnomaly);
-                t = new PlotModel { Title = NameChoice, TitleFontSize = 24, LegendFontSize = 24 };
-                int cl = currentLine;
-                cl -= cl % 10;
-                if (isAnomaly(cl))
-                {
-                    anomaliesControl.Add(1);
-                    pointsAnomaly.Points.Add(new ScatterPoint(dmodel.CsvData[cl, nameIndex],
-                    dmodel.CsvData[cl, nameCorrelatedIndex]));
-                }
-                else
-                {
-                    anomaliesControl.Add(0);
-                    pointsRegressionGraph.Points.Add(new ScatterPoint(dmodel.CsvData[cl, nameIndex],
-                        dmodel.CsvData[cl, nameCorrelatedIndex]));
-                }
-                if (anomaliesControl.Count>30)
-                {
-                    if (anomaliesControl.First().Equals(0))
-                        pointsRegressionGraph.Points.RemoveAt(0);
-                    else
-                        pointsAnomaly.Points.RemoveAt(0);
-                    anomaliesControl.RemoveAt(0);
-                }
-                changed = true;
-            }
-            if (changed)
-            {
-                t.Series.Add(seriesRegressionGraph);
-                t.Series.Add(pointsRegressionGraph);
-                t.Series.Add(pointsAnomaly);
-                t.Axes.Add(new OxyPlot.Axes.LinearAxis { Position = OxyPlot.Axes.AxisPosition.Bottom, Title = NameChoice, FontSize = 24 });
-                t.Axes.Add(new OxyPlot.Axes.LinearAxis { Position = OxyPlot.Axes.AxisPosition.Left, Title = NameChoiceCorrelated, FontSize = 24 });
-            }
-            return t;
-            //t.InvalidatePlot(true); can refresh???????
         }
     }
 }

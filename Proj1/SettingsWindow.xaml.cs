@@ -33,98 +33,6 @@ namespace Proj1
             vm = new SettingsViewModel(new SettingsModel());
             DataContext = vm;
         }
-
-
-        //D:\Desktop\AdvancedProgramming2\reg_flight.csv
-        private void StartSimulator(object sender, RoutedEventArgs e)
-        {
-            //Process.Start("D:\\Program Files\\FlightGear 2020.3.6\\bin\\fgfs.exe");// --generic=socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm = null");
-            //System.Diagnostics.Process.Start(@"D:\\Program Files\\FlightGear 2020.3.6\\bin\\fgfs.exe");
-
-            Thread.Sleep(20000);
-            // IPHostEntry ipHost = Dns.GetHostEntry("localhost");
-            IPAddress ipAddr = IPAddress.Parse("127.0.0.1");
-            IPEndPoint localEndPoint = new IPEndPoint(ipAddr, 5400);
-
-            // Creation TCP/IP Socket using  
-            // Socket Class Costructor 
-            Socket client = new Socket(ipAddr.AddressFamily,
-                       SocketType.Stream, ProtocolType.Tcp);
-
-            string csvLocation = csvNormalLocationText.Text;
-
-            List<double[]> dataList = new List<double[]>();
-            string[] lineData;
-            List<string> stringData = new List<string>();
-            string line;
-            int count = 0;//, columns = 0;
-            System.IO.StreamReader file = new System.IO.StreamReader(@csvLocation);
-            //check valid path 
-            while ((line = file.ReadLine()) != null)
-            {
-                stringData.Add(line);
-                lineData = line.Split(',');
-                count++;
-                List<double> listDouble = new List<double>();
-                foreach (string s in lineData)
-                {
-                    listDouble.Add(Convert.ToDouble(s));
-                }
-                dataList.Add(listDouble.ToArray());
-            }
-            double[][] csvData = dataList.ToArray();
-
-            try
-            {
-                // Connect Socket to the remote  
-                // endpoint using method Connect() 
-                client.Connect(localEndPoint);
-
-                // We print EndPoint information  
-                // that we are connected 
-                Console.WriteLine("Socket connected to -> {0} ",
-                              client.RemoteEndPoint.ToString());
-                foreach (string s in stringData)
-                {
-                    Console.WriteLine(s);
-                    byte[] byteData = Encoding.ASCII.GetBytes(s+"\r\n");
-                    byte[] b = new byte[400];
-                    
-
-                    for (int i = 0; i < 300; i++) {
-                        string message = Encoding.ASCII.GetString(b);
-                        //Console.Write(message);
-                    }
-                    int sent = client.Send(byteData);
-                    //Console.WriteLine(sent);
-                    Thread.Sleep(100);
-                }
-
-                // Close Socket using  
-                // the method Close() 
-                client.Shutdown(SocketShutdown.Both);
-                client.Close();
-
-            }
-            // Manage of Socket's Exceptions 
-            catch (ArgumentNullException ane)
-            {
-
-                Console.WriteLine("ArgumentNullException : {0}", ane.ToString());
-            }
-
-            catch (SocketException se)
-            {
-
-                Console.WriteLine("SocketException : {0}", se.ToString());
-            }
-
-            catch (Exception ex)
-            {
-                Console.WriteLine("Unexpected exception : {0}", ex.ToString());
-            }
-        }
-
         private void Continue_Click(object sender, RoutedEventArgs e)
         {
             if (vm.check())
@@ -132,7 +40,6 @@ namespace Proj1
                 this.Close();
             }
         }
-
         private void NormalBrowse_Click(object sender, RoutedEventArgs e)
         {
             vm.browse("CsvNormalPath");

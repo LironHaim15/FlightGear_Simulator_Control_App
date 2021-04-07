@@ -11,11 +11,44 @@
         <ListBox x:Name="FeaturesListBox" ItemsSource="{Binding VM_FeaturesList}" HorizontalAlignment="Left" Height="679" Margin="10,53,0,0" VerticalAlignment="Top" Width="345" FontSize="20" SelectionChanged="FeaturesListBox_SelectionChanged"/>
         <ListBox x:Name="AnomaliesListBox" ItemsSource="{Binding VM_AnomaliesList}" HorizontalAlignment="Left" Height="392" Margin="10,798,0,0" VerticalAlignment="Top" Width="345" FontSize="20" SelectionChanged="AnomaliesListBox_SelectionChanged"/>
 
-        <oxy:PlotView Model="{Binding VM_FeatureGraph}" Margin="826,53,0,0" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left" Width="456" />
-        <oxy:PlotView Model="{Binding VM_CorrelatedFeatureGraph}" Margin="382,53,0,0" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left" Width="424" />
-        <oxy:PlotView Model="{Binding VM_RegressionGraph}" Margin="382,479,0,0" Height="711" VerticalAlignment="Top" HorizontalAlignment="Left" Width="900" />
+        <oxy:PlotView Visibility="Hidden" Model="{Binding VM_FeatureGraph}" Margin="826,53,0,0" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left" Width="456" />
+        <oxy:PlotView Visibility="Hidden" Model="{Binding VM_CorrelatedFeatureGraph}" Margin="382,53,0,0" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left" Width="424" />
+        <oxy:PlotView Visibility="Hidden" Model="{Binding VM_RegressionGraph}" Margin="382,479,0,0" Height="711" VerticalAlignment="Top" HorizontalAlignment="Left" Width="900" />
         <Label Content="Features List" HorizontalAlignment="Left" Margin="80,6,0,0" VerticalAlignment="Top" Width="184" Foreground="White" FontWeight="Bold" FontSize="24"/>
         <Label Content="Anomalies List" HorizontalAlignment="Left" Margin="67,751,0,0" VerticalAlignment="Top" Width="197" Foreground="White" FontWeight="Bold" FontSize="24"/>
+
+
+        <oxy:Plot Margin="374,53,478,747" Title="Chosen Feature" FontSize="24">
+            <oxy:Plot.Axes>
+                <oxy:LinearAxis Position="Bottom" Minimum="0" Maximum="{Binding VM_AxisXMax}" Title="Time (seconds)" FontSize="24"/>
+                <oxy:LinearAxis Position="Left"  Title="{Binding VM_AxisYTitle}" FontSize="24"/>
+            </oxy:Plot.Axes>
+            <oxy:Plot.Series>
+                <oxy:LineSeries ItemsSource="{Binding VM_DataPoints}"/>
+            </oxy:Plot.Series>
+        </oxy:Plot>
+
+        <oxy:Plot Margin="832,53,19,747" Title="Correlated Feature" FontSize="24">
+            <oxy:Plot.Axes>
+                <oxy:LinearAxis Position="Bottom" Minimum="0" Maximum="{Binding VM_AxisXMaxCorr}" Title="Time (seconds)" FontSize="24"/>
+                <oxy:LinearAxis Position="Left"  Title="{Binding VM_AxisYTitleCorr}" FontSize="24"/>
+            </oxy:Plot.Axes>
+            <oxy:Plot.Series>
+                <oxy:LineSeries ItemsSource="{Binding VM_DataPointsCorr}"/>
+            </oxy:Plot.Series>
+        </oxy:Plot>
+
+        <oxy:Plot Margin="382,500,19,36" Title="Two Correlatad Features Regression Graph" TitleFontSize="24" LegendFontSize="26">
+            <oxy:Plot.Axes>
+                <oxy:LinearAxis Position="Bottom" Title="{Binding  VM_AxisYTitle}" FontSize="24"/>
+                <oxy:LinearAxis Position="Left"  Title="{Binding VM_AxisYTitleCorr}" FontSize="24"/>
+            </oxy:Plot.Axes>
+            <oxy:Plot.Series>
+                <oxy:LineSeries ItemsSource="{Binding VM_RegPoints}" Title="Regression Line" MarkerType="None" FontSize = "24"/>
+                <oxy:ScatterSeries ItemsSource="{Binding VM_RegDataPoints, BindsDirectlyToSource=True}" Title="Samples" MarkerType="Circle" FontSize = "24"/>
+                <oxy:ScatterSeries ItemsSource="{Binding VM_AnomaliesPoints}" Title="Anomalies" MarkerType="Circle" FontSize = "24"/>
+            </oxy:Plot.Series>
+        </oxy:Plot>
 
     </Grid>
 </UserControl>

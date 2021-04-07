@@ -7,10 +7,13 @@ using Proj1.Models;
 using System.ComponentModel;
 
 
+
 namespace Proj1.ViewModels
 {
     using System.Collections.Generic;
     using OxyPlot;
+    using OxyPlot.Series;
+
     class AnomaliesViewModel:INotifyPropertyChanged
     {
         private AnomaliesModel amodel;
@@ -53,17 +56,12 @@ namespace Proj1.ViewModels
         public PlotModel VM_FeatureGraph
         {
             get
-            {
-                return amodel.FeatureGraph;
-            }
+            { return amodel.FeatureGraph; }
         }
 
         public PlotModel VM_CorrelatedFeatureGraph
         {
-            get
-            {
-                return amodel.CorrelatedFeatureGraph;
-            }
+            get { return amodel.CorrelatedFeatureGraph; }
         }
 
         public PlotModel VM_RegressionGraph
@@ -78,5 +76,47 @@ namespace Proj1.ViewModels
         {
             get { return amodel.AnomaliesList; }
         }
+        public List<DataPoint> VM_DataPoints
+        {
+            get
+            { return amodel.DataPoints; }
+        }
+        public string VM_AxisYTitle
+        {
+            get { return amodel.AxisYTitle; }
+        }
+        public double VM_AxisXMax
+        {
+            get { return amodel.AxisXMax; }
+        }
+        public List<DataPoint> VM_DataPointsCorr
+        {
+            get
+            { return amodel.DataPointsCorr; }
+        }
+        public string VM_AxisYTitleCorr
+        {
+            get { return amodel.AxisYTitleCorr; }
+        }
+        public double VM_AxisXMaxCorr
+        {
+            get { return amodel.AxisXMaxCorr; }
+        }
+        public List<ScatterPoint> VM_RegDataPoints
+        {
+            get
+            { return amodel.RegDataPoints; }
+        }
+        public List<ScatterPoint> VM_AnomaliesPoints
+        {
+            get
+            { return amodel.AnomaliesPoints; }
+        }
+        public List<DataPoint> VM_RegPoints
+        {
+            get
+            { return amodel.RegPoints; }
+        }
+
     }
 }

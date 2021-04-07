@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Diagnostics;
 using System.Net.Sockets;
-using System.Threading.Tasks;
-using System.Collections.Generic;
 using System.Threading;
 using System.Windows;
 
@@ -37,7 +35,7 @@ namespace Proj1.Models
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string propName)
+        private void NotifyPropertyChanged(string propName)
         {
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
@@ -61,7 +59,8 @@ namespace Proj1.Models
                 currentLine = value;
                 CurrentTime = TimeSpan.FromSeconds(currentLine / lineFreq);
                 if (currentLine >= MaxLines-1) {
-                    ToPlay = false; }
+                    ToPlay = false;
+                }
                 DataModel.Instance.CurrentLine = currentLine;
                 NotifyPropertyChanged("CurrentLine");
             }
@@ -83,17 +82,22 @@ namespace Proj1.Models
                 playSpeed = value;
                 double div = (1000 / lineFreq) / playSpeed;
                 sleepSpeed = (int)div;
-                Console.WriteLine("sleepSpeed: " + sleepSpeed);
-                Console.WriteLine("div: " + div);
                 NotifyPropertyChanged("PlaySpeed");
             }
         }
         public bool ToPlay
         {
             get { return toPlay; }
-            set { toPlay = value;
-                if (toPlay == false)
-                    thread.Join();
+            set {
+                if (toPlay != value)
+                {
+                    toPlay = value;
+                    if (toPlay == false)
+                    {
+                        if (thread.IsAlive)
+                            thread.Join();
+                    }
+                }         
             }
         }
         public void setPlaySpeed(string speed)
@@ -101,7 +105,7 @@ namespace Proj1.Models
             try { double ps = double.Parse(speed);
                 PlaySpeed = ps;
             }
-            catch (FormatException e)
+            catch
             {
                 PlaySpeed = PlaySpeed;
             }
@@ -125,6 +129,11 @@ namespace Proj1.Models
                 return;
             }
             ToPlay = true;
+            /*if(DataModel.Instance.Thread!=null && DataModel.Instance.Thread.IsAlive)
+            {
+                try { DataModel.Instance.Thread.Abort(); }
+                catch { }
+            }*/
             thread = new Thread(() =>
             {
                 try
@@ -132,7 +141,6 @@ namespace Proj1.Models
                     Socket client = DataModel.Instance.Socket;
                     while (ToPlay && DataModel.Instance.Connected)
                     {
-                        // CATCH EX IF PLAY BEFORE CONNECTION
                         byte[] byteData = Encoding.ASCII.GetBytes(stringData[CurrentLine] + "\r\n");
                         int sent = client.Send(byteData);
                         CurrentLine++;
@@ -140,9 +148,8 @@ namespace Proj1.Models
                     }
                 }
                 catch {
-                    Console.WriteLine(CurrentLine);
-                    Console.WriteLine("HERE");
-                } // TO COMPLETE
+
+                } 
             });
             DataModel.Instance.Thread = thread;
             thread.Start();

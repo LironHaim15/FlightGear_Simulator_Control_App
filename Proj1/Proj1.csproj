@@ -77,6 +77,7 @@
     <Compile Include="Models\ConnectModel.cs" />
     <Compile Include="Models\DashboardModel.cs" />
     <Compile Include="Models\DataModel.cs" />
+    <Compile Include="Models\InfoModel.cs" />
     <Compile Include="Models\JoystickModel.cs" />
     <Compile Include="Models\LoadModel.cs" />
     <Compile Include="Models\MainModel.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="ViewModels\AnomaliesViewModel.cs" />
     <Compile Include="ViewModels\ConnectViewModel.cs" />
     <Compile Include="ViewModels\DashboardViewModel.cs" />
+    <Compile Include="ViewModels\InfoViewModel.cs" />
     <Compile Include="ViewModels\JoystickViewModel.cs" />
     <Compile Include="ViewModels\LoadViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -105,6 +107,9 @@
     </Compile>
     <Compile Include="LoadDLLWindow.xaml.cs">
       <DependentUpon>LoadDLLWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InfoWindow.xaml.cs">
+      <DependentUpon>InfoWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Anomalies.xaml">
       <SubType>Designer</SubType>
@@ -145,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LoadDLLWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

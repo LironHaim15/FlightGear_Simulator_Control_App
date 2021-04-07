@@ -1,0 +1,32 @@
+﻿<Window x:Class="Proj1.InfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proj1"
+        mc:Ignorable="d"
+        Title="Instructions" Height="652" Width="596" Background="#FF4B4B4B" MinHeight="350" MinWidth="300" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="17"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="216"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="17"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition/>
+            <RowDefinition Height="42"/>
+        </Grid.RowDefinitions>
+        <RichTextBox IsReadOnly="True" Margin="10,13" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Background="#FF323232" Foreground="White" AllowDrop="False">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="{Binding VM_InfoText, Mode=OneWay}"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Label Content="User Instructions" Margin="8,4,10,6" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="22" Grid.Column="2"/>
+        <Button Content="Close" Margin="21,17,27,5" Grid.Row="2" Click="Button_Click" HorizontalAlignment="Center" Width="168" Height="20" VerticalAlignment="Center" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Grid.Column="2"/>
+    </Grid>
+</Window>

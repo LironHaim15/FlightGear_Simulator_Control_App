@@ -28,10 +28,10 @@ namespace Proj1.Models
             AltSmall=0;
             AltBig=0;
             Compass = 0;
-    }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string propName)
+        private void NotifyPropertyChanged(string propName)
         {
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));

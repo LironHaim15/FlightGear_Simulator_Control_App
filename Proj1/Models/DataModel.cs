@@ -20,6 +20,7 @@ namespace Proj1.Models
         private Thread thread;
         private int maxLines;
         private double[,] csvData;
+        private double[,] learnData;
         private List<string> stringData;
         private List<string> featuresNames;
         private Dictionary<string,int> dashboardFeatures;
@@ -31,6 +32,7 @@ namespace Proj1.Models
         private List<string> anomaliesList;
         private Socket fgClient;
         private double maxSpeed;
+        private bool toPlay;
         private DataModel() {
             currentLine = 0;
             stringData = new List<string>();
@@ -84,6 +86,11 @@ namespace Proj1.Models
             get { return csvData; }
             set { csvData = value; }
         }
+        public double[,] LearnData
+        {
+            get { return learnData; }
+            set { learnData = value; }
+        }
         public List<string> FeaturesNames
         {
             get { return featuresNames; }
@@ -118,10 +125,16 @@ namespace Proj1.Models
             get { return thread; }
             set { thread = value; }
         }
+        public bool ToPlay
+        {
+            get { return toPlay; }
+            set { toPlay = value;
+                NotifyPropertyChanged("ToPlay");
+            }
+        }
         public void closeThread()
         {
-            if(thread!=null)
-                thread.Join();
+            ToPlay = false;
         }
         public void setCurrentLine(int line)
         {
@@ -133,11 +146,6 @@ namespace Proj1.Models
             get { return dllLoaded; }
             set
             {
-                Console.WriteLine("loaded!");
-                foreach (var item in anomaliesList)
-                {
-                    Console.WriteLine(item);
-                }
                 dllLoaded = value;
                 NotifyPropertyChanged("DllLoaded");
             }
@@ -183,6 +191,7 @@ namespace Proj1.Models
             thread = null;
             maxLines = 0;
             csvData = null;
+            learnData = null;
             stringData.Clear();
             featuresNames.Clear();
             dashboardFeatures.Clear();
@@ -195,7 +204,6 @@ namespace Proj1.Models
             fgClient = null;
             NotifyPropertyChanged("Restart");
     }
-        // for graph
         public bool ChangeChoice
         {
             get { return changeChoice; }
@@ -208,7 +216,7 @@ namespace Proj1.Models
             set { nameChoice = value; }
         }
         public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string propName)
+        private void NotifyPropertyChanged(string propName)
         {
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));

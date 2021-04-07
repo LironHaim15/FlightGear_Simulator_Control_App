@@ -25,12 +25,14 @@ namespace Proj1
         ConnectWindow cwindow;
         LoadDLLWindow lwindow;
         SettingsWindow swindow;
+        InfoWindow iwindow;
         public MainWindow()
         {
             InitializeComponent();
             cwindow = null;
             lwindow = null;
             swindow = null;
+            iwindow = null;
             vm = new MainViewModel();
             DataContext = vm;
         }
@@ -82,6 +84,19 @@ namespace Proj1
                 swindow.Close();
             if (cwindow != null || (cwindow != null && cwindow.IsVisible))
                 cwindow.Close();
+            if (iwindow != null || (iwindow != null && iwindow.IsVisible))
+                iwindow.Close();
+        }
+
+        private void User_Instructions_Click(object sender, RoutedEventArgs e)
+        {
+            if (iwindow == null || !iwindow.IsVisible)
+            {
+                iwindow = new InfoWindow();
+                iwindow.Show();
+            }
+            else
+                iwindow.Focus();
         }
     }
 }

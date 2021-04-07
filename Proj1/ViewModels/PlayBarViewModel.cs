@@ -32,6 +32,8 @@ namespace Proj1.ViewModels
                 pbmodel.CurrentLine = dmodel.CurrentLine;
             if (propName == "VM_Restart")
                 pbmodel.restart();
+            if (propName == "VM_ToPlay")
+                pause();
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
@@ -41,7 +43,7 @@ namespace Proj1.ViewModels
             get
             {
                 pbmodel.updateMaxLines();
-                return pbmodel.MaxLines - 1;
+                return (pbmodel.MaxLines - 1);
             }
         }
         public float VM_CurrentLine

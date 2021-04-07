@@ -119,10 +119,10 @@ namespace Proj1.VeiwModels
         {
             if (dmodel.Connected)
             {
-                //dmodel.Socket.Shutdown(SocketShutdown.Both); CHECK IF NECCESSARY
-                dmodel.Connected = false;
+                dmodel.Socket.Shutdown(SocketShutdown.Both); //CHECK IF NECCESSARY
                 dmodel.closeThread();
                 dmodel.Socket.Close();
+                dmodel.Connected = false;
                 dmodel.softReset();
             }
         }

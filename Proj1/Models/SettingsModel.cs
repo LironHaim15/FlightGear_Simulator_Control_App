@@ -6,7 +6,6 @@ using System.ComponentModel;
 using System.Text;
 using System.Xml;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using Proj1.Models;
 
 
@@ -96,9 +95,7 @@ namespace Proj1
             }
         }
         private void getDashboardFeatures()
-        {   //
-            // CHECK NAMES IN XML !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            //
+        {
             Dictionary<string, int> dashboard = DataModel.Instance.DashboardFeatures;
             List<string> list = DataModel.Instance.FeaturesNames;
             dashboard.Add("altimeter",list.IndexOf("altimeter_indicated-altitude-ft"));
@@ -117,9 +114,7 @@ namespace Proj1
             return data;
         }
         private void getJoystickFeatures()
-        {   //
-            // CHECK NAMES IN XML !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            //
+        {
             Dictionary<string, int> joystick = DataModel.Instance.JoystickFeatures;
             List<string> list = DataModel.Instance.FeaturesNames;
             joystick.Add("aileron", list.IndexOf("aileron"));
@@ -137,35 +132,101 @@ namespace Proj1
 
         private void createInputTxt(List<string> featuresNames, List<string> stringData)
         {
-            using (StreamWriter sw = File.CreateText("input.txt"))
+            try
             {
-                //StreamWriter sw = File.CreateText("input.txt");
-                sw.WriteLine("1");
-                //write learn data in input.txt
-                int i = 0;
-                for (; i < featuresNames.Count - 1; i++)
-                    sw.Write(featuresNames[i] + ",");
-                sw.WriteLine(featuresNames[i]);
+                if (File.Exists("input.txt"))
+                {
+                    File.Delete("input.txt");
+                }
+                using (StreamWriter sw = File.CreateText("input.txt"))
+                {
+                    sw.WriteLine("1");
+                    //write learn data in input.txt
+                    int i = 0;
+                    for (; i < featuresNames.Count - 1; i++)
+                        sw.Write(featuresNames[i] + ",");
+                    sw.WriteLine(featuresNames[i]);
+                    string line;
+                    StreamReader file = new StreamReader(@csvNormalPath);
+                    //check valid path 
+                    while ((line = file.ReadLine()) != null)
+                        sw.WriteLine(line);
+                    sw.WriteLine("done");
+                    file.Close();
+                    //write test data in input.txt
+                    i = 0;
+                    for (; i < featuresNames.Count - 1; i++)
+                        sw.Write(featuresNames[i] + ",");
+                    sw.WriteLine(featuresNames[i]);
+                    foreach (string s in stringData)
+                        sw.WriteLine(s);
+                    sw.WriteLine("done");
+                    sw.WriteLine("3");
+                    sw.WriteLine("4");
+                    sw.WriteLine("6");
+                    sw.Close();
+                }
+            }
+            catch { }
+        }
+        private void parseXML(List<string> featuresNames)
+        {
+            try
+            {
+                XmlDocument xml = new XmlDocument();
+                xml.Load(xmlPath);
+                XmlNodeList nodes = xml.SelectNodes("//output");
+                //List<string> featuresNames = DataModel.Instance.FeaturesNames;
+                Dictionary<string, int> featNamesMap = new Dictionary<string, int>();
+                foreach (XmlNode node in nodes)
+                {
+                    XmlNodeList aNodes = node.SelectNodes(".//name");
+                    foreach (XmlNode aNode in aNodes)
+                    {
+                        string name = aNode.InnerText;
+                        if (featNamesMap.ContainsKey(name))
+                        {
+                            int count = featNamesMap[name];
+                            featuresNames.Add(name + count.ToString());
+                            count++;
+                            featNamesMap[name] = count;
+                        }
+                        else
+                        {
+                            featuresNames.Add(name);
+                            featNamesMap[name] = 1;
+                        }
+                    }
+                }
+            }
+            catch { }
+        }
+        private List<double[]> csvToListArray(List<string> stringData, string csvLocation)
+        {
+            List<double[]> dataList = new List<double[]>();
+            try
+            {
+                //copy test csv data to local array.
+                string[] lineData = { };
                 string line;
-                StreamReader file = new StreamReader(@csvNormalPath);
+                StreamReader file = new StreamReader(@csvLocation);
                 //check valid path 
                 while ((line = file.ReadLine()) != null)
-                    sw.WriteLine(line);
-                sw.WriteLine("done");
+                {
+                    stringData.Add(line);
+                    lineData = line.Split(',');
+                    List<double> listDouble = new List<double>();
+                    foreach (string s in lineData)
+                    {
+                        listDouble.Add(Convert.ToDouble(s));
+                    }
+                    dataList.Add(listDouble.ToArray());
+                }
                 file.Close();
-                //write test data in input.txt
-                i = 0;
-                for (; i < featuresNames.Count - 1; i++)
-                    sw.Write(featuresNames[i] + ",");
-                sw.WriteLine(featuresNames[i]);
-                foreach (string s in stringData)
-                    sw.WriteLine(s);
-                sw.WriteLine("done");
-                sw.WriteLine("3");
-                sw.WriteLine("4");
-                sw.WriteLine("6");
-                sw.Close();
+                return dataList;
             }
+            catch { }
+            return dataList;
         }
         public bool isEverythingOK()
         {
@@ -175,7 +236,6 @@ namespace Proj1
             {
                 errorMessage += "# Test CSV file wasn't found.\n";
                 errorExist = true;
-                // notify and change lable.
             }
             if (!(isCorrectPath(CsvNormalPath) && string.Equals(Path.GetExtension(CsvNormalPath), ".csv", StringComparison.OrdinalIgnoreCase)))
             {
@@ -194,7 +254,6 @@ namespace Proj1
                 errorMessage += "# playback__small.xml file wasn't found at\n" +
                                 " ...\\data\\protocol\\ at FlightGear directory.\n";
             }
-
             if (errorExist)
             {
                 Error = errorMessage;
@@ -205,80 +264,25 @@ namespace Proj1
                 try
                 {
                     DataModel.Instance.hardReset();
-                    //Copy XML file to FG Protocols folder
-                    //File.Copy(xmlPath, xmlDestPath + "\\playback_small.xml", true);
-
                     //Get XML Labels and save them in data model.
-                    XmlDocument xml = new XmlDocument();
-                    xml.Load(xmlPath);
-                    XmlNodeList nodes = xml.SelectNodes("//output");
                     List<string> featuresNames = DataModel.Instance.FeaturesNames;
-                    Dictionary<string, int> featNamesMap = new Dictionary<string, int>();
-                    foreach (XmlNode node in nodes)
-                    {
-                        XmlNodeList aNodes = node.SelectNodes(".//name");
-                        foreach (XmlNode aNode in aNodes)
-                        {
-                            string name = aNode.InnerText;
-                            if (featNamesMap.ContainsKey(name))
-                            {
-                                int count = featNamesMap[name];
-                                featuresNames.Add(name + count.ToString());
-                                count++;
-                                featNamesMap[name] = count;
-                            }
-                            else
-                            {
-                                featuresNames.Add(name);
-                                featNamesMap[name] = 1;
-                            }
-                        }
-                    }
-                    //copy test csv data to local array.
-                    string csvLocation = csvTestPath;
-                    //Console.WriteLine("test: "+csvTestPath);
-                    List<double[]> dataList = new List<double[]>();
-                    string[] lineData= { };
-                    List<string> stringData = DataModel.Instance.StringData;
-                    string line;
-                    StreamReader file = new StreamReader(@csvLocation);
-                    //check valid path 
-                    while ((line = file.ReadLine()) != null)
-                    {
-                        stringData.Add(line);
-                        lineData = line.Split(',');
-                        List<double> listDouble = new List<double>();
-                        foreach (string s in lineData)
-                        {
-                            listDouble.Add(Convert.ToDouble(s));
-                        }
-                        dataList.Add(listDouble.ToArray());
-                    }
-                    //get learn data strings
+                    parseXML(featuresNames);
 
-                    if (File.Exists("input.txt"))
-                    {
-                        File.Delete("input.txt");
-                    }
-                    file.Close();
-                    createInputTxt(featuresNames, stringData);
-                    DataModel.Instance.CsvData = getDataArray(dataList, lineData.Length);
+                    List<string> stringData = DataModel.Instance.StringData;
+                    DataModel.Instance.CsvData = getDataArray(csvToListArray(stringData, csvTestPath), featuresNames.Count);
                     DataModel.Instance.MaxLines = stringData.Count;
+                    stringData = new List<string>();
+                    DataModel.Instance.LearnData = getDataArray(csvToListArray(stringData, csvNormalPath), featuresNames.Count);
+                    
+                    createInputTxt(featuresNames, DataModel.Instance.StringData);
                     getDashboardFeatures();
                     getJoystickFeatures();
                     saveMaxValues();
                     DataModel.Instance.SettingsOK = true;
                 }
-                catch (IOException iox)
-                {
-                    Console.WriteLine(iox.Message); //CHANGE - file could not read.
-                    return false;
-                }
-                //learn data. (requires DLL)
+                catch
+                { return false; }
             }
-            //    D:\Desktop\AdvancedProgramming2\reg_flight.csv
-            //    D:\Desktop\AdvancedProgramming2\playback_small.xml
-            //    D:\Program Files\FlightGear 2020.3.6
             return true;
         }
     }
