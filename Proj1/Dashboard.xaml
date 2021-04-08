@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Proj1"
-             mc:Ignorable="d" Height="579" Width="326">
+             mc:Ignorable="d" Height="579" Width="326" RenderOptions.BitmapScalingMode="Fant">
     <Grid  Height="579" Width="326" HorizontalAlignment="Right" VerticalAlignment="Bottom">
 
         <Label Content="Altitude:" VerticalAlignment="Bottom" Height="40" FontSize="24" FontWeight="Bold" Foreground="White" Margin="45,0,153,382"/>
@@ -73,7 +73,7 @@
         </Canvas>
 
 
-        <Canvas HorizontalAlignment="Left" Height="189" Margin="-9,224,0,0" VerticalAlignment="Top" Width="215">
+        <Canvas HorizontalAlignment="Left" Height="189" Margin="-9,224,0,0" VerticalAlignment="Top" Width="215" >
 
             <Image Source="/Resources/compass.png" RenderTransformOrigin="0.5,0.5" Canvas.Left="32" Canvas.Top="10" Height="166" Width="156" >
                 <Image.RenderTransform>

@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Proj1"
              mc:Ignorable="d" 
-             d:DesignHeight="1200" Width="1292">
+             d:DesignHeight="1200" Width="1292" RenderOptions.BitmapScalingMode="Fant">
     <Grid>
         <ListBox x:Name="FeaturesListBox" ItemsSource="{Binding VM_FeaturesList}" HorizontalAlignment="Left" Height="679" Margin="10,53,0,0" VerticalAlignment="Top" Width="345" FontSize="20" SelectionChanged="FeaturesListBox_SelectionChanged"/>
         <ListBox x:Name="AnomaliesListBox" ItemsSource="{Binding VM_AnomaliesList}" HorizontalAlignment="Left" Height="392" Margin="10,798,0,0" VerticalAlignment="Top" Width="345" FontSize="20" SelectionChanged="AnomaliesListBox_SelectionChanged"/>
