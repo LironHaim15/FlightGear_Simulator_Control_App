@@ -8,8 +8,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="1200" Width="1292" RenderOptions.BitmapScalingMode="Fant">
     <Grid>
-        <ListBox x:Name="FeaturesListBox" ItemsSource="{Binding VM_FeaturesList}" HorizontalAlignment="Left" Height="679" Margin="10,53,0,0" VerticalAlignment="Top" Width="345" FontSize="20" SelectionChanged="FeaturesListBox_SelectionChanged"/>
-        <ListBox x:Name="AnomaliesListBox" ItemsSource="{Binding VM_AnomaliesList}" HorizontalAlignment="Left" Height="392" Margin="10,798,0,0" VerticalAlignment="Top" Width="345" FontSize="20" SelectionChanged="AnomaliesListBox_SelectionChanged"/>
+        <ListBox x:Name="FeaturesListBox" ItemsSource="{Binding VM_FeaturesList}" Height="679" Margin="10,53,937,0" VerticalAlignment="Top" FontSize="20" SelectionChanged="FeaturesListBox_SelectionChanged"/>
+        <ListBox x:Name="AnomaliesListBox" ItemsSource="{Binding VM_AnomaliesList}" Margin="10,798,937,10" FontSize="20" SelectionChanged="AnomaliesListBox_SelectionChanged"/>
 
         <oxy:PlotView Visibility="Hidden" Model="{Binding VM_FeatureGraph}" Margin="826,53,0,0" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left" Width="456" />
         <oxy:PlotView Visibility="Hidden" Model="{Binding VM_CorrelatedFeatureGraph}" Margin="382,53,0,0" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left" Width="424" />
@@ -38,7 +38,7 @@
             </oxy:Plot.Series>
         </oxy:Plot>
 
-        <oxy:Plot Margin="382,500,19,36" Title="Two Correlatad Features Regression Graph" TitleFontSize="24" LegendFontSize="26">
+        <oxy:Plot Margin="382,479,19,10" Title="Two Correlatad Features Regression Graph" TitleFontSize="24" LegendFontSize="26">
             <oxy:Plot.Axes>
                 <oxy:LinearAxis Position="Bottom" Title="{Binding  VM_AxisYTitle}" FontSize="24"/>
                 <oxy:LinearAxis Position="Left"  Title="{Binding VM_AxisYTitleCorr}" FontSize="24"/>

@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:Proj1"
         mc:Ignorable="d"
         Title="FlightGear Flight Control" Height="740.5" Width="826.5" Background="#FF4B4B4B" Icon="Resources/airplane.png" Closing="Window_Closing" ResizeMode="CanResizeWithGrip">
-    <Grid HorizontalAlignment="Left" Width="816">
+    <Grid Margin="0,0,2,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="43"/>
-            <RowDefinition Height="355*"/>
-            <RowDefinition Height="226*"/>
-            <RowDefinition Height="85*"/>
+            <RowDefinition Height="47"/>
+            <RowDefinition Height="216*"/>
+            <RowDefinition Height="365*"/>
+            <RowDefinition Height="81*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="229*"/>
@@ -19,19 +19,19 @@
             <ColumnDefinition Width="242*"/>
         </Grid.ColumnDefinitions>
 
-        <Border BorderThickness="1" Height="565" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="#FF343434" HorizontalAlignment="Left" Width="574" BorderBrush="Black">
-            <Viewbox Margin="9,-21,0,-1" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding VM_AnomaliesVisibility, FallbackValue=Visible}" Height="585" Width="562">
-                <local:Anomalies x:Name="anomaliesUC" Width="1297" Height="1222" />
+        <Border BorderThickness="1" Margin="10,6,4,5" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="#FF343434" BorderBrush="Black">
+            <Viewbox Margin="-1,-1,1,-1" Visibility="{Binding VM_AnomaliesVisibility, FallbackValue=Visible}">
+                <local:Anomalies x:Name="anomaliesUC" Width="1297" Height="1292" />
             </Viewbox>
         </Border>
 
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" Margin="0,10,0,139" Grid.Row="1" Background="#FF343434" HorizontalAlignment="Left" Width="218">
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" Margin="0,6,10,4" Grid.Row="1" Background="#FF343434">
             <Viewbox Margin="-1,0,0,-1" Visibility="{Binding VM_JoystickVisibility, FallbackValue=Visible}">
                 <local:Joystick x:Name="joystickUC" Height="366"/>
             </Viewbox>
         </Border>
 
-        <Border BorderBrush="Black" BorderThickness="1" Margin="10,9,11,10" Grid.Row="3" Grid.ColumnSpan="3" Background="#FF343434">
+        <Border BorderBrush="Black" BorderThickness="1" Margin="10,5,11,10" Grid.Row="3" Grid.ColumnSpan="3" Background="#FF343434">
             <Viewbox Margin="0,-1,-1,-1" Visibility="{Binding VM_PlaybarVisibility, FallbackValue=Visible}">
                 <local:PlayBar x:Name="playbarUC" Height="91" Width="664" />
             </Viewbox>
@@ -39,33 +39,33 @@
 
 
 
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" Margin="0,222,0,1" Grid.Row="1" Grid.RowSpan="2" Background="#FF343434" HorizontalAlignment="Left" Width="217">
-            <Viewbox Height="342" VerticalAlignment="Top" Visibility="{Binding VM_DashboardVisibility, FallbackValue=Visible}" Margin="0,0,-1,0">
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" Margin="0,2,11,5" Grid.Row="2" Background="#FF343434">
+            <Viewbox Visibility="{Binding VM_DashboardVisibility, FallbackValue=Visible}" Margin="0,0,-1,-1">
                 <local:Dashboard x:Name="dashboardUC" Height="606" Width="381" />
             </Viewbox>
         </Border>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="10,2,0,0" VerticalAlignment="Top" Width="213" Grid.ColumnSpan="2">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin="10,2,0,4" Width="196">
             <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Disconnect" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="83" Click="Disconnect_Click" Height="29" IsEnabled="{Binding VM_DisconnectEnable, FallbackValue=False}" Grid.Column="1"/>
-                <Button Content="Connect" HorizontalAlignment="Left" Margin="5,4,0,0" VerticalAlignment="Top" Width="91" Height="29" Click="Connect_Click" IsEnabled="{Binding VM_ConnectEnable, FallbackValue=False}"/>
+                <Button Content="Disconnect" Margin="10,4,4,6" Click="Disconnect_Click" IsEnabled="{Binding VM_DisconnectEnable, FallbackValue=False}" Grid.Column="1"/>
+                <Button Content="Connect" Margin="5,4,1,6" Click="Connect_Click" IsEnabled="{Binding VM_ConnectEnable, FallbackValue=False}"/>
             </Grid>
         </Border>
 
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" HorizontalAlignment="Left" Height="41" Margin="10,2,-38,0" VerticalAlignment="Top" Width="256">
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" Margin="10,2,11,4">
             <Button x:Name="User_Instructions" Content="User Instructions" Margin="9,3,9,4" Click="User_Instructions_Click"/>
         </Border>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="24,2,0,0" VerticalAlignment="Top" Width="274" Grid.Column="1">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin="10,2,0,4" Width="352" Grid.Column="1">
             <Grid >
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="127*"/>
-                    <ColumnDefinition Width="159*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="5*"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Load Detection Algo" HorizontalAlignment="Left" Visibility="Visible" Margin="8,4,0,0" VerticalAlignment="Top" Width="133" Height="30" Click="Load_Click" Grid.Column="1" IsEnabled="{Binding VM_LoadEnable, FallbackValue=False}" />
-                <Button HorizontalAlignment="Left" Margin="7,4,0,0" VerticalAlignment="Top" Width="108" Height="30" Click="Settings_Click" IsEnabled="{Binding VM_SettingsEnable, FallbackValue=False}">
+                <Button Content="Load Detection Algo" Visibility="Visible" Margin="10,4,10,5" Click="Load_Click" Grid.Column="1" IsEnabled="{Binding VM_LoadEnable, FallbackValue=False}" />
+                <Button Margin="7,4,11,5" Click="Settings_Click" IsEnabled="{Binding VM_SettingsEnable, FallbackValue=False}">
                     <Grid Height="28" Width="104" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="7*"/>
