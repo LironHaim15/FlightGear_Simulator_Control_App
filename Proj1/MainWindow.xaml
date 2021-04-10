@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proj1"
         mc:Ignorable="d"
-        Title="FlightGear Flight Control" Height="740.5" Width="826.5" Background="#FF4B4B4B" Icon="Resources/airplane.png" Closing="Window_Closing" ResizeMode="CanResizeWithGrip">
+        Title="FlightGear Flight Control" MinWidth="810" MinHeight="810" Height="740" Width="900" Background="#FF4B4B4B" Icon="Resources/airplane.png" Closing="Window_Closing" ResizeMode="CanResizeWithGrip" >
     <Grid Margin="0,0,2,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="47"/>
@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
 
         <Border BorderThickness="1" Margin="10,6,4,5" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="#FF343434" BorderBrush="Black">
-            <Viewbox Margin="-1,-1,1,-1" Visibility="{Binding VM_AnomaliesVisibility, FallbackValue=Visible}">
+            <Viewbox Margin="-1,-1,1,-1" Visibility="{Binding VM_AnomaliesVisibility, FallbackValue=Visible}" >
                 <local:Anomalies x:Name="anomaliesUC" Width="1297" Height="1292" />
             </Viewbox>
         </Border>
@@ -33,7 +33,7 @@
 
         <Border BorderBrush="Black" BorderThickness="1" Margin="10,5,11,10" Grid.Row="3" Grid.ColumnSpan="3" Background="#FF343434">
             <Viewbox Margin="0,-1,-1,-1" Visibility="{Binding VM_PlaybarVisibility, FallbackValue=Visible}">
-                <local:PlayBar x:Name="playbarUC" Height="91" Width="664" />
+                <local:PlayBar x:Name="playbarUC" Height="91" Width="1100" />
             </Viewbox>
         </Border>
 
