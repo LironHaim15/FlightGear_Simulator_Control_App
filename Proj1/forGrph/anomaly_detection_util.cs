@@ -6,14 +6,8 @@ using System.Threading.Tasks;
 
 namespace Proj1.forGrph
 {
-    /// <summary>
-    /// from the semester a .the code is the first targil from semster a in c#
-    /// </summary>
     static class anomaly_detection_util
     {
-        /// <summary>
-        /// returns the variance of X and Y
-        /// </summary>
         private static double avg(double[] x, int size)
         {
             double sum = 0;
@@ -21,10 +15,7 @@ namespace Proj1.forGrph
             return sum / size;
         }
 
-        // 
-        /// <summary>
-        /// returns the covariance of X and Y
-        /// </summary>
+        // returns the variance of X and Y
         private static double var(double[] x, int size)
         {
             double av = avg(x, size);
@@ -38,9 +29,7 @@ namespace Proj1.forGrph
             return sum / size - av * av;
         }
 
-        /// <summary>
-        /// returns the Pearson correlation coefficient of X and Y
-        /// </summary>
+        // returns the covariance of X and Y
         private static double cov(double[] x, double[] y, int size)
         {
             double sum = 0;
@@ -53,9 +42,7 @@ namespace Proj1.forGrph
         }
 
 
-        /// <summary>
-        /// returns the most Pearson correlation to j col in data to other col
-        /// </summary>
+        // returns the Pearson correlation coefficient of X and Y
         public static double pearson(double[] x, double[] y, int size)
         {
             double c = cov(x, y, size);
@@ -84,9 +71,7 @@ namespace Proj1.forGrph
             return index;
         }
 
-        /// <summary>
-        /// performs a linear regression and returns the line equation
-        /// </summary>
+        // performs a linear regression and returns the line equation
         public static Line linear_reg(double[] x,double[] y, int size)
         {
             double a;

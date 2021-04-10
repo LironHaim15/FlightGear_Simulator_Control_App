@@ -17,38 +17,27 @@ using Proj1.Models;
 namespace Proj1
 {
     /// <summary>
-    /// Interaction logic for LoadDLLWindow.xaml . the veiw of load algo user story 9
+    /// Interaction logic for Window1.xaml
     /// </summary>
     public partial class LoadDLLWindow : Window
     {
-        //feilds
         private LoadViewModel vm;
-        //DELETE
         //private string extension;
-        /// <summary>
-        /// the constractur of the LoadDLLWindow
-        /// </summary>
         public LoadDLLWindow()
         {
             InitializeComponent();
             vm = new LoadViewModel(new LoadModel());
             DataContext = vm;
         }
-        /// <summary>
-        /// when the user click to load the dll
-        /// </summary>
+
         private void Load_Click(object sender, RoutedEventArgs e)
         {
-            // if the dll is okey close
             if (vm.load(dllPath.Text))
             {
                 this.Close();
             }
         }
 
-        /// <summary>
-        /// to choose file from computer.
-        /// </summary>
         private void Browse_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog openFileDlg = new Microsoft.Win32.OpenFileDialog();

@@ -18,15 +18,11 @@ using Proj1.Models;
 namespace Proj1
 {
     /// <summary>
-    /// Interaction logic Dashboard.xaml . the veiw of Dashboard
+    /// Interaction logic for UserControl1.xaml
     /// </summary>
     public partial class Dashboard : UserControl
     {
-        //feild
         private DashboardViewModel vm;
-        /// <summary>
-        /// the constractur of the window
-        /// </summary>
         public Dashboard()
         {
             InitializeComponent();

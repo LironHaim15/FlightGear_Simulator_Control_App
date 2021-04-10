@@ -18,24 +18,18 @@ using Proj1.Models;
 namespace Proj1
 {
     /// <summary>
-    /// Interaction logic InfoWindow.xaml . the veiw of InfoWindow to user
+    /// Interaction logic for Window1.xaml
     /// </summary>
     public partial class InfoWindow : Window
     {
-        //feild
         private InfoViewModel vm;
-        /// <summary>
-        /// the constractur of the  InfoWindow
-        /// </summary>
         public InfoWindow()
         {
             InitializeComponent();
             vm = new InfoViewModel(new InfoModel());
             DataContext = vm;
         }
-        /// <summary>
-        /// the button that close the informtion
-        /// </summary>
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

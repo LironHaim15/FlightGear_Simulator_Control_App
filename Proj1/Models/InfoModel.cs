@@ -8,23 +8,12 @@ using System.IO;
 
 namespace Proj1.Models
 {
-    /// <summary>
-    ///  A  InfoModel class
-    /// </summary>
-    /// <remarks>
-    /// to display informtion to user
-    /// </remarks>
-    class InfoModel :INotifyPropertyChanged
+    class InfoModel:INotifyPropertyChanged
     {
-        //feilds
         private string info;
-        /// <summary>
-        ///the constructor of InfoModel.
-        /// </summary>
         public InfoModel() {
             try
             {
-                // from txt the informtion
                 InfoText = File.ReadAllText("README.txt");
             }
             catch {
@@ -32,17 +21,11 @@ namespace Proj1.Models
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        ///mvvm notify of changes of model
-        /// </summary>
         private void NotifyPropertyChanged(string propName)
         {
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-        /// <summary>
-        ///property of InfoText
-        /// </summary>
         public string InfoText
         {
             get { return info; }

@@ -20,16 +20,12 @@ using System.Runtime.InteropServices;
 namespace Proj1
 {
     /// <summary>
-    /// Interaction logic  Joystick.xaml . the veiw of  Joystick user story 3
+    /// Interaction logic for UserControl1.xaml
     /// </summary>
     public partial class Joystick : UserControl
     {
-        //feilds
         private JoystickViewModel vm;
 
-        /// <summary>
-        /// the constractur of the  Joystick window.
-        /// </summary>
         public Joystick()
         {
             InitializeComponent();

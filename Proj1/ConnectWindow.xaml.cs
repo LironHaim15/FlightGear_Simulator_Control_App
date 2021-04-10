@@ -17,27 +17,19 @@ using Proj1.Models;
 namespace Proj1
 {
     /// <summary>
-    /// Interaction logic forConnectWindow.xaml . the veiw of connect with the flight geer
+    /// Interaction logic for Window1.xaml
     /// </summary>
     public partial class ConnectWindow : Window
     {
-        // feild 
         ConnectViewModel vm;
-        /// <summary>
-        /// the constractur of the window
-        /// </summary>
         public ConnectWindow()
         {
             InitializeComponent();
             vm = new ConnectViewModel(new ConnectModel());
             DataContext = vm;
         }
-        /// <summary>
-        /// the click to connect the fly
-        /// </summary>
         private void StartConnection_Click(object sender, RoutedEventArgs e)
         {
-            // if the input right need to close the window
             if (vm.check(ipTextBox.Text, portTextBox.Text))
             {
                 this.Close();

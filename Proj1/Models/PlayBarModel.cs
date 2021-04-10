@@ -12,18 +12,11 @@ using System.Windows;
 
 namespace Proj1.Models
 {
-    /// <summary>
-    ///  A PlayBarModel class. the  model of user story 2
-    /// </summary>
     class PlayBarModel : INotifyPropertyChanged
     {
-        // time in video
         private TimeSpan currentTime;
-        // speed of video
         private double playSpeed;
-        // the line in the fly
         private int currentLine;
-        // sleep in the send informtion the f
         private int sleepSpeed;
         private bool toPlay;
         private int lineFreq;
