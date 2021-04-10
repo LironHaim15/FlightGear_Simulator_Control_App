@@ -18,7 +18,7 @@
         <Label Content="Anomalies List" HorizontalAlignment="Left" Margin="67,751,0,0" VerticalAlignment="Top" Width="197" Foreground="White" FontWeight="Bold" FontSize="24"/>
 
 
-        <oxy:Plot Margin="374,53,478,747" Title="Chosen Feature" FontSize="24">
+        <oxy:Plot Margin="374,53,471,721" Title="Chosen Feature" FontSize="24">
             <oxy:Plot.Axes>
                 <oxy:LinearAxis Position="Bottom" Minimum="0" Maximum="{Binding VM_AxisXMax}" Title="Time (seconds)" FontSize="24"/>
                 <oxy:LinearAxis Position="Left"  Title="{Binding VM_AxisYTitle}" FontSize="24"/>
@@ -28,7 +28,7 @@
             </oxy:Plot.Series>
         </oxy:Plot>
 
-        <oxy:Plot Margin="832,53,19,747" Title="Correlated Feature" FontSize="24">
+        <oxy:Plot Margin="832,53,10,721" Title="Correlated Feature" FontSize="24">
             <oxy:Plot.Axes>
                 <oxy:LinearAxis Position="Bottom" Minimum="0" Maximum="{Binding VM_AxisXMaxCorr}" Title="Time (seconds)" FontSize="24"/>
                 <oxy:LinearAxis Position="Left"  Title="{Binding VM_AxisYTitleCorr}" FontSize="24"/>
@@ -38,7 +38,7 @@
             </oxy:Plot.Series>
         </oxy:Plot>
 
-        <oxy:Plot Margin="382,479,19,10" Title="Two Correlatad Features Regression Graph" TitleFontSize="24" LegendFontSize="26">
+        <oxy:Plot Margin="382,615,10,10" Title="Two Correlatad Features Regression Graph" TitleFontSize="24" LegendFontSize="26">
             <oxy:Plot.Axes>
                 <oxy:LinearAxis Position="Bottom" Title="{Binding  VM_AxisYTitle}" FontSize="24"/>
                 <oxy:LinearAxis Position="Left"  Title="{Binding VM_AxisYTitleCorr}" FontSize="24"/>

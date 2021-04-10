@@ -17,15 +17,24 @@ using Proj1.Models;
 namespace Proj1
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainWindow.xaml . the veiw of MainWindow of the project that inside have all
+    /// the veiwbox and all the veiw part .
     /// </summary>
     public partial class MainWindow : Window
     {
+        //feilds
         MainViewModel vm;
+        //window to connect to flight geer
         ConnectWindow cwindow;
+        // window to load dll algo
         LoadDLLWindow lwindow;
+        // window to setting all the files and the place of the flight geer
         SettingsWindow swindow;
+        // window with informtion to user about the progrem
         InfoWindow iwindow;
+        /// <summary>
+        /// the constractur of the  MainWindow
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -36,9 +45,12 @@ namespace Proj1
             vm = new MainViewModel();
             DataContext = vm;
         }
-
+        /// <summary>
+        /// setting click open new window to setting
+        /// </summary>
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
+            // open window the first time or  if the window hidden
             if (swindow == null || !swindow.IsVisible)
             {
                 swindow = new SettingsWindow();
@@ -47,7 +59,9 @@ namespace Proj1
             else
                 swindow.Focus();
         }
-
+        /// <summary>
+        ///Connect click open new window to connect
+        /// </summary>
         private void Connect_Click(object sender, RoutedEventArgs e)
         {
             if (cwindow == null || !cwindow.IsVisible)
@@ -58,12 +72,17 @@ namespace Proj1
             else
                 cwindow.Focus();
         }
-
+        /// <summary>
+        ///dissconnect for flight geer
+        /// </summary>
         private void Disconnect_Click(object sender, RoutedEventArgs e)
         {
             vm.disconnect();
         }
 
+        /// <summary>
+        ///load dll algo
+        /// </summary>
         private void Load_Click(object sender, RoutedEventArgs e)
         {
             if (lwindow == null || !lwindow.IsVisible)
@@ -75,9 +94,13 @@ namespace Proj1
                 lwindow.Focus();
         }
 
+        /// <summary>
+        ///close window
+        /// </summary>
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             vm.disconnect();
+            //close the another windows
             if (lwindow != null || (lwindow != null && lwindow.IsVisible))
                 lwindow.Close();
             if (swindow != null || (swindow != null && swindow.IsVisible))
@@ -88,6 +111,9 @@ namespace Proj1
                 iwindow.Close();
         }
 
+        /// <summary>
+        ///informtion click open new window with informtion to user.
+        /// </summary>
         private void User_Instructions_Click(object sender, RoutedEventArgs e)
         {
             if (iwindow == null || !iwindow.IsVisible)
