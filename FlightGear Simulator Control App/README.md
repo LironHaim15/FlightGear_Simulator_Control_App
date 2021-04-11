@@ -68,10 +68,12 @@ After launching you should be in the main window. Press on the `Settings` button
 Once closed, the 'Connect' and 'Load Detection Algo' buttons should be functional.
 
 Before connectiong, Run the FlightGear Launcher and go to the 'Settings' tab. In the 'Additional Settings' catagory at the end of the page, enter these two lines in the text box:
+
 ```
 --generic=socket,in,10,127.0.0.1,5400,tcp,playback_small
 --fdm=null
 ```
+
 >(the first line establishes a one way TCP socket with the port 5400 and ip of Local Host 127.0.0.1, these can be changed here at your wish. It also directs FG to the `playback_small.xml`. The paramater '10' indicates the amount of lines in the data file that represent a single second.
 the second line disables the FG controlable simulator.)
 
@@ -91,7 +93,7 @@ Screenshots of the mentioned windows are provided below for further understandin
 * Joystick and Dashboard are viewable and not interactive.
 * Load Detection alogorithm by pressing the 'Load Detection Algo' button, browse for suitable dll file and load it by pressing 'Load'. If the dll was loaded successfully the window will close. Once loaded, if there are any anomalies detected, they will be displayed in the anomalies list. Press any anomaly to jump in time to the moment it occurs. Anomalies are highlighted in red in graph.
 * You can load new detection algorithm at any time.
-* For more details, you can press, drag and zoom in & out the graph.
+* For more details, you can press, drag and zoom in & out the graph. TIP: double-click on the mouse wheel when curser is on the graph to reset the graph's view.
 
 ---
 
@@ -138,6 +140,7 @@ An example of `input.txt` & `output.txt` files is included in the project.
 
 ## Program Structure
 
+Used design pattern: MVVM.
 Our code files are orginized in 4 main places:
 * View related files are located in the main folder of the project.
 * ViewModels files are located in ViewModels folder.
@@ -157,7 +160,7 @@ In addition, the folder plugins is provided with 2 anomalies detection algorithm
 
 ## Video Demo
 
-[Watch here]()
+[Watch here](https://youtu.be/58-n3c-bOTY)
 
 --- 
 
