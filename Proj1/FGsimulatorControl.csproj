@@ -85,7 +85,6 @@
     <Compile Include="Anomalies.xaml.cs">
       <DependentUpon>Anomalies.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Delegate1.cs" />
     <Compile Include="forGrph\anomaly_detection_util.cs" />
     <Compile Include="forGrph\Line.cs" />
     <Compile Include="forGrph\Point.cs" />
@@ -191,7 +190,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

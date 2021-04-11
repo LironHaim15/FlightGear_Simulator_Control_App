@@ -40,7 +40,6 @@
             <Button Content="Back" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="342,51,0,-44" Grid.Row="4" VerticalAlignment="Top" Width="75" Visibility="Hidden" Grid.ColumnSpan="2"/>
             <Button x:Name="NormalBrowse" Content="..." Grid.Column="3" Click="NormalBrowse_Click" Margin="0,0,0,11"/>
             <Button x:Name="TestBrowse" Content="..." Grid.Column="3" Grid.Row="1" Click="TestBrowse_Click" Margin="0,0,0,10"/>
-            <Button x:Name="FGpathBrowse" Content="..." Grid.Column="3" Grid.Row="2" Click="FGpathBrowse_Click" Margin="0,0,0,10"/>
 
         </Grid>
     </Grid>

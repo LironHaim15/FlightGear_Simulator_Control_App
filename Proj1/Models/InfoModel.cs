@@ -26,7 +26,7 @@ namespace Proj1.Models
             try
             {
                 // from txt the informtion
-                InfoText = File.ReadAllText("README.txt");
+                InfoText = File.ReadAllText("README.md");
             }
             catch
             {

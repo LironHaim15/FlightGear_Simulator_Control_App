@@ -181,7 +181,7 @@
   <Class Name="Proj1.SettingsWindow" Collapsed="true">
     <Position X="0.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAAASAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAASAAA=</HashCode>
       <FileName>SettingsWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

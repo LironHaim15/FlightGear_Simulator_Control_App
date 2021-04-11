@@ -99,14 +99,12 @@ namespace Proj1
         /// </summary>
         /// <param name="type"></param>
         public void browse(string type)
-        {
+        {   
             Microsoft.Win32.OpenFileDialog openFileDlg = new Microsoft.Win32.OpenFileDialog();
             Nullable<bool> result = openFileDlg.ShowDialog();
             if (result == true)
             {
-                if(type == "FlightGearPath")
-                    FlightGearPath= Path.GetFullPath(openFileDlg.FileName);
-                else if (type == "CsvNormalPath")
+                if (type == "CsvNormalPath")
                     CsvNormalPath = Path.GetFullPath(openFileDlg.FileName);
                 else if (type == "CsvTestPath")
                     CsvTestPath = Path.GetFullPath(openFileDlg.FileName);

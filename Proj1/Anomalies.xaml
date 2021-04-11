@@ -21,9 +21,6 @@
         <ListBox x:Name="FeaturesListBox" ItemsSource="{Binding VM_FeaturesList}" Margin="10,53,10,6" FontSize="20" SelectionChanged="FeaturesListBox_SelectionChanged" Grid.RowSpan="2"/>
         <ListBox x:Name="AnomaliesListBox" ItemsSource="{Binding VM_AnomaliesList}" Margin="10,60,10,10" FontSize="20" SelectionChanged="AnomaliesListBox_SelectionChanged" Grid.Row="2"/>
 
-        <oxy:PlotView Visibility="Hidden" Model="{Binding VM_FeatureGraph}" Margin="3,53,0,0" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left" Width="456" Grid.Column="2" />
-        <oxy:PlotView Visibility="Hidden" Model="{Binding VM_CorrelatedFeatureGraph}" Margin="17,53,0,0" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left" Width="424" Grid.Column="1" />
-        <oxy:PlotView Visibility="Hidden" Model="{Binding VM_RegressionGraph}" Margin="17,11,0,0" Height="711" VerticalAlignment="Top" HorizontalAlignment="Left" Width="900" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Row="1" />
         <Label Content="Features List" HorizontalAlignment="Left" Margin="80,6,0,0" VerticalAlignment="Top" Width="184" Foreground="White" FontWeight="Bold" FontSize="24"/>
         <Label Content="Anomalies List" HorizontalAlignment="Left" Margin="67,13,0,0" VerticalAlignment="Top" Width="197" Foreground="White" FontWeight="Bold" FontSize="24" Grid.Row="2"/>
 

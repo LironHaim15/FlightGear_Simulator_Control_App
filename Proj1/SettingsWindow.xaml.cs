@@ -64,15 +64,5 @@ namespace Proj1
         {
             vm.browse("CsvTestPath");
         }
-
-        /// <summary>
-        /// called upon click on the browse button for the FlightGear directory path.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void FGpathBrowse_Click(object sender, RoutedEventArgs e)
-        {
-            vm.browse("FlightGearPath");
-        }
     }
 }
