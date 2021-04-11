@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Proj1.Anomalies" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Anomalies.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.ViewModels.AnomaliesViewModel" Collapsed="true">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <AssociationLine Name="dmodel" Type="Proj1.Models.DataModel" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="1.062" />
+        <Point X="5.5" Y="1.062" />
+        <Point X="5.5" Y="1.209" />
+        <Point X="9.042" Y="1.209" Type="JumpStart" />
+        <Point X="9.208" Y="1.209" Type="JumpEnd" />
+        <Point X="9.25" Y="1.209" />
+        <Point X="9.25" Y="2.312" />
+        <Point X="10.305" Y="2.312" />
+        <Point X="10.305" Y="2.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ACAACCAAAEQgAICAIAAAAAAAgYAQBQAAAAAAAgAEAAA=</HashCode>
+      <FileName>ViewModels\AnomaliesViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="amodel" />
+      <Field Name="dmodel" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.Models.AnomaliesModel" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAgAEIBYDFQQAJUAKAhAgAAQgIAQFGSEgASAQABMARA=</HashCode>
+      <FileName>Models\AnomaliesModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.Models.DataModel" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wADABABQBQAAUIUBFAhEQAAIgQQAA0AEwAZAEIAEgRU=</HashCode>
+      <FileName>Models\DataModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.InfoWindow" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InfoWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.ViewModels.InfoViewModel" Collapsed="true">
+    <Position X="3.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAKAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\InfoViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="imodel" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.Models.InfoModel" Collapsed="true">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAIAAAAAAAAAAgAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\InfoModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.Joystick" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Joystick.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.VeiwModels.JoystickViewModel" Collapsed="true">
+    <Position X="3.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAIAAgAAAAAAAgAAAAAAABAAAAAABECA=</HashCode>
+      <FileName>ViewModels\JoystickViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="jmodel" />
+      <Field Name="dmodel" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.Models.JoystickModel" Collapsed="true">
+    <Position X="5.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAIQABAAAAAYCgAIAAAAAEAAQAFAAAAA=</HashCode>
+      <FileName>Models\JoystickModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.LoadDLLWindow" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAABAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>LoadDLLWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.ViewModels.LoadViewModel" Collapsed="true">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABIQAAIAAAAAABAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\LoadViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="lmodel" />
+      <Field Name="dmodel" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.Models.LoadModel" Collapsed="true">
+    <Position X="5.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAYAAAAAAACAAgAAAAAAQAAAAAAQEAAA=</HashCode>
+      <FileName>Models\LoadModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.MainWindow" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="vm" Type="Proj1.VeiwModels.MainViewModel" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11" Y="1.191" />
+        <Point X="11.375" Y="1.191" />
+        <Point X="11.375" Y="1.781" />
+        <Point X="11" Y="1.781" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACIAAgAAAgAAAAABBAAAAAAEAIAAAAAAAAQAAAAAE=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+      <Field Name="cwindow" />
+      <Field Name="lwindow" />
+      <Field Name="swindow" />
+      <Field Name="iwindow" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.ConnectWindow" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConnectWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.SettingsWindow" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAAASAAA=</HashCode>
+      <FileName>SettingsWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.VeiwModels.MainViewModel" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAIAAEAAAAEAAgQCEAACAAAAACAAEAAA=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dmodel" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.ViewModels.ConnectViewModel" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIQIAEAAAABAAAgAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>ViewModels\ConnectViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cmodel" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.Models.ConnectModel" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQBAAAAAAYAAAAACACAAqAAAAAgAAAAgAAAAAAA=</HashCode>
+      <FileName>Models\ConnectModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.SettingsViewModel" Collapsed="true">
+    <Position X="3.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAMgIABAAAABAAAgAAAAAAAACAAEAAAAAA=</HashCode>
+      <FileName>ViewModels\SettingsViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="smodel" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.SettingsModel" Collapsed="true">
+    <Position X="5.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAghBAAZQAAAACACAAwgBAQAAQAQAAEAAAAAA=</HashCode>
+      <FileName>Models\SettingsModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.PlayBar" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <AssociationLine Name="vm" Type="Proj1.ViewModels.PlayBarViewModel" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.312" Y="6" />
+        <Point X="1.312" Y="5.938" />
+        <Point X="2.062" Y="5.938" />
+        <Point X="2.062" Y="6.281" />
+        <Point X="2.75" Y="6.281" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IAEAAAAAAAAgAAAEEgAAAAAAAAAABAAAAEAAABAAABA=</HashCode>
+      <FileName>PlayBar.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.ViewModels.PlayBarViewModel" Collapsed="true">
+    <Position X="2.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAYAgAAQAAIAAkAAAAAAAgACgBAQAAAAACAAAIAQ=</HashCode>
+      <FileName>ViewModels\PlayBarViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pbmodel" />
+      <Field Name="dmodel" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.Models.PlayBarModel" Collapsed="true">
+    <Position X="5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAABAQABAAEIEQEAAAAAAAgQSAAgmEAAIQgAAAAAA=</HashCode>
+      <FileName>Models\PlayBarModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.Dashboard" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dashboard.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.ViewModels.DashboardViewModel" Collapsed="true">
+    <Position X="2.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAAQAIIAAAAAAAACAgQBAAAAQAACAAAAiIAA=</HashCode>
+      <FileName>ViewModels\DashboardViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dashmodel" />
+      <Field Name="dmodel" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Proj1.Models.DashboardModel" Collapsed="true">
+    <Position X="5.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAgQABAJQAAIIEAACgAIAAggABABEAAAARQAFAAAEA=</HashCode>
+      <FileName>Models\DashboardModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
