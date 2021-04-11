@@ -50,7 +50,6 @@ Launch `FlightGear Simulator Control App.exe`.
 
 screenshots folder and exaple for `input.txt`, `output.txt` files are also inside for further assitance and understanding.
 
----
 ## Usage
 
 ### Preparations
@@ -95,14 +94,12 @@ Screenshots of the mentioned windows are provided below for further understandin
 * You can load new detection algorithm at any time.
 * For more details, you can press, drag and zoom in & out the graph. TIP: double-click on the mouse wheel when curser is on the graph to reset the graph's view.
 
----
 
 ## Requirements
 
 .Net Framework 4.7.2 and above.
 Tested with FlightGear 2020.3.6 (but any other version should work fine).
 
----
 
 ## Plugins (DLL) Requirements
 
@@ -130,13 +127,11 @@ Our program reads that `output.txt`, parse and store the anomalies.
 
 An example of `input.txt` & `output.txt` files is included in the project.
 
----
 
 ## Limitations
 
 * Our app support stream and anlysis of only data in frequency on 10 lines per second.
 
----
 
 ## Program Structure
 
@@ -151,18 +146,15 @@ Full UML can be found within the project and a picture version is down below amo
 
 In addition, the folder plugins is provided with 2 anomalies detection algorithms: `CS_SimpleDetector.dll` and `CS_HybridDetector.dll` (each of them specific requires the other dll file that is inside that folder.)
 
----
 
 ## GitHub Links
  [FlightGear Simulator Control App]()
 
----
 
 ## Video Demo
 
 [Watch here](https://youtu.be/58-n3c-bOTY)
 
---- 
 
 ## Authors
 
