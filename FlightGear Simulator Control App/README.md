@@ -3,7 +3,6 @@
 ## About
 Our FlightGear Simulator Control App allows you to stream flight data stored in a CSV file to FlightGear, control the playback and its speed, analyze your flight and look for anomalies (based on another CSV file which represent a proper flight) using a several features listed below.
 
-   
 ### Features
 * Connect FlightGear application using TCP and stream your flight data.
 * View of the joystick controlling the aircraft.
@@ -15,13 +14,8 @@ Our FlightGear Simulator Control App allows you to stream flight data stored in 
 * Display of data samples of the last 30 seconds. Anomalies are highlighted. 
 * 2 types of anomalies detection algorithms are provided in the 'plugins' folder.
 
-
-
 ## Table of contents
-
-Use for instance <https://github.com/ekalinin/github-markdown-toc>:
-
-> * [Title / Repository Name](#title--repository-name)
+> * [FlightGear Simulator Control App](#flightgear-simulator-control-app)
 >   * [About](#about)
 >   * [Features](#features)
 >   * [Table of contents](#table-of-contents)
@@ -30,31 +24,32 @@ Use for instance <https://github.com/ekalinin/github-markdown-toc>:
 >     * [Preparations](#preparations)
 >     * [Getting Started](#getting-started)
 >     * [Using The Features](#using-the-features)
->     * [Screenshots](#screenshots)
->   * [Content](#content)
 >   * [Requirements](#requirements)
+>   * [Plugins (DLL) Requirements](#plugins-dll-requirements)
 >   * [Limitations](#limitations)
->   * [Deploy (how to install build product)](#deploy-how-to-install-build-product)
->   * [Resources (Documentation and other links)](#resources-documentation-and-other-links)
->   * [Contributing / Reporting issues](#contributing--reporting-issues)
->   * [License](#license)
->   * [About Nuxeo](#about-nuxeo)
+>   * [Program Structure](#program-structure)
+>   * [GitHub Links](#github-links)
+>   * [Video Demo](#video-demo)
+>   * [Authors](#authors)
+>   * [Screenshots](#screenshots)
 ---
 ## Installation
 
-Download the files provided in GitHub and put them in the same folder. The following files should be in that folder:
+Download the project from GitHub. The compiled program is in the folder `FlightGear Simulator Control App` (you may copy this folder where ever you desire). Make sure the following files are in that folder:
 
-* OxyPlot.dll
-* OxyPlot.Wpf.dll
-* OxyPlot.Wpf.xml
-* OxyPlot.xml
-* FlightGear Simulator Control App.exe
-* FlightGear Simulator Control App.exe.config
-* FlightGear Simulator Control App.pdb
-* README
+>* OxyPlot.dll
+>* OxyPlot.Wpf.dll
+>* OxyPlot.Wpf.xml
+>* OxyPlot.xml
+>* FlightGear Simulator Control App.exe
+>* FlightGear Simulator Control App.exe.config
+>* FlightGear Simulator Control App.pdb
+>* README
   
 Launch `FlightGear Simulator Control App.exe`.
-   
+
+screenshots folder and exaple for `input.txt`, `output.txt` files are also inside for further assitance and understanding.
+
 ---
 ## Usage
 
@@ -98,24 +93,16 @@ Screenshots of the mentioned windows are provided below for further understandin
 * You can load new detection algorithm at any time.
 * For more details, you can press, drag and zoom in & out the graph.
 
-### Screenshots
-
 ---
 
-### Content
-
-Description, sub-modules organization...
-
----
-
-### Requirements
+## Requirements
 
 .Net Framework 4.7.2 and above.
 Tested with FlightGear 2020.3.6 (but any other version should work fine).
 
 ---
 
-### Plugins (DLL) Requirements
+## Plugins (DLL) Requirements
 
 DLL must have the namespace `AlgorithmNS` and a class named `Algorithm`. This class has to contain a method called `getAnomaliesReport` that gets no arguments and returns void.
 
@@ -143,7 +130,7 @@ An example of `input.txt` & `output.txt` files is included in the project.
 
 ---
 
-### Limitations
+## Limitations
 
 * Our app support stream and anlysis of only data in frequency on 10 lines per second.
 
@@ -157,8 +144,47 @@ Our code files are orginized in 4 main places:
 * Models files are located in Models folder.
 * `Line.cs`, `Point.cs` and `anomaly_detection_util.cs` are located in the folder forGrph.
 
+Full UML can be found within the project and a picture version is down below among the screenshots.
+
 In addition, the folder plugins is provided with 2 anomalies detection algorithms: `CS_SimpleDetector.dll` and `CS_HybridDetector.dll` (each of them specific requires the other dll file that is inside that folder.)
 
-## License
+---
 
-## About Us
+## GitHub Links
+ [FlightGear Simulator Control App]()
+
+---
+
+## Video Demo
+
+[Watch here]()
+
+--- 
+
+## Authors
+
+* [Stav Lidor](https://github.com/stavLidor)
+* [Liron Haim](https://github.com/LironHaim15)
+
+## Screenshots
+
+### FlightGear Launcher in Settings Window
+[![FlightGear Launcher in Settings window](\screenshots\FGWindow.jpg "FGWindow.jpg")](https://ibb.co/gDmnK1v)
+
+### Main Window
+[![Main window](\screenshots\MainWindow.jpg "MainWindow.jpg")](https://ibb.co/tX77F8f)
+
+### Settings Window
+[![Settings window](\screenshots\SettingsWindow.jpg "SettingsWindow.jpg")](https://ibb.co/c36XHxd)
+
+### Connect Window
+[![Connect window](\screenshots\ConnectWindow.jpg "ConnectWindow.jpg")](https://ibb.co/d5sjQmD)
+
+### Load Plugin Window
+[![Load window](\screenshots\LoadWindow.jpg "LoadWindow.jpg")](https://ibb.co/d5sjQmD)
+
+### The App With All The Features
+[![InAction](\screenshots\InAction.jpg "InAction.jpg")](https://ibb.co/sKSqHcT)
+
+### UML
+[![UML](\screenshots\UML.png "UML.png")](https://ibb.co/mCyp5QR)
