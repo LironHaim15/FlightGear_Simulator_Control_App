@@ -187,4 +187,5 @@ In addition, the folder plugins is provided with 2 anomalies detection algorithm
 [![InAction](\screenshots\InAction.jpg "InAction.jpg")](https://ibb.co/sKSqHcT)
 
 ### UML
-![UML](\screenshots\UML.png "UML.png")(https://ibb.co/mCyp5QR)
+[![UML](\screenshots\UML.png "UML.png")](https://ibb.co/mCyp5QR)
+
