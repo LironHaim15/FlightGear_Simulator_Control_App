@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Proj1.Models.AnomaliesModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAgAEIBYDFQQAJUAKAhAgAAQgIAQFGSEgASAQABMARA=</HashCode>
+      <FileName>Models\AnomaliesModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Proj1.Models.ConnectModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQBAAAAAAYAAAAACACAAqAAAAAgAAAAgAAAAAAA=</HashCode>
+      <FileName>Models\ConnectModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Proj1.Models.DashboardModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAgQABAJQAAIIEAACgAIAAggABABEAAAARQAFAAAEA=</HashCode>
+      <FileName>Models\DashboardModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Proj1.Models.DataModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wADABABQBQAAUIUBFAhEQAAIgQQAA0AEwAZAEIAEgRU=</HashCode>
+      <FileName>Models\DataModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Proj1.Models.InfoModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAIAAAAAAAAAAgAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\InfoModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Proj1.Models.JoystickModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAIQABAAAAAYCgAIAAAAAEAAQAFAAAAA=</HashCode>
+      <FileName>Models\JoystickModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Proj1.Models.MainModel" Collapsed="true">
+    <Position X="13" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\MainModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proj1.Models.PlayBarModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAABAQABAAEIEQEAAAAAAAgQSAAgmEAAIQgAAAAAA=</HashCode>
+      <FileName>Models\PlayBarModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Proj1.SettingsModel" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAghBAAZQAAAACACAAwgBAQAAQAQAAEAAAAAA=</HashCode>
+      <FileName>Models\SettingsModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.3" Collapsed="true" />
+  </Class>
+  <Class Name="Proj1.Models.LoadModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAYAAAAAAACAAgAAAAAAQAAAAAAQEAAA=</HashCode>
+      <FileName>Models\LoadModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

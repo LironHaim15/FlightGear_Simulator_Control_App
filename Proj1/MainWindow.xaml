@@ -33,7 +33,7 @@
 
         <Border BorderBrush="Black" BorderThickness="1" Margin="10,5,11,10" Grid.Row="3" Grid.ColumnSpan="3" Background="#FF343434">
             <Viewbox Margin="0,-1,-1,-1" Visibility="{Binding VM_PlaybarVisibility, FallbackValue=Visible}">
-                <local:PlayBar x:Name="playbarUC" Height="91" Width="1100" />
+                <local:PlayBar x:Name="playbarUC" Height="97" Width="1100" />
             </Viewbox>
         </Border>
 

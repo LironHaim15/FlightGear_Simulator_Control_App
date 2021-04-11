@@ -20,27 +20,35 @@ using OxyPlot.Wpf;
 namespace Proj1
 {
     /// <summary>
-    /// Interaction logic for Anomalies.xaml
+    /// Interaction logic for Anomalies.xaml . the veiw of grph part its implemnts by mvvm .
     /// </summary>
     public partial class Anomalies : UserControl
     {
+        // veiw model feild
         private AnomaliesViewModel vm;
+
+        /// <summary>
+        /// the constractur of the window
+        /// </summary>
         public Anomalies()
         {
             InitializeComponent();
+            // new view model
             vm = new AnomaliesViewModel(new AnomaliesModel());
+            //binds
             DataContext = vm;
         }
-        private void FeaturesListBox_Click(object sender, RoutedEventArgs e)
-        {
-            vm.update(FeaturesListBox.SelectedItem.ToString());
-        }
-
+        /// <summary>
+        /// when the user chose from the featuresBox name.
+        /// </summary>
         private void FeaturesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             vm.update(FeaturesListBox.SelectedItem.ToString());
         }
 
+        /// <summary>
+        ///when the user chose from the  AnomaliesList the anomalie that he want to explore.
+        /// </summary>
         private void AnomaliesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (vm.VM_AnomaliesList.Count != 0)

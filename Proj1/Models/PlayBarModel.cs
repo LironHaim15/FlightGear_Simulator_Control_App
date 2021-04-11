@@ -14,9 +14,13 @@ namespace Proj1.Models
 {
     class PlayBarModel : INotifyPropertyChanged
     {
+        // time in video
         private TimeSpan currentTime;
+        // speed of video
         private double playSpeed;
+        // the line in the fly
         private int currentLine;
+        // sleep in the send informtion the f
         private int sleepSpeed;
         private bool toPlay;
         private int lineFreq;
@@ -40,17 +44,26 @@ namespace Proj1.Models
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-
+        /// <summary>
+        /// Get and set Maximum lines in the data.
+        /// </summary>
         public int MaxLines
         {
             get { return maxLines; }
             set { maxLines = value;
             }
         }
+        /// <summary>
+        /// update MaxLines in the Data Model.
+        /// </summary>
         public void updateMaxLines()
         {
             MaxLines = DataModel.Instance.MaxLines;
         }
+        /// <summary>
+        /// Update current line in Data Model. stop the data stream by turning ToPlay to false.
+        /// and update the time according to the new current line.
+        /// </summary>
         public int CurrentLine
         {
             get { return currentLine; }
@@ -65,6 +78,9 @@ namespace Proj1.Models
                 NotifyPropertyChanged("CurrentLine");
             }
         }
+        /// <summary>
+        /// Get and set CurrentTime.
+        /// </summary>
         public TimeSpan CurrentTime
         {
             get { return currentTime; }
@@ -74,6 +90,9 @@ namespace Proj1.Models
                 NotifyPropertyChanged("CurrentTime");
             }
         }
+        /// <summary>
+        /// Get and set PlaySpeed, assumining data is streaming 10 lines per second.
+        /// </summary>
         public double PlaySpeed
         {
             get { return playSpeed; }
@@ -85,6 +104,9 @@ namespace Proj1.Models
                 NotifyPropertyChanged("PlaySpeed");
             }
         }
+        /// <summary>
+        /// Get and set ToPlay, if false then stop the thread by joining it.
+        /// </summary>
         public bool ToPlay
         {
             get { return toPlay; }
@@ -100,6 +122,10 @@ namespace Proj1.Models
                 }         
             }
         }
+        /// <summary>
+        /// set the new PlaySpeed according to what the user entered in the playbar.
+        /// </summary>
+        /// <param name="speed"></param>
         public void setPlaySpeed(string speed)
         {
             try { double ps = double.Parse(speed);
@@ -111,6 +137,10 @@ namespace Proj1.Models
             }
         }
 
+        /// <summary>
+        /// skip 'amount' of seconds backwards or forwards in the time and current line.
+        /// </summary>
+        /// <param name="amount"></param>
         public void skip(int amount)
         {
             int lines = CurrentLine + (amount * lineFreq);
@@ -122,6 +152,10 @@ namespace Proj1.Models
                 CurrentLine = lines;
         }
 
+        /// <summary>
+        /// start playing and stearm data lines.
+        /// initiating a new thread.
+        /// </summary>
         public void play()
         {
             if (ToPlay == true || CurrentLine >= MaxLines - 1)
@@ -129,11 +163,6 @@ namespace Proj1.Models
                 return;
             }
             ToPlay = true;
-            /*if(DataModel.Instance.Thread!=null && DataModel.Instance.Thread.IsAlive)
-            {
-                try { DataModel.Instance.Thread.Abort(); }
-                catch { }
-            }*/
             thread = new Thread(() =>
             {
                 try
@@ -154,6 +183,9 @@ namespace Proj1.Models
             DataModel.Instance.Thread = thread;
             thread.Start();
         }
+        /// <summary>
+        /// reset every field. is called when disconneting and connecting again.
+        /// </summary>
         public void restart()
         {
             CurrentTime = new TimeSpan(0, 0, 0);

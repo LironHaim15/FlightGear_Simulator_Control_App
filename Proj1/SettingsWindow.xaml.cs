@@ -21,7 +21,7 @@ using Proj1.VeiwModels;
 namespace Proj1
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SettingsWindow.xaml
     /// </summary>
     public partial class SettingsWindow : Window
     {
@@ -33,6 +33,11 @@ namespace Proj1
             vm = new SettingsViewModel(new SettingsModel());
             DataContext = vm;
         }
+        /// <summary>
+        /// called upon click on the 'continue' button and check that every path is checked out.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Continue_Click(object sender, RoutedEventArgs e)
         {
             if (vm.check())
@@ -40,21 +45,31 @@ namespace Proj1
                 this.Close();
             }
         }
+        /// <summary>
+        /// called upon click on the browse button for the learning csv path.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NormalBrowse_Click(object sender, RoutedEventArgs e)
         {
             vm.browse("CsvNormalPath");
         }
 
+        /// <summary>
+        /// called upon click on the browse button for the test csv path.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TestBrowse_Click(object sender, RoutedEventArgs e)
         {
             vm.browse("CsvTestPath");
         }
 
-        private void XmlBrowse_Click(object sender, RoutedEventArgs e)
-        {
-            vm.browse("XmlPath");
-        }
-
+        /// <summary>
+        /// called upon click on the browse button for the FlightGear directory path.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FGpathBrowse_Click(object sender, RoutedEventArgs e)
         {
             vm.browse("FlightGearPath");

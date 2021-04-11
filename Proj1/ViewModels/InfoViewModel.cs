@@ -8,9 +8,19 @@ using System.ComponentModel;
 
 namespace Proj1.ViewModels
 {
-    class InfoViewModel:INotifyPropertyChanged
+    /// <summary>
+    ///  A  InfoViewModel class
+    /// </summary>
+    /// <remarks>
+    /// to display informtion to user
+    /// </remarks>
+    class InfoViewModel : INotifyPropertyChanged
     {
+        //feilds
         private InfoModel imodel;
+        /// <summary>
+        ///the constructor of InfoViewModel.
+        /// </summary>
         public InfoViewModel(InfoModel im)
         {
             this.imodel = im;
@@ -20,11 +30,17 @@ namespace Proj1.ViewModels
             };
         }
         public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        ///mvvm notify of changes of model to veiw
+        /// </summary>
         public void NotifyPropertyChanged(string propName)
         {
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
+        /// <summary>
+        ///property of VM_InfoText
+        /// </summary>
         public string VM_InfoText
         {
             get { return imodel.InfoText; }
