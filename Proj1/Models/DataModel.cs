@@ -47,6 +47,7 @@ namespace Proj1.Models
         private bool dllLoaded;
         // the anomleis informtion which line and the description of anomaliy
         private Dictionary<int, List<string>> anomalies;
+        private Dictionary<string, List<DataPoint>> pointsCorGraph;
         private List<string> anomaliesList;
         // the sockt of conected the fly
         private Socket fgClient;
@@ -65,6 +66,7 @@ namespace Proj1.Models
             dashboardFeatures = new Dictionary<string, int>();
             joystickFeatures = new Dictionary<string, int>();
             anomalies = new Dictionary<int, List<string>>();
+            pointsCorGraph = new Dictionary<string, List<DataPoint>>();
             connected = false;
             anomaliesList = new List<string>();
             settingsOK = false;
@@ -172,6 +174,13 @@ namespace Proj1.Models
         public Dictionary<int, List<string>> Anomalies
         {
             get { return anomalies; }
+        }
+        /// <summary>
+        ///property of  GraphPoints
+        /// </summary>
+        public Dictionary<string, List<DataPoint>> GraphPoints
+        {
+            get { return pointsCorGraph; }
         }
         /// <summary>
         ///property of AnomaliesList
@@ -302,6 +311,7 @@ namespace Proj1.Models
             dllLoaded = false;
             anomalies.Clear();
             anomaliesList.Clear();
+            pointsCorGraph.Clear();
             fgClient = null;
             NotifyPropertyChanged("Restart");
         }

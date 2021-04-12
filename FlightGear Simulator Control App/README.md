@@ -12,7 +12,7 @@ Our FlightGear Simulator Control App allows you to stream flight data stored in 
 * Plugins - an option to load a dll file for an anomaly detector algorithm. Anomalies will be shown according to this algorithm.
 * Interactive anomalies list. Each element in this list shows a series of anomalies and its time. A click on it will make a jump to that time.
 * Display of data samples of the last 30 seconds. Anomalies are highlighted. 
-* 2 types of anomalies detection algorithms are provided in the 'plugins' folder.
+* 2 types of anomalies detection algorithms are provided in the 'plugins' folder: `CS_SimpleDetector.dll` and `CS_HybridDetector.dll`. 
 
 ## Table of contents
 > * [FlightGear Simulator Control App](#flightgear-simulator-control-app)
@@ -114,10 +114,22 @@ This method reads a text file named `input.txt` which is located in the app dire
  * next line: "4".
  * next line: "6".
   
-`getAnomaliesReport` method must create another text file called `output.txt` and it must contain atleast 2 lines, one line with the string "ResultsEnd.", and another line with the string "ResultsEnd.".
+`getAnomaliesReport` method must create another text file called `output.txt` and it must contain atleast 2 pairs lines, one line with the string "ThresholdEnd.", and another line with the string "ThresholdEnd.".
+
+Between these two lines there should be a list of every most correlated features that the plugin has found, after their names (in the same line seperated by commas) there should be a list of points that will create the shape on the graph that seperates anomalies from proper samples. For example, linear graph will be represented by 2 points, the circle of the HybridDetector we provided is represented by 100 points. each point is written in new-line. after the last point there should be a new-line with `done` and then the next pair of correlated features. Like the next format (will show a squre using 4 points):
+
+>"name_of_feature1" + "," + "name_of_feature2"  
+x_value1 + "," + y_value1  
+x_value2 + "," + y_value2   
+x_value3 + "," + y_value3  
+x_value4 + "," + y_value4  
+"done"
+
+
+After "ThresholdEnd." there should be another pair of lines, one with the string "ResultsEnd.", and another line with the string "ResultsEnd.".
 
 Between these two lines there should be a list of anomalies with the next format:
->"line_number" + "\t" + "name_of_feature1' + "," + "name_of_feature2"
+>"line_number" + "\t" + "name_of_feature1" + "," + "name_of_feature2"
 
 "line_number" should be a number. "/t" means TAB character.
 
@@ -153,7 +165,7 @@ In addition, the folder plugins is provided with 2 anomalies detection algorithm
 
 ## Video Demo
 
-[Watch here](https://youtu.be/58-n3c-bOTY)
+[Watch here](https://www.youtube.com/watch?v=FAFICu-S3Ck)
 
 
 ## Authors
@@ -183,3 +195,4 @@ In addition, the folder plugins is provided with 2 anomalies detection algorithm
 
 ### UML
 [![UML](\screenshots\UML.png "UML.png")](https://ibb.co/mCyp5QR)
+
