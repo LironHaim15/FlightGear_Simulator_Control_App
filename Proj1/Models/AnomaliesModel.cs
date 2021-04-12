@@ -366,29 +366,49 @@ namespace Proj1.Models
         public void addSamplePoint(int cl)
         {
             temp = new List<ScatterPoint>();
-            //check if have anomliy by this point
-            if (isAnomaly(cl))
+            try
             {
-                // add to corntol list for know is anomliy point
-                anomaliesControl.Add(1);
-                temp.AddRange(anomaliesPoints);
-                temp.Add(new ScatterPoint(dmodel.CsvData[cl, nameIndex],
-                                                    dmodel.CsvData[cl, nameCorrelatedIndex]));
-                //updth the anomliy list
-                AnomaliesPoints = temp;
+                //check if have anomliy by this point
+                if (isAnomaly(cl))
+                {
+                    // add to corntol list for know is anomliy point
+                    anomaliesControl.Add(1);
+                    temp.AddRange(anomaliesPoints);
+                    temp.Add(new ScatterPoint(dmodel.CsvData[cl, nameIndex],
+                                                        dmodel.CsvData[cl, nameCorrelatedIndex]));
+                    //updth the anomliy list
+                    AnomaliesPoints = temp;
+                }
+                else
+                {
+                    // for know its no anomliy point.
+                    anomaliesControl.Add(0);
+                    // have all the points to temp
+                    temp.AddRange(regDataPoints);
+                    temp.Add(new ScatterPoint(dmodel.CsvData[cl, nameIndex],
+                                                       dmodel.CsvData[cl, nameCorrelatedIndex]));
+                    // updth the list.
+                    RegDataPoints = temp;
+                }
+            }
+            catch { }
+        }
 
-            }
-            else
+        private void setAnomalyShapePointsList()
+        {
+            if (dmodel.GraphPoints.ContainsKey((nameChoice + "," + nameCorrelated)))
+                regPoints = dmodel.GraphPoints[(nameChoice + "," + nameCorrelated)];
+            if (regPoints.Count == 0)
             {
-                // for know its no anomliy point.
-                anomaliesControl.Add(0);
-                // have all the points to temp
-                temp.AddRange(regDataPoints);
-                temp.Add(new ScatterPoint(dmodel.CsvData[cl, nameIndex],
-                                                   dmodel.CsvData[cl, nameCorrelatedIndex]));
-                // updth the list.
-                RegDataPoints = temp;
+                // add the reg line if we got no points from the plugin.
+                double[] X = Enumerable.Range(0, dmodel.LearnData.GetLength(0)).Select(x => dmodel.LearnData[x, nameIndex]).ToArray();
+                double[] Y = Enumerable.Range(0, dmodel.LearnData.GetLength(0)).Select(x => dmodel.LearnData[x, nameCorrelatedIndex]).ToArray();
+                double minX = X.Min(), maxX = X.Max();
+                Line reg = anomaly_detection_util.linear_reg(X, Y, dmodel.MaxLines);
+                RegPoints.Add(new DataPoint(minX, reg.f(minX)));
+                RegPoints.Add(new DataPoint(maxX, reg.f(maxX)));
             }
+            RegPoints = regPoints;
         }
         /// <summary>
         ///create the regression graph.
@@ -416,48 +436,49 @@ namespace Proj1.Models
                     counter--;
                     cl -= 10;
                 }
-                // add the reg line
-                double[] X = Enumerable.Range(0, dmodel.LearnData.GetLength(0)).Select(x => dmodel.LearnData[x, nameIndex]).ToArray();
-                double[] Y = Enumerable.Range(0, dmodel.LearnData.GetLength(0)).Select(x => dmodel.LearnData[x, nameCorrelatedIndex]).ToArray();
-                double minX = X.Min(), maxX = X.Max();
-                Line reg = anomaly_detection_util.linear_reg(X, Y, dmodel.MaxLines);
-                RegPoints.Add(new DataPoint(minX, reg.f(minX)));
-                RegPoints.Add(new DataPoint(maxX, reg.f(maxX)));
-                // updth all the points for this grph
+                setAnomalyShapePointsList();
+                // update all the points for this graph
                 AxisYTitle = NameChoice;
                 AxisYTitleCorr = NameChoiceCorrelated;
-                RegPoints = regPoints;
-            }
-            // if it new mod 10 line for exmple currentLine =300 and previousLine= 299 need to add point
-            else if ((currentLine - currentLine % 10) != (previousLine - previousLine % 10))
-            {
-                int cl = currentLine;
-                cl -= cl % 10;
-                // add a point
-                addSamplePoint(cl);
-                // if have more then 30 points
-                if (anomaliesControl.Count > 30)
-                {
-                    temp = new List<ScatterPoint>();
-                    // its no anomliy point that need to remove for the regular points
-                    if (anomaliesControl.First().Equals(0))
-                    {
-                        temp.AddRange(regDataPoints);
-                        //remove point
-                        temp.RemoveAt(0);
-                        RegDataPoints = temp;
-                    }
-                    // need to remove for anomliy
-                    else
-                    {
-                        temp.AddRange(anomaliesPoints);
-                        temp.RemoveAt(0);
-                        AnomaliesPoints = temp;
-                    }
-                    // remove the first point and the data if its anomliy or not
-                    anomaliesControl.RemoveAt(0);
                 }
+            else
+            {
+
+                setAnomalyShapePointsList();
+                // if it new mod 10 line for exmple currentLine =300 and previousLine= 299 need to add point
+                if ((currentLine - currentLine % 10) != (previousLine - previousLine % 10))
+                {
+                    int cl = currentLine;
+                    cl -= cl % 10;
+                    // add a point
+                    addSamplePoint(cl);
+                    // if have more then 30 points
+                    if (anomaliesControl.Count > 30)
+                    {
+                        temp = new List<ScatterPoint>();
+                        // its no anomliy point that need to remove for the regular points
+                        if (anomaliesControl.First().Equals(0))
+                        {
+                            temp.AddRange(regDataPoints);
+                            //remove point
+                            temp.RemoveAt(0);
+                            RegDataPoints = temp;
+                        }
+                        // need to remove for anomliy
+                        else
+                        {
+                            temp.AddRange(anomaliesPoints);
+                            temp.RemoveAt(0);
+                            AnomaliesPoints = temp;
+                        }
+                        // remove the first point and the data if its anomliy or not
+                        anomaliesControl.RemoveAt(0);
+                    }
+                }
+
             }
+            
+
         }
         /// <summary>
         ///create a graph 
