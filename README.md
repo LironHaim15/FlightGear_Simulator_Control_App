@@ -165,7 +165,7 @@ In addition, the folder plugins is provided with 2 anomalies detection algorithm
 
 ## Video Demo
 
-[Watch here](https://youtu.be/58-n3c-bOTY)
+[Watch here](https://www.youtube.com/watch?v=FAFICu-S3Ck)
 
 
 ## Authors
