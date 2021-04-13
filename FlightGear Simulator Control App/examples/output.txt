@@ -18,6 +18,1288 @@ Please choose an option:
 4.display results
 5.upload anomalies and analyze results
 6.exit
+ThresholdStart.
+aileron,slip-skid-ball_indicated-slip-skid
+-0.183612,1.47807
+-0.122326,1.47615
+-0.0612816,1.47038
+-0.000720378,1.46078
+0.0591191,1.44741
+0.118001,1.4303
+0.175692,1.40953
+0.231965,1.38518
+0.286598,1.35734
+0.339375,1.32613
+0.390089,1.29167
+0.438538,1.25408
+0.484532,1.21353
+0.527889,1.17018
+0.568438,1.12418
+0.606019,1.07573
+0.640484,1.02502
+0.671696,0.972244
+0.699533,0.917611
+0.723885,0.861338
+0.744655,0.803647
+0.761762,0.744765
+0.775137,0.684926
+0.784729,0.624364
+0.7905,0.56332
+0.792426,0.502034
+0.7905,0.440749
+0.784729,0.379705
+0.775137,0.319143
+0.761762,0.259304
+0.744655,0.200422
+0.723885,0.142731
+0.699533,0.0864581
+0.671696,0.031825
+0.640484,-0.0209524
+0.606019,-0.0716658
+0.568438,-0.120115
+0.527889,-0.166109
+0.484532,-0.209466
+0.438538,-0.250015
+0.390089,-0.287596
+0.339375,-0.322061
+0.286598,-0.353273
+0.231965,-0.38111
+0.175692,-0.405462
+0.118001,-0.426232
+0.0591191,-0.443339
+-0.000720378,-0.456714
+-0.0612816,-0.466306
+-0.122326,-0.472077
+-0.183612,-0.474003
+-0.244897,-0.472077
+-0.305941,-0.466306
+-0.366503,-0.456714
+-0.426342,-0.443339
+-0.485224,-0.426232
+-0.542915,-0.405462
+-0.599188,-0.38111
+-0.653821,-0.353273
+-0.706598,-0.322061
+-0.757312,-0.287596
+-0.805761,-0.250015
+-0.851755,-0.209466
+-0.895112,-0.166109
+-0.935661,-0.120115
+-0.973242,-0.0716658
+-1.00771,-0.0209524
+-1.03892,0.031825
+-1.06676,0.0864581
+-1.09111,0.142731
+-1.11188,0.200422
+-1.12898,0.259304
+-1.14236,0.319143
+-1.15195,0.379705
+-1.15772,0.440749
+-1.15965,0.502034
+-1.15772,0.56332
+-1.15195,0.624364
+-1.14236,0.684926
+-1.12898,0.744765
+-1.11188,0.803647
+-1.09111,0.861338
+-1.06676,0.917611
+-1.03892,0.972244
+-1.00771,1.02502
+-0.973242,1.07573
+-0.935661,1.12418
+-0.895112,1.17018
+-0.851755,1.21353
+-0.805761,1.25408
+-0.757312,1.29167
+-0.706598,1.32613
+-0.653821,1.35734
+-0.599188,1.38518
+-0.542915,1.40953
+-0.485224,1.4303
+-0.426342,1.44741
+-0.366503,1.46078
+-0.305941,1.47038
+-0.244897,1.47615
+-0.183612,1.47807
+done
+elevator,altimeter_indicated-altitude-ft
+-0.0725415,734.909
+24.5468,734.135
+49.069,731.817
+73.3972,727.964
+97.4355,722.591
+121.089,715.719
+144.264,707.375
+166.87,697.593
+188.817,686.41
+210.018,673.872
+230.39,660.027
+249.853,644.93
+268.329,628.641
+285.746,611.224
+302.035,592.748
+317.132,573.285
+330.977,552.913
+343.516,531.711
+354.698,509.765
+364.48,487.159
+372.824,463.984
+379.696,440.33
+385.069,416.292
+388.922,391.964
+391.24,367.441
+392.014,342.822
+391.24,318.203
+388.922,293.681
+385.069,269.352
+379.696,245.314
+372.824,221.661
+364.48,198.485
+354.698,175.88
+343.516,153.933
+330.977,132.732
+317.132,112.359
+302.035,92.8967
+285.746,74.4203
+268.329,57.0032
+249.853,40.7141
+230.39,25.6173
+210.018,11.7724
+188.817,-0.766051
+166.87,-11.9485
+144.264,-21.7309
+121.089,-30.0745
+97.4355,-36.9464
+73.3972,-42.3196
+49.069,-46.1728
+24.5468,-48.4909
+-0.0725415,-49.2646
+-24.6919,-48.4909
+-49.214,-46.1728
+-73.5423,-42.3196
+-97.5805,-36.9464
+-121.234,-30.0745
+-144.409,-21.7309
+-167.015,-11.9485
+-188.962,-0.766051
+-210.163,11.7724
+-230.535,25.6173
+-249.998,40.7141
+-268.474,57.0032
+-285.891,74.4203
+-302.181,92.8967
+-317.277,112.359
+-331.122,132.732
+-343.661,153.933
+-354.843,175.88
+-364.626,198.485
+-372.969,221.661
+-379.841,245.314
+-385.214,269.352
+-389.068,293.681
+-391.386,318.203
+-392.159,342.822
+-391.386,367.441
+-389.068,391.964
+-385.214,416.292
+-379.841,440.33
+-372.969,463.984
+-364.626,487.159
+-354.843,509.765
+-343.661,531.711
+-331.122,552.913
+-317.277,573.285
+-302.181,592.748
+-285.891,611.224
+-268.474,628.641
+-249.998,644.93
+-230.535,660.027
+-210.163,673.872
+-188.962,686.41
+-167.015,697.593
+-144.409,707.375
+-121.234,715.719
+-97.5805,722.591
+-73.5423,727.964
+-49.214,731.817
+-24.6919,734.135
+-0.0725415,734.909
+done
+throttle,engine_rpm
+1,2467.16
+0,700.217
+done
+roll-deg,attitude-indicator_internal-roll-deg
+19.5583,19.5501
+-37.44,-37.4422
+done
+pitch-deg,attitude-indicator_internal-pitch-deg
+16.6507,16.4319
+-9.50386,-9.86441
+done
+heading-deg,indicated-heading-deg
+344.737,359.524
+89.9383,112.927
+done
+airspeed-kt,gps_indicated-ground-speed-kt
+93.8226,94.0506
+0,-0.97229
+done
+glideslope,vertical-speed-fps
+-0.081313,18.4876
+1.7224,18.4309
+3.519,18.2611
+5.30138,17.9788
+7.06253,17.5851
+8.79548,17.0816
+10.4934,16.4703
+12.1496,15.7536
+13.7575,14.9344
+15.3108,14.0158
+16.8033,13.0014
+18.2293,11.8954
+19.5829,10.702
+20.859,9.42591
+22.0524,8.07225
+23.1584,6.64634
+24.1728,5.15378
+25.0914,3.60048
+25.9107,1.99257
+26.6273,0.336386
+27.2386,-1.36153
+27.7421,-3.09448
+28.1358,-4.85562
+28.4181,-6.63801
+28.5879,-8.43461
+28.6446,-10.2383
+28.5879,-12.042
+28.4181,-13.8386
+28.1358,-15.621
+27.7421,-17.3822
+27.2386,-19.1151
+26.6273,-20.813
+25.9107,-22.4692
+25.0914,-24.0771
+24.1728,-25.6304
+23.1584,-27.123
+22.0524,-28.5489
+20.859,-29.9025
+19.5829,-31.1786
+18.2293,-32.372
+16.8033,-33.4781
+15.3108,-34.4924
+13.7575,-35.411
+12.1496,-36.2303
+10.4934,-36.947
+8.79548,-37.5583
+7.06253,-38.0617
+5.30138,-38.4554
+3.519,-38.7377
+1.7224,-38.9075
+-0.081313,-38.9642
+-1.88503,-38.9075
+-3.68162,-38.7377
+-5.46401,-38.4554
+-7.22515,-38.0617
+-8.9581,-37.5583
+-10.656,-36.947
+-12.3122,-36.2303
+-13.9201,-35.411
+-15.4734,-34.4924
+-16.966,-33.4781
+-18.3919,-32.372
+-19.7455,-31.1786
+-21.0216,-29.9025
+-22.215,-28.5489
+-23.321,-27.123
+-24.3354,-25.6304
+-25.254,-24.0771
+-26.0733,-22.4692
+-26.79,-20.813
+-27.4013,-19.1151
+-27.9047,-17.3822
+-28.2984,-15.621
+-28.5807,-13.8386
+-28.7505,-12.042
+-28.8072,-10.2383
+-28.7505,-8.43461
+-28.5807,-6.63801
+-28.2984,-4.85562
+-27.9047,-3.09448
+-27.4013,-1.36153
+-26.79,0.336386
+-26.0733,1.99257
+-25.254,3.60048
+-24.3354,5.15378
+-23.321,6.64634
+-22.215,8.07225
+-21.0216,9.42591
+-19.7455,10.702
+-18.3919,11.8954
+-16.966,13.0014
+-15.4734,14.0158
+-13.9201,14.9344
+-12.3122,15.7536
+-10.656,16.4703
+-8.9581,17.0816
+-7.22515,17.5851
+-5.46401,17.9788
+-3.68162,18.2611
+-1.88503,18.4309
+-0.081313,18.4876
+done
+vertical-speed-fps,gps_indicated-vertical-speed
+15.8754,955.87
+-36.352,-2199.58
+done
+airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
+46.7028,118.094
+51.2302,117.952
+55.7396,117.526
+60.2134,116.817
+64.6339,115.829
+68.9836,114.566
+73.2454,113.031
+77.4024,111.232
+81.4383,109.176
+85.3371,106.87
+89.0834,104.324
+92.6624,101.548
+96.0601,98.5526
+99.263,95.3497
+102.258,91.952
+105.035,88.3729
+107.581,84.6266
+109.886,80.7278
+111.943,76.692
+113.742,72.5349
+115.276,68.2732
+116.54,63.9235
+117.528,59.503
+118.236,55.0292
+118.663,50.5197
+118.805,45.9924
+118.663,41.4651
+118.236,36.9556
+117.528,32.4818
+116.54,28.0613
+115.276,23.7116
+113.742,19.4498
+111.943,15.2928
+109.886,11.257
+107.581,7.35817
+105.035,3.61185
+102.258,0.0327972
+99.263,-3.36488
+96.0601,-6.56776
+92.6624,-9.56322
+89.0834,-12.3394
+85.3371,-14.8854
+81.4383,-17.1911
+77.4024,-19.2475
+73.2454,-21.0464
+68.9836,-22.5808
+64.6339,-23.8445
+60.2134,-24.8326
+55.7396,-25.5411
+51.2302,-25.9674
+46.7028,-26.1097
+42.1755,-25.9674
+37.666,-25.5411
+33.1923,-24.8326
+28.7718,-23.8445
+24.4221,-22.5808
+20.1603,-21.0464
+16.0033,-19.2475
+11.9674,-17.1911
+8.06861,-14.8854
+4.3223,-12.3394
+0.743239,-9.56322
+-2.65444,-6.56776
+-5.85732,-3.36488
+-8.85277,0.0327972
+-11.629,3.61185
+-14.175,7.35817
+-16.4807,11.257
+-18.5371,15.2928
+-20.336,19.4498
+-21.8703,23.7116
+-23.134,28.0613
+-24.1221,32.4818
+-24.8307,36.9556
+-25.257,41.4651
+-25.3992,45.9924
+-25.257,50.5197
+-24.8307,55.0292
+-24.1221,59.503
+-23.134,63.9235
+-21.8703,68.2732
+-20.336,72.5349
+-18.5371,76.692
+-16.4807,80.7278
+-14.175,84.6266
+-11.629,88.3729
+-8.85277,91.952
+-5.85732,95.3497
+-2.65444,98.5526
+0.743239,101.548
+4.3223,104.324
+8.06861,106.87
+11.9674,109.176
+16.0033,111.232
+20.1603,113.031
+24.4221,114.566
+28.7718,115.829
+33.1923,116.817
+37.666,117.526
+42.1755,117.952
+46.7028,118.094
+done
+altimeter_indicated-altitude-ft,altimeter_pressure-alt-ft
+699.265,423.033
+-13.6202,-278.952
+done
+altimeter_pressure-alt-ft,encoder_pressure-alt-ft
+435.627,435.214
+-277.258,-276.372
+done
+attitude-indicator_indicated-pitch-deg,attitude-indicator_internal-pitch-deg
+3.57345,23.917
+4.85083,23.8769
+6.12317,23.7566
+7.38545,23.5567
+8.63269,23.2779
+9.85996,22.9213
+11.0624,22.4884
+12.2353,21.9809
+13.374,21.4007
+14.4741,20.7501
+15.5311,20.0317
+16.5409,19.2484
+17.4996,18.4033
+18.4033,17.4996
+19.2484,16.5409
+20.0317,15.5311
+20.7501,14.4741
+21.4007,13.374
+21.9809,12.2353
+22.4884,11.0624
+22.9213,9.85996
+23.2779,8.63269
+23.5567,7.38545
+23.7566,6.12317
+23.8769,4.85083
+23.917,3.57345
+23.8769,2.29607
+23.7566,1.02372
+23.5567,-0.238556
+23.2779,-1.48579
+22.9213,-2.71306
+22.4884,-3.91552
+21.9809,-5.08842
+21.4007,-6.22714
+20.7501,-7.32718
+20.0317,-8.3842
+19.2484,-9.39403
+18.4033,-10.3527
+17.4996,-11.2564
+16.5409,-12.1015
+15.5311,-12.8848
+14.4741,-13.6032
+13.374,-14.2538
+12.2353,-14.834
+11.0624,-15.3415
+9.85996,-15.7744
+8.63269,-16.131
+7.38545,-16.4098
+6.12317,-16.6097
+4.85083,-16.73
+3.57345,-16.7701
+2.29607,-16.73
+1.02372,-16.6097
+-0.238556,-16.4098
+-1.48579,-16.131
+-2.71306,-15.7744
+-3.91552,-15.3415
+-5.08842,-14.834
+-6.22714,-14.2538
+-7.32718,-13.6032
+-8.3842,-12.8848
+-9.39403,-12.1015
+-10.3527,-11.2564
+-11.2564,-10.3527
+-12.1015,-9.39403
+-12.8848,-8.3842
+-13.6032,-7.32718
+-14.2538,-6.22714
+-14.834,-5.08842
+-15.3415,-3.91552
+-15.7744,-2.71306
+-16.131,-1.48579
+-16.4098,-0.238556
+-16.6097,1.02372
+-16.73,2.29607
+-16.7701,3.57345
+-16.73,4.85083
+-16.6097,6.12317
+-16.4098,7.38545
+-16.131,8.63269
+-15.7744,9.85996
+-15.3415,11.0624
+-14.834,12.2353
+-14.2538,13.374
+-13.6032,14.4741
+-12.8848,15.5311
+-12.1015,16.5409
+-11.2564,17.4996
+-10.3527,18.4033
+-9.39403,19.2484
+-8.3842,20.0317
+-7.32718,20.7501
+-6.22714,21.4007
+-5.08842,21.9809
+-3.91552,22.4884
+-2.71306,22.9213
+-1.48579,23.2779
+-0.238556,23.5567
+1.02372,23.7566
+2.29607,23.8769
+3.57345,23.917
+done
+attitude-indicator_indicated-roll-deg,attitude-indicator_internal-roll-deg
+1.28049,28.5884
+4.25098,28.4951
+7.20974,28.2154
+10.1451,27.7505
+13.0455,27.1022
+15.8994,26.273
+18.6957,25.2663
+21.4232,24.086
+24.0713,22.7367
+26.6293,21.2239
+29.0874,19.5534
+31.4357,17.7319
+33.665,15.7665
+35.7665,13.665
+37.7319,11.4357
+39.5534,9.08739
+41.2239,6.62935
+42.7367,4.07126
+44.086,1.42323
+45.2663,-1.3043
+46.273,-4.10056
+47.1022,-6.95451
+47.7505,-9.85489
+48.2154,-12.7903
+48.4951,-15.749
+48.5884,-18.7195
+48.4951,-21.69
+48.2154,-24.6488
+47.7505,-27.5841
+47.1022,-30.4845
+46.273,-33.3385
+45.2663,-36.1347
+44.086,-38.8623
+42.7367,-41.5103
+41.2239,-44.0684
+39.5534,-46.5264
+37.7319,-48.8747
+35.7665,-51.104
+33.665,-53.2055
+31.4357,-55.1709
+29.0874,-56.9924
+26.6293,-58.6629
+24.0713,-60.1758
+21.4232,-61.525
+18.6957,-62.7053
+15.8994,-63.712
+13.0455,-64.5412
+10.1451,-65.1895
+7.20974,-65.6544
+4.25098,-65.9341
+1.28049,-66.0275
+-1.69,-65.9341
+-4.64877,-65.6544
+-7.58414,-65.1895
+-10.4845,-64.5412
+-13.3385,-63.712
+-16.1347,-62.7053
+-18.8623,-61.525
+-21.5103,-60.1758
+-24.0684,-58.6629
+-26.5264,-56.9924
+-28.8747,-55.1709
+-31.104,-53.2055
+-33.2055,-51.104
+-35.1709,-48.8747
+-36.9924,-46.5264
+-38.6629,-44.0684
+-40.1758,-41.5103
+-41.525,-38.8623
+-42.7053,-36.1347
+-43.712,-33.3385
+-44.5412,-30.4845
+-45.1895,-27.5841
+-45.6544,-24.6488
+-45.9341,-21.69
+-46.0275,-18.7195
+-45.9341,-15.749
+-45.6544,-12.7903
+-45.1895,-9.85489
+-44.5412,-6.95451
+-43.712,-4.10056
+-42.7053,-1.3043
+-41.525,1.42323
+-40.1758,4.07126
+-38.6629,6.62935
+-36.9924,9.08739
+-35.1709,11.4357
+-33.2055,13.665
+-31.104,15.7665
+-28.8747,17.7319
+-26.5264,19.5534
+-24.0684,21.2239
+-21.5103,22.7367
+-18.8623,24.086
+-16.1347,25.2663
+-13.3385,26.273
+-10.4845,27.1022
+-7.58414,27.7505
+-4.64877,28.2154
+-1.69,28.4951
+1.28049,28.5884
+done
+attitude-indicator_internal-pitch-deg,gps_indicated-vertical-speed
+0.484187,1130.47
+109.585,1127.04
+218.255,1116.77
+326.065,1099.7
+432.591,1075.88
+537.411,1045.43
+640.113,1008.46
+740.29,965.106
+837.547,915.551
+931.501,859.987
+1021.78,798.633
+1108.03,731.731
+1189.91,659.546
+1267.09,582.362
+1339.28,500.484
+1406.18,414.235
+1467.53,323.956
+1523.1,230.002
+1572.65,132.745
+1616,32.5677
+1652.98,-70.1336
+1683.43,-174.954
+1707.24,-281.48
+1724.32,-389.29
+1734.59,-497.96
+1738.02,-607.061
+1734.59,-716.161
+1724.32,-824.832
+1707.24,-932.642
+1683.43,-1039.17
+1652.98,-1143.99
+1616,-1246.69
+1572.65,-1346.87
+1523.1,-1444.12
+1467.53,-1538.08
+1406.18,-1628.36
+1339.28,-1714.61
+1267.09,-1796.48
+1189.91,-1873.67
+1108.03,-1945.85
+1021.78,-2012.75
+931.501,-2074.11
+837.547,-2129.67
+740.29,-2179.23
+640.113,-2222.58
+537.411,-2259.55
+432.591,-2290.01
+326.065,-2313.82
+218.255,-2330.89
+109.585,-2341.17
+0.484187,-2344.59
+-108.616,-2341.17
+-217.286,-2330.89
+-325.097,-2313.82
+-431.623,-2290.01
+-536.443,-2259.55
+-639.144,-2222.58
+-739.321,-2179.23
+-836.579,-2129.67
+-930.533,-2074.11
+-1020.81,-2012.75
+-1107.06,-1945.85
+-1188.94,-1873.67
+-1266.12,-1796.48
+-1338.31,-1714.61
+-1405.21,-1628.36
+-1466.56,-1538.08
+-1522.13,-1444.12
+-1571.68,-1346.87
+-1615.03,-1246.69
+-1652.01,-1143.99
+-1682.46,-1039.17
+-1706.27,-932.642
+-1723.35,-824.832
+-1733.62,-716.161
+-1737.05,-607.061
+-1733.62,-497.96
+-1723.35,-389.29
+-1706.27,-281.48
+-1682.46,-174.954
+-1652.01,-70.1336
+-1615.03,32.5677
+-1571.68,132.745
+-1522.13,230.002
+-1466.56,323.956
+-1405.21,414.235
+-1338.31,500.484
+-1266.12,582.362
+-1188.94,659.546
+-1107.06,731.731
+-1020.81,798.633
+-930.533,859.987
+-836.579,915.551
+-739.321,965.106
+-639.144,1008.46
+-536.443,1045.43
+-431.623,1075.88
+-325.097,1099.7
+-217.286,1116.77
+-108.616,1127.04
+0.484187,1130.47
+done
+attitude-indicator_internal-roll-deg,turn-indicator_indicated-turn-rate
+-8.94046,31.3257
+-6.96647,31.2637
+-5.00026,31.0778
+-3.04961,30.7688
+-1.12221,30.338
+0.774341,29.787
+2.63255,29.118
+4.44509,28.3337
+6.2048,27.4371
+7.90473,26.4317
+9.53819,25.3216
+11.0987,24.1111
+12.5802,22.8051
+13.9767,21.4086
+15.2828,19.9271
+16.4932,18.3666
+17.6033,16.7331
+18.6087,15.0332
+19.5053,13.2735
+20.2896,11.4609
+20.9586,9.60274
+21.5096,7.70619
+21.9405,5.77878
+22.2494,3.82813
+22.4353,1.86193
+22.4973,-0.112065
+22.4353,-2.08606
+22.2494,-4.05226
+21.9405,-6.00291
+21.5096,-7.93032
+20.9586,-9.82687
+20.2896,-11.6851
+19.5053,-13.4976
+18.6087,-15.2573
+17.6033,-16.9573
+16.4932,-18.5907
+15.2828,-20.1512
+13.9767,-21.6327
+12.5802,-23.0292
+11.0987,-24.3353
+9.53819,-25.5457
+7.90473,-26.6558
+6.2048,-27.6612
+4.44509,-28.5578
+2.63255,-29.3422
+0.774341,-30.0112
+-1.12221,-30.5622
+-3.04961,-30.993
+-5.00026,-31.3019
+-6.96647,-31.4878
+-8.94046,-31.5498
+-10.9145,-31.4878
+-12.8807,-31.3019
+-14.8313,-30.993
+-16.7587,-30.5622
+-18.6553,-30.0112
+-20.5135,-29.3422
+-22.326,-28.5578
+-24.0857,-27.6612
+-25.7857,-26.6558
+-27.4191,-25.5457
+-28.9796,-24.3353
+-30.4611,-23.0292
+-31.8576,-21.6327
+-33.1637,-20.1512
+-34.3741,-18.5907
+-35.4842,-16.9573
+-36.4896,-15.2573
+-37.3862,-13.4976
+-38.1706,-11.6851
+-38.8396,-9.82687
+-39.3905,-7.93032
+-39.8214,-6.00291
+-40.1303,-4.05226
+-40.3162,-2.08606
+-40.3782,-0.112065
+-40.3162,1.86193
+-40.1303,3.82813
+-39.8214,5.77878
+-39.3905,7.70619
+-38.8396,9.60274
+-38.1706,11.4609
+-37.3862,13.2735
+-36.4896,15.0332
+-35.4842,16.7331
+-34.3741,18.3666
+-33.1637,19.9271
+-31.8576,21.4086
+-30.4611,22.8051
+-28.9796,24.1111
+-27.4191,25.3216
+-25.7857,26.4317
+-24.0857,27.4371
+-22.326,28.3337
+-20.5135,29.118
+-18.6553,29.787
+-16.7587,30.338
+-14.8313,30.7688
+-12.8807,31.0778
+-10.9145,31.2637
+-8.94046,31.3257
+done
+encoder_indicated-altitude-ft,encoder_pressure-alt-ft
+440,440
+-280,-280
+done
+encoder_pressure-alt-ft,gps_indicated-altitude-ft
+440,843.559
+-280,96.1801
+done
+gps_indicated-altitude-ft,gps_indicated-ground-speed-kt
+425.287,516.225
+454.83,515.297
+484.257,512.515
+513.452,507.891
+542.298,501.443
+570.682,493.197
+598.493,483.184
+625.62,471.445
+651.957,458.026
+677.399,442.98
+701.846,426.366
+725.201,408.249
+747.373,388.702
+768.274,367.802
+787.821,345.63
+805.938,322.274
+822.552,297.827
+837.598,272.385
+851.017,246.049
+862.756,218.921
+872.769,191.111
+881.015,162.726
+887.463,133.88
+892.087,104.686
+894.869,75.2586
+895.797,45.715
+894.869,16.1715
+892.087,-13.2555
+887.463,-42.4498
+881.015,-71.2961
+872.769,-99.6806
+862.756,-127.491
+851.017,-154.618
+837.598,-180.955
+822.552,-206.397
+805.938,-230.844
+787.821,-254.199
+768.274,-276.371
+747.373,-297.272
+725.201,-316.819
+701.846,-334.936
+677.399,-351.55
+651.957,-366.596
+625.62,-380.015
+598.493,-391.754
+570.682,-401.767
+542.298,-410.013
+513.452,-416.461
+484.257,-421.085
+454.83,-423.867
+425.287,-424.795
+395.743,-423.867
+366.316,-421.085
+337.122,-416.461
+308.276,-410.013
+279.891,-401.767
+252.08,-391.754
+224.953,-380.015
+198.617,-366.596
+173.175,-351.55
+148.728,-334.936
+125.372,-316.819
+103.2,-297.272
+82.2994,-276.371
+62.7523,-254.199
+44.6359,-230.844
+28.0217,-206.397
+12.9754,-180.955
+-0.443752,-154.618
+-12.1827,-127.491
+-22.1952,-99.6806
+-30.4417,-71.2961
+-36.8896,-42.4498
+-41.5135,-13.2555
+-44.2952,16.1715
+-45.2236,45.715
+-44.2952,75.2586
+-41.5135,104.686
+-36.8896,133.88
+-30.4417,162.726
+-22.1952,191.111
+-12.1827,218.921
+-0.443752,246.049
+12.9754,272.385
+28.0217,297.827
+44.6359,322.274
+62.7523,345.63
+82.2994,367.802
+103.2,388.702
+125.372,408.249
+148.728,426.366
+173.175,442.98
+198.617,458.026
+224.953,471.445
+252.08,483.184
+279.891,493.197
+308.276,501.443
+337.122,507.891
+366.316,512.515
+395.743,515.297
+425.287,516.225
+done
+gps_indicated-ground-speed-kt,slip-skid-ball_indicated-slip-skid
+46.7843,51.8987
+50.0159,51.7971
+53.2346,51.4929
+56.4279,50.9871
+59.5832,50.2818
+62.6879,49.3798
+65.7299,48.2846
+68.6971,47.0006
+71.5779,45.5328
+74.3607,43.887
+77.0348,42.0697
+79.5895,40.0881
+82.0147,37.95
+84.3008,35.6639
+86.4389,33.2387
+88.4205,30.684
+90.2378,28.0099
+91.8836,25.2271
+93.3514,22.3463
+94.6354,19.3791
+95.7306,16.3371
+96.6326,13.2324
+97.3379,10.0771
+97.8437,6.88383
+98.1479,3.66506
+98.2495,0.433533
+98.1479,-2.79799
+97.8437,-6.01676
+97.3379,-9.21008
+96.6326,-12.3653
+95.7306,-15.4701
+94.6354,-18.5121
+93.3514,-21.4793
+91.8836,-24.36
+90.2378,-27.1429
+88.4205,-29.8169
+86.4389,-32.3716
+84.3008,-34.7968
+82.0147,-37.083
+79.5895,-39.2211
+77.0348,-41.2027
+74.3607,-43.0199
+71.5779,-44.6657
+68.6971,-46.1335
+65.7299,-47.4176
+62.6879,-48.5127
+59.5832,-49.4147
+56.4279,-50.12
+53.2346,-50.6258
+50.0159,-50.9301
+46.7843,-51.0316
+43.5528,-50.9301
+40.334,-50.6258
+37.1407,-50.12
+33.9855,-49.4147
+30.8807,-48.5127
+27.8387,-47.4176
+24.8715,-46.1335
+21.9908,-44.6657
+19.2079,-43.0199
+16.5339,-41.2027
+13.9792,-39.2211
+11.554,-37.083
+9.26785,-34.7968
+7.12975,-32.3716
+5.14815,-29.8169
+3.33086,-27.1429
+1.68507,-24.36
+0.217266,-21.4793
+-1.06676,-18.5121
+-2.16194,-15.4701
+-3.06395,-12.3653
+-3.76923,-9.21008
+-4.27501,-6.01676
+-4.57927,-2.79799
+-4.68082,0.433533
+-4.57927,3.66506
+-4.27501,6.88383
+-3.76923,10.0771
+-3.06395,13.2324
+-2.16194,16.3371
+-1.06676,19.3791
+0.217266,22.3463
+1.68507,25.2271
+3.33086,28.0099
+5.14815,30.684
+7.12975,33.2387
+9.26785,35.6639
+11.554,37.95
+13.9792,40.0881
+16.5339,42.0697
+19.2079,43.887
+21.9908,45.5328
+24.8715,47.0006
+27.8387,48.2846
+30.8807,49.3798
+33.9855,50.2818
+37.1407,50.9871
+40.334,51.4929
+43.5528,51.7971
+46.7843,51.8987
+done
+gps_indicated-vertical-speed,vertical-speed-indicator_indicated-speed-fpm
+-1081.24,3864.33
+-882.884,3858.1
+-685.308,3839.42
+-489.294,3808.37
+-295.617,3765.08
+-105.04,3709.71
+81.6838,3642.49
+263.818,3563.67
+440.645,3473.58
+611.465,3372.55
+775.604,3261
+932.416,3139.37
+1081.28,3008.13
+1221.61,2867.8
+1352.85,2718.93
+1474.49,2562.12
+1586.04,2397.98
+1687.06,2227.16
+1777.16,2050.33
+1855.97,1868.2
+1923.2,1681.48
+1978.57,1490.9
+2021.86,1297.22
+2052.9,1101.21
+2071.58,903.632
+2077.81,705.273
+2071.58,506.914
+2052.9,309.338
+2021.86,113.325
+1978.57,-80.3525
+1923.2,-270.929
+1855.97,-457.653
+1777.16,-639.788
+1687.06,-816.614
+1586.04,-987.434
+1474.49,-1151.57
+1352.85,-1308.39
+1221.61,-1457.25
+1081.28,-1597.58
+932.416,-1728.82
+775.604,-1850.46
+611.465,-1962.01
+440.645,-2063.03
+263.818,-2153.13
+81.6838,-2231.94
+-105.04,-2299.17
+-295.617,-2354.54
+-489.294,-2397.83
+-685.308,-2428.87
+-882.884,-2447.55
+-1081.24,-2453.78
+-1279.6,-2447.55
+-1477.18,-2428.87
+-1673.19,-2397.83
+-1866.87,-2354.54
+-2057.45,-2299.17
+-2244.17,-2231.94
+-2426.3,-2153.13
+-2603.13,-2063.03
+-2773.95,-1962.01
+-2938.09,-1850.46
+-3094.9,-1728.82
+-3243.77,-1597.58
+-3384.1,-1457.25
+-3515.34,-1308.39
+-3636.97,-1151.57
+-3748.52,-987.434
+-3849.55,-816.614
+-3939.64,-639.788
+-4018.46,-457.653
+-4085.68,-270.929
+-4141.05,-80.3525
+-4184.34,113.325
+-4215.39,309.338
+-4234.07,506.914
+-4240.3,705.273
+-4234.07,903.632
+-4215.39,1101.21
+-4184.34,1297.22
+-4141.05,1490.9
+-4085.68,1681.48
+-4018.46,1868.2
+-3939.64,2050.33
+-3849.55,2227.16
+-3748.52,2397.98
+-3636.97,2562.12
+-3515.34,2718.93
+-3384.1,2867.8
+-3243.77,3008.13
+-3094.9,3139.37
+-2938.09,3261
+-2773.95,3372.55
+-2603.13,3473.58
+-2426.3,3563.67
+-2244.17,3642.49
+-2057.45,3709.71
+-1866.87,3765.08
+-1673.19,3808.37
+-1477.18,3839.42
+-1279.6,3858.1
+-1081.24,3864.33
+done
+indicated-heading-deg,engine_rpm
+done
+magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+179.976,198.1
+192.407,197.709
+204.789,196.539
+217.073,194.593
+229.21,191.88
+241.154,188.41
+252.855,184.197
+264.27,179.258
+275.351,173.612
+286.056,167.281
+296.343,160.29
+306.17,152.667
+315.499,144.443
+324.293,135.648
+332.518,126.319
+340.141,116.492
+347.131,106.205
+353.462,95.5004
+359.109,84.4189
+364.048,73.0048
+368.261,61.303
+371.731,49.3598
+374.444,37.2223
+376.389,24.9384
+377.56,12.5566
+377.95,0.125662
+377.56,-12.3052
+376.389,-24.6871
+374.444,-36.971
+371.731,-49.1085
+368.261,-61.0517
+364.048,-72.7534
+359.109,-84.1676
+353.462,-95.2491
+347.131,-105.954
+340.141,-116.241
+332.518,-126.068
+324.293,-135.397
+315.499,-144.191
+306.17,-152.416
+296.343,-160.039
+286.056,-167.029
+275.351,-173.36
+264.27,-179.007
+252.855,-183.946
+241.154,-188.159
+229.21,-191.629
+217.073,-194.342
+204.789,-196.287
+192.407,-197.458
+179.976,-197.848
+167.545,-197.458
+155.164,-196.287
+142.88,-194.342
+130.742,-191.629
+118.799,-188.159
+107.097,-183.946
+95.6831,-179.007
+84.6016,-173.36
+73.8966,-167.029
+63.6101,-160.039
+53.783,-152.416
+44.4538,-144.191
+35.6595,-135.397
+27.4347,-126.068
+19.812,-116.241
+12.8213,-105.954
+6.49038,-95.2491
+0.844091,-84.1676
+-4.09525,-72.7534
+-8.30814,-61.0517
+-11.778,-49.1085
+-14.491,-36.971
+-16.4366,-24.6871
+-17.607,-12.3052
+-17.9977,0.125662
+-17.607,12.5566
+-16.4366,24.9384
+-14.491,37.2223
+-11.778,49.3598
+-8.30814,61.303
+-4.09525,73.0048
+0.844091,84.4189
+6.49038,95.5004
+12.8213,106.205
+19.812,116.492
+27.4347,126.319
+35.6595,135.648
+44.4538,144.443
+53.783,152.667
+63.6101,160.29
+73.8966,167.281
+84.6016,173.612
+95.6831,179.258
+107.097,184.197
+118.799,188.41
+130.742,191.88
+142.88,194.593
+155.164,196.539
+167.545,197.709
+179.976,198.1
+done
+vertical-speed-indicator_indicated-speed-fpm,engine_rpm
+done
+ThresholdEnd.
 anomaly detection complete.
 Welcome to the Anomaly Detection Server.
 Please choose an option:
@@ -28,373 +1310,523 @@ Please choose an option:
 5.upload anomalies and analyze results
 6.exit
 ResultsStart.
-504	airspeed-kt,airspeed-indicator_indicated-speed-kt
-505	airspeed-kt,airspeed-indicator_indicated-speed-kt
-506	airspeed-kt,airspeed-indicator_indicated-speed-kt
-507	airspeed-kt,airspeed-indicator_indicated-speed-kt
-508	airspeed-kt,airspeed-indicator_indicated-speed-kt
-509	airspeed-kt,airspeed-indicator_indicated-speed-kt
-510	airspeed-kt,airspeed-indicator_indicated-speed-kt
-511	airspeed-kt,airspeed-indicator_indicated-speed-kt
-512	airspeed-kt,airspeed-indicator_indicated-speed-kt
-513	airspeed-kt,airspeed-indicator_indicated-speed-kt
-514	airspeed-kt,airspeed-indicator_indicated-speed-kt
-515	airspeed-kt,airspeed-indicator_indicated-speed-kt
-516	airspeed-kt,airspeed-indicator_indicated-speed-kt
-517	airspeed-kt,airspeed-indicator_indicated-speed-kt
-518	airspeed-kt,airspeed-indicator_indicated-speed-kt
-519	airspeed-kt,airspeed-indicator_indicated-speed-kt
-520	airspeed-kt,airspeed-indicator_indicated-speed-kt
-521	airspeed-kt,airspeed-indicator_indicated-speed-kt
-522	airspeed-kt,airspeed-indicator_indicated-speed-kt
-523	airspeed-kt,airspeed-indicator_indicated-speed-kt
-524	airspeed-kt,airspeed-indicator_indicated-speed-kt
-525	airspeed-kt,airspeed-indicator_indicated-speed-kt
-526	airspeed-kt,airspeed-indicator_indicated-speed-kt
-527	airspeed-kt,airspeed-indicator_indicated-speed-kt
-528	airspeed-kt,airspeed-indicator_indicated-speed-kt
-529	airspeed-kt,airspeed-indicator_indicated-speed-kt
-530	airspeed-kt,airspeed-indicator_indicated-speed-kt
-531	airspeed-kt,airspeed-indicator_indicated-speed-kt
-532	airspeed-kt,airspeed-indicator_indicated-speed-kt
-533	airspeed-kt,airspeed-indicator_indicated-speed-kt
-534	airspeed-kt,airspeed-indicator_indicated-speed-kt
-535	airspeed-kt,airspeed-indicator_indicated-speed-kt
-536	airspeed-kt,airspeed-indicator_indicated-speed-kt
-537	airspeed-kt,airspeed-indicator_indicated-speed-kt
-538	airspeed-kt,airspeed-indicator_indicated-speed-kt
-539	airspeed-kt,airspeed-indicator_indicated-speed-kt
-540	airspeed-kt,airspeed-indicator_indicated-speed-kt
-541	airspeed-kt,airspeed-indicator_indicated-speed-kt
-542	airspeed-kt,airspeed-indicator_indicated-speed-kt
-543	airspeed-kt,airspeed-indicator_indicated-speed-kt
-544	airspeed-kt,airspeed-indicator_indicated-speed-kt
-545	airspeed-kt,airspeed-indicator_indicated-speed-kt
-546	airspeed-kt,airspeed-indicator_indicated-speed-kt
-547	airspeed-kt,airspeed-indicator_indicated-speed-kt
-548	airspeed-kt,airspeed-indicator_indicated-speed-kt
-549	airspeed-kt,airspeed-indicator_indicated-speed-kt
-550	airspeed-kt,airspeed-indicator_indicated-speed-kt
-551	airspeed-kt,airspeed-indicator_indicated-speed-kt
-552	airspeed-kt,airspeed-indicator_indicated-speed-kt
-553	airspeed-kt,airspeed-indicator_indicated-speed-kt
-554	airspeed-kt,airspeed-indicator_indicated-speed-kt
-555	airspeed-kt,airspeed-indicator_indicated-speed-kt
-556	airspeed-kt,airspeed-indicator_indicated-speed-kt
-557	airspeed-kt,airspeed-indicator_indicated-speed-kt
-558	airspeed-kt,airspeed-indicator_indicated-speed-kt
-559	airspeed-kt,airspeed-indicator_indicated-speed-kt
-560	airspeed-kt,airspeed-indicator_indicated-speed-kt
-561	airspeed-kt,airspeed-indicator_indicated-speed-kt
-562	airspeed-kt,airspeed-indicator_indicated-speed-kt
-563	airspeed-kt,airspeed-indicator_indicated-speed-kt
-564	airspeed-kt,airspeed-indicator_indicated-speed-kt
-565	airspeed-kt,airspeed-indicator_indicated-speed-kt
-566	airspeed-kt,airspeed-indicator_indicated-speed-kt
-567	airspeed-kt,airspeed-indicator_indicated-speed-kt
-568	airspeed-kt,airspeed-indicator_indicated-speed-kt
-569	airspeed-kt,airspeed-indicator_indicated-speed-kt
-570	airspeed-kt,airspeed-indicator_indicated-speed-kt
-571	airspeed-kt,airspeed-indicator_indicated-speed-kt
-572	airspeed-kt,airspeed-indicator_indicated-speed-kt
-573	airspeed-kt,airspeed-indicator_indicated-speed-kt
-574	airspeed-kt,airspeed-indicator_indicated-speed-kt
-575	airspeed-kt,airspeed-indicator_indicated-speed-kt
-576	airspeed-kt,airspeed-indicator_indicated-speed-kt
-577	airspeed-kt,airspeed-indicator_indicated-speed-kt
-578	airspeed-kt,airspeed-indicator_indicated-speed-kt
-579	airspeed-kt,airspeed-indicator_indicated-speed-kt
-580	airspeed-kt,airspeed-indicator_indicated-speed-kt
-581	airspeed-kt,airspeed-indicator_indicated-speed-kt
-582	airspeed-kt,airspeed-indicator_indicated-speed-kt
-583	airspeed-kt,airspeed-indicator_indicated-speed-kt
-584	airspeed-kt,airspeed-indicator_indicated-speed-kt
-585	airspeed-kt,airspeed-indicator_indicated-speed-kt
-586	airspeed-kt,airspeed-indicator_indicated-speed-kt
-587	airspeed-kt,airspeed-indicator_indicated-speed-kt
-588	airspeed-kt,airspeed-indicator_indicated-speed-kt
-589	airspeed-kt,airspeed-indicator_indicated-speed-kt
-590	airspeed-kt,airspeed-indicator_indicated-speed-kt
-591	airspeed-kt,airspeed-indicator_indicated-speed-kt
-592	airspeed-kt,airspeed-indicator_indicated-speed-kt
-593	airspeed-kt,airspeed-indicator_indicated-speed-kt
-594	airspeed-kt,airspeed-indicator_indicated-speed-kt
-595	airspeed-kt,airspeed-indicator_indicated-speed-kt
-596	airspeed-kt,airspeed-indicator_indicated-speed-kt
-597	airspeed-kt,airspeed-indicator_indicated-speed-kt
-598	airspeed-kt,airspeed-indicator_indicated-speed-kt
-599	airspeed-kt,airspeed-indicator_indicated-speed-kt
-600	airspeed-kt,airspeed-indicator_indicated-speed-kt
-601	airspeed-kt,airspeed-indicator_indicated-speed-kt
-602	airspeed-kt,airspeed-indicator_indicated-speed-kt
-603	airspeed-kt,airspeed-indicator_indicated-speed-kt
-604	airspeed-kt,airspeed-indicator_indicated-speed-kt
-605	airspeed-kt,airspeed-indicator_indicated-speed-kt
-606	airspeed-kt,airspeed-indicator_indicated-speed-kt
-607	airspeed-kt,airspeed-indicator_indicated-speed-kt
-608	airspeed-kt,airspeed-indicator_indicated-speed-kt
-609	airspeed-kt,airspeed-indicator_indicated-speed-kt
-610	airspeed-kt,airspeed-indicator_indicated-speed-kt
-611	airspeed-kt,airspeed-indicator_indicated-speed-kt
-612	airspeed-kt,airspeed-indicator_indicated-speed-kt
-613	airspeed-kt,airspeed-indicator_indicated-speed-kt
-614	airspeed-kt,airspeed-indicator_indicated-speed-kt
-615	airspeed-kt,airspeed-indicator_indicated-speed-kt
-616	airspeed-kt,airspeed-indicator_indicated-speed-kt
-617	airspeed-kt,airspeed-indicator_indicated-speed-kt
-618	airspeed-kt,airspeed-indicator_indicated-speed-kt
-619	airspeed-kt,airspeed-indicator_indicated-speed-kt
-620	airspeed-kt,airspeed-indicator_indicated-speed-kt
-621	airspeed-kt,airspeed-indicator_indicated-speed-kt
-622	airspeed-kt,airspeed-indicator_indicated-speed-kt
-623	airspeed-kt,airspeed-indicator_indicated-speed-kt
-624	airspeed-kt,airspeed-indicator_indicated-speed-kt
-625	airspeed-kt,airspeed-indicator_indicated-speed-kt
-626	airspeed-kt,airspeed-indicator_indicated-speed-kt
-627	airspeed-kt,airspeed-indicator_indicated-speed-kt
-628	airspeed-kt,airspeed-indicator_indicated-speed-kt
-629	airspeed-kt,airspeed-indicator_indicated-speed-kt
-630	airspeed-kt,airspeed-indicator_indicated-speed-kt
-631	airspeed-kt,airspeed-indicator_indicated-speed-kt
-632	airspeed-kt,airspeed-indicator_indicated-speed-kt
-633	airspeed-kt,airspeed-indicator_indicated-speed-kt
-634	airspeed-kt,airspeed-indicator_indicated-speed-kt
-635	airspeed-kt,airspeed-indicator_indicated-speed-kt
-636	airspeed-kt,airspeed-indicator_indicated-speed-kt
-637	airspeed-kt,airspeed-indicator_indicated-speed-kt
-638	airspeed-kt,airspeed-indicator_indicated-speed-kt
-639	airspeed-kt,airspeed-indicator_indicated-speed-kt
-640	airspeed-kt,airspeed-indicator_indicated-speed-kt
-641	airspeed-kt,airspeed-indicator_indicated-speed-kt
-642	airspeed-kt,airspeed-indicator_indicated-speed-kt
-643	airspeed-kt,airspeed-indicator_indicated-speed-kt
-644	airspeed-kt,airspeed-indicator_indicated-speed-kt
-645	airspeed-kt,airspeed-indicator_indicated-speed-kt
-646	airspeed-kt,airspeed-indicator_indicated-speed-kt
-647	airspeed-kt,airspeed-indicator_indicated-speed-kt
-648	airspeed-kt,airspeed-indicator_indicated-speed-kt
-649	airspeed-kt,airspeed-indicator_indicated-speed-kt
-650	airspeed-kt,airspeed-indicator_indicated-speed-kt
-651	airspeed-kt,airspeed-indicator_indicated-speed-kt
-652	airspeed-kt,airspeed-indicator_indicated-speed-kt
-653	airspeed-kt,airspeed-indicator_indicated-speed-kt
-654	airspeed-kt,airspeed-indicator_indicated-speed-kt
-655	airspeed-kt,airspeed-indicator_indicated-speed-kt
-656	airspeed-kt,airspeed-indicator_indicated-speed-kt
-657	airspeed-kt,airspeed-indicator_indicated-speed-kt
-658	airspeed-kt,airspeed-indicator_indicated-speed-kt
-659	airspeed-kt,airspeed-indicator_indicated-speed-kt
-660	airspeed-kt,airspeed-indicator_indicated-speed-kt
-661	airspeed-kt,airspeed-indicator_indicated-speed-kt
-662	airspeed-kt,airspeed-indicator_indicated-speed-kt
-663	airspeed-kt,airspeed-indicator_indicated-speed-kt
-664	airspeed-kt,airspeed-indicator_indicated-speed-kt
-665	airspeed-kt,airspeed-indicator_indicated-speed-kt
-666	airspeed-kt,airspeed-indicator_indicated-speed-kt
-667	airspeed-kt,airspeed-indicator_indicated-speed-kt
-668	airspeed-kt,airspeed-indicator_indicated-speed-kt
-669	airspeed-kt,airspeed-indicator_indicated-speed-kt
-670	airspeed-kt,airspeed-indicator_indicated-speed-kt
-671	airspeed-kt,airspeed-indicator_indicated-speed-kt
-672	airspeed-kt,airspeed-indicator_indicated-speed-kt
-673	airspeed-kt,airspeed-indicator_indicated-speed-kt
-674	airspeed-kt,airspeed-indicator_indicated-speed-kt
-675	airspeed-kt,airspeed-indicator_indicated-speed-kt
-676	airspeed-kt,airspeed-indicator_indicated-speed-kt
-677	airspeed-kt,airspeed-indicator_indicated-speed-kt
-678	airspeed-kt,airspeed-indicator_indicated-speed-kt
-679	airspeed-kt,airspeed-indicator_indicated-speed-kt
-680	airspeed-kt,airspeed-indicator_indicated-speed-kt
-681	airspeed-kt,airspeed-indicator_indicated-speed-kt
-682	airspeed-kt,airspeed-indicator_indicated-speed-kt
-683	airspeed-kt,airspeed-indicator_indicated-speed-kt
-684	airspeed-kt,airspeed-indicator_indicated-speed-kt
-685	airspeed-kt,airspeed-indicator_indicated-speed-kt
-686	airspeed-kt,airspeed-indicator_indicated-speed-kt
-687	airspeed-kt,airspeed-indicator_indicated-speed-kt
-688	airspeed-kt,airspeed-indicator_indicated-speed-kt
-689	airspeed-kt,airspeed-indicator_indicated-speed-kt
-690	airspeed-kt,airspeed-indicator_indicated-speed-kt
-691	airspeed-kt,airspeed-indicator_indicated-speed-kt
-692	airspeed-kt,airspeed-indicator_indicated-speed-kt
-693	airspeed-kt,airspeed-indicator_indicated-speed-kt
-694	airspeed-kt,airspeed-indicator_indicated-speed-kt
-695	airspeed-kt,airspeed-indicator_indicated-speed-kt
-696	airspeed-kt,airspeed-indicator_indicated-speed-kt
-697	airspeed-kt,airspeed-indicator_indicated-speed-kt
-698	airspeed-kt,airspeed-indicator_indicated-speed-kt
-699	airspeed-kt,airspeed-indicator_indicated-speed-kt
-700	airspeed-kt,airspeed-indicator_indicated-speed-kt
-531	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-532	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-533	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-534	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-535	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-536	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-537	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-538	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-539	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-540	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-541	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-542	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-543	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-544	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-545	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-546	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-547	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-548	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-549	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-550	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-551	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-552	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-553	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-554	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-555	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-556	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-557	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-558	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-559	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-560	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-561	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-562	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-563	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-564	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-565	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-566	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-567	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-568	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-569	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-570	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-571	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-572	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-573	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-574	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-575	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-576	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-577	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-578	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-579	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-580	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-581	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-582	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-583	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-584	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-585	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-586	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-587	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-588	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-589	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-590	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-591	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-592	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-593	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-594	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-595	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-596	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-597	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-598	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-599	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-600	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-601	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-602	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-603	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-604	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-605	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-606	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-607	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-608	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-609	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-610	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-611	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-612	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-613	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-614	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-615	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-616	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-617	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-618	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-619	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-620	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-621	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-622	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-623	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-624	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-625	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-626	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-627	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-628	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-629	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-630	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-631	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-632	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-633	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-634	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-635	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-636	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-637	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-638	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-639	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-640	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-641	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-642	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-643	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-644	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-645	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-646	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-647	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-648	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-649	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-650	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-651	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-652	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-653	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-654	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-655	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-656	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-657	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-658	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-659	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-660	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-661	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-662	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-663	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-664	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-665	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-666	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-667	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-668	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-669	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-670	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-671	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-672	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-673	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-674	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-675	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-676	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-677	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-678	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-679	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-680	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-681	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-682	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-683	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-684	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-685	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-686	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-687	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-688	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-689	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-690	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-691	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-692	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-693	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-694	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-695	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-696	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-697	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-698	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-699	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
-700	airspeed-indicator_indicated-speed-kt,gps_indicated-ground-speed-kt
+300	pitch-deg,attitude-indicator_internal-pitch-deg
+301	pitch-deg,attitude-indicator_internal-pitch-deg
+302	pitch-deg,attitude-indicator_internal-pitch-deg
+303	pitch-deg,attitude-indicator_internal-pitch-deg
+304	pitch-deg,attitude-indicator_internal-pitch-deg
+305	pitch-deg,attitude-indicator_internal-pitch-deg
+306	pitch-deg,attitude-indicator_internal-pitch-deg
+307	pitch-deg,attitude-indicator_internal-pitch-deg
+308	pitch-deg,attitude-indicator_internal-pitch-deg
+309	pitch-deg,attitude-indicator_internal-pitch-deg
+310	pitch-deg,attitude-indicator_internal-pitch-deg
+311	pitch-deg,attitude-indicator_internal-pitch-deg
+312	pitch-deg,attitude-indicator_internal-pitch-deg
+313	pitch-deg,attitude-indicator_internal-pitch-deg
+314	pitch-deg,attitude-indicator_internal-pitch-deg
+315	pitch-deg,attitude-indicator_internal-pitch-deg
+316	pitch-deg,attitude-indicator_internal-pitch-deg
+317	pitch-deg,attitude-indicator_internal-pitch-deg
+318	pitch-deg,attitude-indicator_internal-pitch-deg
+319	pitch-deg,attitude-indicator_internal-pitch-deg
+320	pitch-deg,attitude-indicator_internal-pitch-deg
+321	pitch-deg,attitude-indicator_internal-pitch-deg
+322	pitch-deg,attitude-indicator_internal-pitch-deg
+323	pitch-deg,attitude-indicator_internal-pitch-deg
+324	pitch-deg,attitude-indicator_internal-pitch-deg
+325	pitch-deg,attitude-indicator_internal-pitch-deg
+326	pitch-deg,attitude-indicator_internal-pitch-deg
+327	pitch-deg,attitude-indicator_internal-pitch-deg
+328	pitch-deg,attitude-indicator_internal-pitch-deg
+329	pitch-deg,attitude-indicator_internal-pitch-deg
+330	pitch-deg,attitude-indicator_internal-pitch-deg
+331	pitch-deg,attitude-indicator_internal-pitch-deg
+332	pitch-deg,attitude-indicator_internal-pitch-deg
+333	pitch-deg,attitude-indicator_internal-pitch-deg
+334	pitch-deg,attitude-indicator_internal-pitch-deg
+335	pitch-deg,attitude-indicator_internal-pitch-deg
+336	pitch-deg,attitude-indicator_internal-pitch-deg
+337	pitch-deg,attitude-indicator_internal-pitch-deg
+338	pitch-deg,attitude-indicator_internal-pitch-deg
+339	pitch-deg,attitude-indicator_internal-pitch-deg
+340	pitch-deg,attitude-indicator_internal-pitch-deg
+390	pitch-deg,attitude-indicator_internal-pitch-deg
+391	pitch-deg,attitude-indicator_internal-pitch-deg
+392	pitch-deg,attitude-indicator_internal-pitch-deg
+393	pitch-deg,attitude-indicator_internal-pitch-deg
+394	pitch-deg,attitude-indicator_internal-pitch-deg
+395	pitch-deg,attitude-indicator_internal-pitch-deg
+396	pitch-deg,attitude-indicator_internal-pitch-deg
+397	pitch-deg,attitude-indicator_internal-pitch-deg
+398	pitch-deg,attitude-indicator_internal-pitch-deg
+399	pitch-deg,attitude-indicator_internal-pitch-deg
+400	pitch-deg,attitude-indicator_internal-pitch-deg
+401	pitch-deg,attitude-indicator_internal-pitch-deg
+402	pitch-deg,attitude-indicator_internal-pitch-deg
+403	pitch-deg,attitude-indicator_internal-pitch-deg
+404	pitch-deg,attitude-indicator_internal-pitch-deg
+405	pitch-deg,attitude-indicator_internal-pitch-deg
+406	pitch-deg,attitude-indicator_internal-pitch-deg
+407	pitch-deg,attitude-indicator_internal-pitch-deg
+408	pitch-deg,attitude-indicator_internal-pitch-deg
+409	pitch-deg,attitude-indicator_internal-pitch-deg
+410	pitch-deg,attitude-indicator_internal-pitch-deg
+411	pitch-deg,attitude-indicator_internal-pitch-deg
+412	pitch-deg,attitude-indicator_internal-pitch-deg
+413	pitch-deg,attitude-indicator_internal-pitch-deg
+414	pitch-deg,attitude-indicator_internal-pitch-deg
+415	pitch-deg,attitude-indicator_internal-pitch-deg
+416	pitch-deg,attitude-indicator_internal-pitch-deg
+417	pitch-deg,attitude-indicator_internal-pitch-deg
+418	pitch-deg,attitude-indicator_internal-pitch-deg
+419	pitch-deg,attitude-indicator_internal-pitch-deg
+420	pitch-deg,attitude-indicator_internal-pitch-deg
+421	pitch-deg,attitude-indicator_internal-pitch-deg
+422	pitch-deg,attitude-indicator_internal-pitch-deg
+423	pitch-deg,attitude-indicator_internal-pitch-deg
+424	pitch-deg,attitude-indicator_internal-pitch-deg
+425	pitch-deg,attitude-indicator_internal-pitch-deg
+426	pitch-deg,attitude-indicator_internal-pitch-deg
+427	pitch-deg,attitude-indicator_internal-pitch-deg
+428	pitch-deg,attitude-indicator_internal-pitch-deg
+429	pitch-deg,attitude-indicator_internal-pitch-deg
+430	pitch-deg,attitude-indicator_internal-pitch-deg
+431	pitch-deg,attitude-indicator_internal-pitch-deg
+432	pitch-deg,attitude-indicator_internal-pitch-deg
+433	pitch-deg,attitude-indicator_internal-pitch-deg
+434	pitch-deg,attitude-indicator_internal-pitch-deg
+435	pitch-deg,attitude-indicator_internal-pitch-deg
+436	pitch-deg,attitude-indicator_internal-pitch-deg
+437	pitch-deg,attitude-indicator_internal-pitch-deg
+438	pitch-deg,attitude-indicator_internal-pitch-deg
+439	pitch-deg,attitude-indicator_internal-pitch-deg
+440	pitch-deg,attitude-indicator_internal-pitch-deg
+441	pitch-deg,attitude-indicator_internal-pitch-deg
+442	pitch-deg,attitude-indicator_internal-pitch-deg
+443	pitch-deg,attitude-indicator_internal-pitch-deg
+444	pitch-deg,attitude-indicator_internal-pitch-deg
+445	pitch-deg,attitude-indicator_internal-pitch-deg
+446	pitch-deg,attitude-indicator_internal-pitch-deg
+447	pitch-deg,attitude-indicator_internal-pitch-deg
+448	pitch-deg,attitude-indicator_internal-pitch-deg
+449	pitch-deg,attitude-indicator_internal-pitch-deg
+450	pitch-deg,attitude-indicator_internal-pitch-deg
+451	pitch-deg,attitude-indicator_internal-pitch-deg
+452	pitch-deg,attitude-indicator_internal-pitch-deg
+453	pitch-deg,attitude-indicator_internal-pitch-deg
+454	pitch-deg,attitude-indicator_internal-pitch-deg
+455	pitch-deg,attitude-indicator_internal-pitch-deg
+456	pitch-deg,attitude-indicator_internal-pitch-deg
+457	pitch-deg,attitude-indicator_internal-pitch-deg
+458	pitch-deg,attitude-indicator_internal-pitch-deg
+459	pitch-deg,attitude-indicator_internal-pitch-deg
+460	pitch-deg,attitude-indicator_internal-pitch-deg
+461	pitch-deg,attitude-indicator_internal-pitch-deg
+462	pitch-deg,attitude-indicator_internal-pitch-deg
+463	pitch-deg,attitude-indicator_internal-pitch-deg
+464	pitch-deg,attitude-indicator_internal-pitch-deg
+465	pitch-deg,attitude-indicator_internal-pitch-deg
+466	pitch-deg,attitude-indicator_internal-pitch-deg
+467	pitch-deg,attitude-indicator_internal-pitch-deg
+468	pitch-deg,attitude-indicator_internal-pitch-deg
+469	pitch-deg,attitude-indicator_internal-pitch-deg
+470	pitch-deg,attitude-indicator_internal-pitch-deg
+471	pitch-deg,attitude-indicator_internal-pitch-deg
+472	pitch-deg,attitude-indicator_internal-pitch-deg
+473	pitch-deg,attitude-indicator_internal-pitch-deg
+474	pitch-deg,attitude-indicator_internal-pitch-deg
+475	pitch-deg,attitude-indicator_internal-pitch-deg
+476	pitch-deg,attitude-indicator_internal-pitch-deg
+477	pitch-deg,attitude-indicator_internal-pitch-deg
+478	pitch-deg,attitude-indicator_internal-pitch-deg
+479	pitch-deg,attitude-indicator_internal-pitch-deg
+480	pitch-deg,attitude-indicator_internal-pitch-deg
+481	pitch-deg,attitude-indicator_internal-pitch-deg
+482	pitch-deg,attitude-indicator_internal-pitch-deg
+483	pitch-deg,attitude-indicator_internal-pitch-deg
+484	pitch-deg,attitude-indicator_internal-pitch-deg
+485	pitch-deg,attitude-indicator_internal-pitch-deg
+486	pitch-deg,attitude-indicator_internal-pitch-deg
+487	pitch-deg,attitude-indicator_internal-pitch-deg
+488	pitch-deg,attitude-indicator_internal-pitch-deg
+489	pitch-deg,attitude-indicator_internal-pitch-deg
+490	pitch-deg,attitude-indicator_internal-pitch-deg
+491	pitch-deg,attitude-indicator_internal-pitch-deg
+492	pitch-deg,attitude-indicator_internal-pitch-deg
+493	pitch-deg,attitude-indicator_internal-pitch-deg
+494	pitch-deg,attitude-indicator_internal-pitch-deg
+495	pitch-deg,attitude-indicator_internal-pitch-deg
+496	pitch-deg,attitude-indicator_internal-pitch-deg
+497	pitch-deg,attitude-indicator_internal-pitch-deg
+498	pitch-deg,attitude-indicator_internal-pitch-deg
+499	pitch-deg,attitude-indicator_internal-pitch-deg
+500	pitch-deg,attitude-indicator_internal-pitch-deg
+501	pitch-deg,attitude-indicator_internal-pitch-deg
+502	pitch-deg,attitude-indicator_internal-pitch-deg
+503	pitch-deg,attitude-indicator_internal-pitch-deg
+504	pitch-deg,attitude-indicator_internal-pitch-deg
+505	pitch-deg,attitude-indicator_internal-pitch-deg
+506	pitch-deg,attitude-indicator_internal-pitch-deg
+507	pitch-deg,attitude-indicator_internal-pitch-deg
+508	pitch-deg,attitude-indicator_internal-pitch-deg
+509	pitch-deg,attitude-indicator_internal-pitch-deg
+510	pitch-deg,attitude-indicator_internal-pitch-deg
+511	pitch-deg,attitude-indicator_internal-pitch-deg
+512	pitch-deg,attitude-indicator_internal-pitch-deg
+513	pitch-deg,attitude-indicator_internal-pitch-deg
+514	pitch-deg,attitude-indicator_internal-pitch-deg
+515	pitch-deg,attitude-indicator_internal-pitch-deg
+516	pitch-deg,attitude-indicator_internal-pitch-deg
+517	pitch-deg,attitude-indicator_internal-pitch-deg
+518	pitch-deg,attitude-indicator_internal-pitch-deg
+519	pitch-deg,attitude-indicator_internal-pitch-deg
+520	pitch-deg,attitude-indicator_internal-pitch-deg
+521	pitch-deg,attitude-indicator_internal-pitch-deg
+522	pitch-deg,attitude-indicator_internal-pitch-deg
+523	pitch-deg,attitude-indicator_internal-pitch-deg
+524	pitch-deg,attitude-indicator_internal-pitch-deg
+525	pitch-deg,attitude-indicator_internal-pitch-deg
+526	pitch-deg,attitude-indicator_internal-pitch-deg
+527	pitch-deg,attitude-indicator_internal-pitch-deg
+528	pitch-deg,attitude-indicator_internal-pitch-deg
+529	pitch-deg,attitude-indicator_internal-pitch-deg
+530	pitch-deg,attitude-indicator_internal-pitch-deg
+531	pitch-deg,attitude-indicator_internal-pitch-deg
+532	pitch-deg,attitude-indicator_internal-pitch-deg
+533	pitch-deg,attitude-indicator_internal-pitch-deg
+534	pitch-deg,attitude-indicator_internal-pitch-deg
+535	pitch-deg,attitude-indicator_internal-pitch-deg
+536	pitch-deg,attitude-indicator_internal-pitch-deg
+537	pitch-deg,attitude-indicator_internal-pitch-deg
+538	pitch-deg,attitude-indicator_internal-pitch-deg
+539	pitch-deg,attitude-indicator_internal-pitch-deg
+540	pitch-deg,attitude-indicator_internal-pitch-deg
+541	pitch-deg,attitude-indicator_internal-pitch-deg
+542	pitch-deg,attitude-indicator_internal-pitch-deg
+543	pitch-deg,attitude-indicator_internal-pitch-deg
+544	pitch-deg,attitude-indicator_internal-pitch-deg
+545	pitch-deg,attitude-indicator_internal-pitch-deg
+546	pitch-deg,attitude-indicator_internal-pitch-deg
+547	pitch-deg,attitude-indicator_internal-pitch-deg
+548	pitch-deg,attitude-indicator_internal-pitch-deg
+549	pitch-deg,attitude-indicator_internal-pitch-deg
+550	pitch-deg,attitude-indicator_internal-pitch-deg
+551	pitch-deg,attitude-indicator_internal-pitch-deg
+552	pitch-deg,attitude-indicator_internal-pitch-deg
+553	pitch-deg,attitude-indicator_internal-pitch-deg
+554	pitch-deg,attitude-indicator_internal-pitch-deg
+555	pitch-deg,attitude-indicator_internal-pitch-deg
+556	pitch-deg,attitude-indicator_internal-pitch-deg
+557	pitch-deg,attitude-indicator_internal-pitch-deg
+558	pitch-deg,attitude-indicator_internal-pitch-deg
+559	pitch-deg,attitude-indicator_internal-pitch-deg
+560	pitch-deg,attitude-indicator_internal-pitch-deg
+561	pitch-deg,attitude-indicator_internal-pitch-deg
+562	pitch-deg,attitude-indicator_internal-pitch-deg
+563	pitch-deg,attitude-indicator_internal-pitch-deg
+564	pitch-deg,attitude-indicator_internal-pitch-deg
+565	pitch-deg,attitude-indicator_internal-pitch-deg
+566	pitch-deg,attitude-indicator_internal-pitch-deg
+567	pitch-deg,attitude-indicator_internal-pitch-deg
+568	pitch-deg,attitude-indicator_internal-pitch-deg
+569	pitch-deg,attitude-indicator_internal-pitch-deg
+570	pitch-deg,attitude-indicator_internal-pitch-deg
+571	pitch-deg,attitude-indicator_internal-pitch-deg
+572	pitch-deg,attitude-indicator_internal-pitch-deg
+573	pitch-deg,attitude-indicator_internal-pitch-deg
+574	pitch-deg,attitude-indicator_internal-pitch-deg
+575	pitch-deg,attitude-indicator_internal-pitch-deg
+576	pitch-deg,attitude-indicator_internal-pitch-deg
+577	pitch-deg,attitude-indicator_internal-pitch-deg
+578	pitch-deg,attitude-indicator_internal-pitch-deg
+579	pitch-deg,attitude-indicator_internal-pitch-deg
+580	pitch-deg,attitude-indicator_internal-pitch-deg
+581	pitch-deg,attitude-indicator_internal-pitch-deg
+582	pitch-deg,attitude-indicator_internal-pitch-deg
+583	pitch-deg,attitude-indicator_internal-pitch-deg
+584	pitch-deg,attitude-indicator_internal-pitch-deg
+585	pitch-deg,attitude-indicator_internal-pitch-deg
+586	pitch-deg,attitude-indicator_internal-pitch-deg
+587	pitch-deg,attitude-indicator_internal-pitch-deg
+588	pitch-deg,attitude-indicator_internal-pitch-deg
+589	pitch-deg,attitude-indicator_internal-pitch-deg
+590	pitch-deg,attitude-indicator_internal-pitch-deg
+591	pitch-deg,attitude-indicator_internal-pitch-deg
+592	pitch-deg,attitude-indicator_internal-pitch-deg
+593	pitch-deg,attitude-indicator_internal-pitch-deg
+594	pitch-deg,attitude-indicator_internal-pitch-deg
+595	pitch-deg,attitude-indicator_internal-pitch-deg
+596	pitch-deg,attitude-indicator_internal-pitch-deg
+597	pitch-deg,attitude-indicator_internal-pitch-deg
+598	pitch-deg,attitude-indicator_internal-pitch-deg
+599	pitch-deg,attitude-indicator_internal-pitch-deg
+600	pitch-deg,attitude-indicator_internal-pitch-deg
+601	pitch-deg,attitude-indicator_internal-pitch-deg
+602	pitch-deg,attitude-indicator_internal-pitch-deg
+603	pitch-deg,attitude-indicator_internal-pitch-deg
+604	pitch-deg,attitude-indicator_internal-pitch-deg
+605	pitch-deg,attitude-indicator_internal-pitch-deg
+606	pitch-deg,attitude-indicator_internal-pitch-deg
+607	pitch-deg,attitude-indicator_internal-pitch-deg
+608	pitch-deg,attitude-indicator_internal-pitch-deg
+609	pitch-deg,attitude-indicator_internal-pitch-deg
+610	pitch-deg,attitude-indicator_internal-pitch-deg
+611	pitch-deg,attitude-indicator_internal-pitch-deg
+612	pitch-deg,attitude-indicator_internal-pitch-deg
+613	pitch-deg,attitude-indicator_internal-pitch-deg
+614	pitch-deg,attitude-indicator_internal-pitch-deg
+615	pitch-deg,attitude-indicator_internal-pitch-deg
+616	pitch-deg,attitude-indicator_internal-pitch-deg
+617	pitch-deg,attitude-indicator_internal-pitch-deg
+618	pitch-deg,attitude-indicator_internal-pitch-deg
+619	pitch-deg,attitude-indicator_internal-pitch-deg
+620	pitch-deg,attitude-indicator_internal-pitch-deg
+621	pitch-deg,attitude-indicator_internal-pitch-deg
+622	pitch-deg,attitude-indicator_internal-pitch-deg
+623	pitch-deg,attitude-indicator_internal-pitch-deg
+624	pitch-deg,attitude-indicator_internal-pitch-deg
+625	pitch-deg,attitude-indicator_internal-pitch-deg
+626	pitch-deg,attitude-indicator_internal-pitch-deg
+627	pitch-deg,attitude-indicator_internal-pitch-deg
+628	pitch-deg,attitude-indicator_internal-pitch-deg
+629	pitch-deg,attitude-indicator_internal-pitch-deg
+630	pitch-deg,attitude-indicator_internal-pitch-deg
+631	pitch-deg,attitude-indicator_internal-pitch-deg
+632	pitch-deg,attitude-indicator_internal-pitch-deg
+633	pitch-deg,attitude-indicator_internal-pitch-deg
+634	pitch-deg,attitude-indicator_internal-pitch-deg
+635	pitch-deg,attitude-indicator_internal-pitch-deg
+636	pitch-deg,attitude-indicator_internal-pitch-deg
+637	pitch-deg,attitude-indicator_internal-pitch-deg
+638	pitch-deg,attitude-indicator_internal-pitch-deg
+639	pitch-deg,attitude-indicator_internal-pitch-deg
+640	pitch-deg,attitude-indicator_internal-pitch-deg
+641	pitch-deg,attitude-indicator_internal-pitch-deg
+642	pitch-deg,attitude-indicator_internal-pitch-deg
+643	pitch-deg,attitude-indicator_internal-pitch-deg
+644	pitch-deg,attitude-indicator_internal-pitch-deg
+645	pitch-deg,attitude-indicator_internal-pitch-deg
+646	pitch-deg,attitude-indicator_internal-pitch-deg
+647	pitch-deg,attitude-indicator_internal-pitch-deg
+648	pitch-deg,attitude-indicator_internal-pitch-deg
+649	pitch-deg,attitude-indicator_internal-pitch-deg
+650	pitch-deg,attitude-indicator_internal-pitch-deg
+651	pitch-deg,attitude-indicator_internal-pitch-deg
+652	pitch-deg,attitude-indicator_internal-pitch-deg
+653	pitch-deg,attitude-indicator_internal-pitch-deg
+654	pitch-deg,attitude-indicator_internal-pitch-deg
+655	pitch-deg,attitude-indicator_internal-pitch-deg
+656	pitch-deg,attitude-indicator_internal-pitch-deg
+657	pitch-deg,attitude-indicator_internal-pitch-deg
+658	pitch-deg,attitude-indicator_internal-pitch-deg
+659	pitch-deg,attitude-indicator_internal-pitch-deg
+660	pitch-deg,attitude-indicator_internal-pitch-deg
+661	pitch-deg,attitude-indicator_internal-pitch-deg
+662	pitch-deg,attitude-indicator_internal-pitch-deg
+663	pitch-deg,attitude-indicator_internal-pitch-deg
+664	pitch-deg,attitude-indicator_internal-pitch-deg
+665	pitch-deg,attitude-indicator_internal-pitch-deg
+666	pitch-deg,attitude-indicator_internal-pitch-deg
+667	pitch-deg,attitude-indicator_internal-pitch-deg
+668	pitch-deg,attitude-indicator_internal-pitch-deg
+669	pitch-deg,attitude-indicator_internal-pitch-deg
+670	pitch-deg,attitude-indicator_internal-pitch-deg
+671	pitch-deg,attitude-indicator_internal-pitch-deg
+672	pitch-deg,attitude-indicator_internal-pitch-deg
+673	pitch-deg,attitude-indicator_internal-pitch-deg
+674	pitch-deg,attitude-indicator_internal-pitch-deg
+675	pitch-deg,attitude-indicator_internal-pitch-deg
+676	pitch-deg,attitude-indicator_internal-pitch-deg
+677	pitch-deg,attitude-indicator_internal-pitch-deg
+678	pitch-deg,attitude-indicator_internal-pitch-deg
+679	pitch-deg,attitude-indicator_internal-pitch-deg
+680	pitch-deg,attitude-indicator_internal-pitch-deg
+681	pitch-deg,attitude-indicator_internal-pitch-deg
+682	pitch-deg,attitude-indicator_internal-pitch-deg
+683	pitch-deg,attitude-indicator_internal-pitch-deg
+684	pitch-deg,attitude-indicator_internal-pitch-deg
+685	pitch-deg,attitude-indicator_internal-pitch-deg
+686	pitch-deg,attitude-indicator_internal-pitch-deg
+687	pitch-deg,attitude-indicator_internal-pitch-deg
+688	pitch-deg,attitude-indicator_internal-pitch-deg
+689	pitch-deg,attitude-indicator_internal-pitch-deg
+690	pitch-deg,attitude-indicator_internal-pitch-deg
+691	pitch-deg,attitude-indicator_internal-pitch-deg
+692	pitch-deg,attitude-indicator_internal-pitch-deg
+693	pitch-deg,attitude-indicator_internal-pitch-deg
+694	pitch-deg,attitude-indicator_internal-pitch-deg
+695	pitch-deg,attitude-indicator_internal-pitch-deg
+696	pitch-deg,attitude-indicator_internal-pitch-deg
+697	pitch-deg,attitude-indicator_internal-pitch-deg
+698	pitch-deg,attitude-indicator_internal-pitch-deg
+699	pitch-deg,attitude-indicator_internal-pitch-deg
+700	pitch-deg,attitude-indicator_internal-pitch-deg
+701	pitch-deg,attitude-indicator_internal-pitch-deg
+702	pitch-deg,attitude-indicator_internal-pitch-deg
+703	pitch-deg,attitude-indicator_internal-pitch-deg
+704	pitch-deg,attitude-indicator_internal-pitch-deg
+705	pitch-deg,attitude-indicator_internal-pitch-deg
+706	pitch-deg,attitude-indicator_internal-pitch-deg
+707	pitch-deg,attitude-indicator_internal-pitch-deg
+708	pitch-deg,attitude-indicator_internal-pitch-deg
+709	pitch-deg,attitude-indicator_internal-pitch-deg
+710	pitch-deg,attitude-indicator_internal-pitch-deg
+711	pitch-deg,attitude-indicator_internal-pitch-deg
+712	pitch-deg,attitude-indicator_internal-pitch-deg
+713	pitch-deg,attitude-indicator_internal-pitch-deg
+714	pitch-deg,attitude-indicator_internal-pitch-deg
+715	pitch-deg,attitude-indicator_internal-pitch-deg
+716	pitch-deg,attitude-indicator_internal-pitch-deg
+717	pitch-deg,attitude-indicator_internal-pitch-deg
+718	pitch-deg,attitude-indicator_internal-pitch-deg
+719	pitch-deg,attitude-indicator_internal-pitch-deg
+720	pitch-deg,attitude-indicator_internal-pitch-deg
+721	pitch-deg,attitude-indicator_internal-pitch-deg
+722	pitch-deg,attitude-indicator_internal-pitch-deg
+723	pitch-deg,attitude-indicator_internal-pitch-deg
+724	pitch-deg,attitude-indicator_internal-pitch-deg
+725	pitch-deg,attitude-indicator_internal-pitch-deg
+726	pitch-deg,attitude-indicator_internal-pitch-deg
+727	pitch-deg,attitude-indicator_internal-pitch-deg
+728	pitch-deg,attitude-indicator_internal-pitch-deg
+729	pitch-deg,attitude-indicator_internal-pitch-deg
+730	pitch-deg,attitude-indicator_internal-pitch-deg
+731	pitch-deg,attitude-indicator_internal-pitch-deg
+732	pitch-deg,attitude-indicator_internal-pitch-deg
+733	pitch-deg,attitude-indicator_internal-pitch-deg
+734	pitch-deg,attitude-indicator_internal-pitch-deg
+735	pitch-deg,attitude-indicator_internal-pitch-deg
+736	pitch-deg,attitude-indicator_internal-pitch-deg
+737	pitch-deg,attitude-indicator_internal-pitch-deg
+738	pitch-deg,attitude-indicator_internal-pitch-deg
+739	pitch-deg,attitude-indicator_internal-pitch-deg
+740	pitch-deg,attitude-indicator_internal-pitch-deg
+741	pitch-deg,attitude-indicator_internal-pitch-deg
+742	pitch-deg,attitude-indicator_internal-pitch-deg
+743	pitch-deg,attitude-indicator_internal-pitch-deg
+744	pitch-deg,attitude-indicator_internal-pitch-deg
+745	pitch-deg,attitude-indicator_internal-pitch-deg
+746	pitch-deg,attitude-indicator_internal-pitch-deg
+747	pitch-deg,attitude-indicator_internal-pitch-deg
+748	pitch-deg,attitude-indicator_internal-pitch-deg
+749	pitch-deg,attitude-indicator_internal-pitch-deg
+750	pitch-deg,attitude-indicator_internal-pitch-deg
+751	pitch-deg,attitude-indicator_internal-pitch-deg
+752	pitch-deg,attitude-indicator_internal-pitch-deg
+753	pitch-deg,attitude-indicator_internal-pitch-deg
+754	pitch-deg,attitude-indicator_internal-pitch-deg
+755	pitch-deg,attitude-indicator_internal-pitch-deg
+756	pitch-deg,attitude-indicator_internal-pitch-deg
+757	pitch-deg,attitude-indicator_internal-pitch-deg
+758	pitch-deg,attitude-indicator_internal-pitch-deg
+759	pitch-deg,attitude-indicator_internal-pitch-deg
+760	pitch-deg,attitude-indicator_internal-pitch-deg
+761	pitch-deg,attitude-indicator_internal-pitch-deg
+762	pitch-deg,attitude-indicator_internal-pitch-deg
+763	pitch-deg,attitude-indicator_internal-pitch-deg
+764	pitch-deg,attitude-indicator_internal-pitch-deg
+765	pitch-deg,attitude-indicator_internal-pitch-deg
+766	pitch-deg,attitude-indicator_internal-pitch-deg
+767	pitch-deg,attitude-indicator_internal-pitch-deg
+768	pitch-deg,attitude-indicator_internal-pitch-deg
+769	pitch-deg,attitude-indicator_internal-pitch-deg
+770	pitch-deg,attitude-indicator_internal-pitch-deg
+771	pitch-deg,attitude-indicator_internal-pitch-deg
+772	pitch-deg,attitude-indicator_internal-pitch-deg
+773	pitch-deg,attitude-indicator_internal-pitch-deg
+774	pitch-deg,attitude-indicator_internal-pitch-deg
+775	pitch-deg,attitude-indicator_internal-pitch-deg
+776	pitch-deg,attitude-indicator_internal-pitch-deg
+777	pitch-deg,attitude-indicator_internal-pitch-deg
+778	pitch-deg,attitude-indicator_internal-pitch-deg
+779	pitch-deg,attitude-indicator_internal-pitch-deg
+780	pitch-deg,attitude-indicator_internal-pitch-deg
+781	pitch-deg,attitude-indicator_internal-pitch-deg
+782	pitch-deg,attitude-indicator_internal-pitch-deg
+783	pitch-deg,attitude-indicator_internal-pitch-deg
+784	pitch-deg,attitude-indicator_internal-pitch-deg
+785	pitch-deg,attitude-indicator_internal-pitch-deg
+786	pitch-deg,attitude-indicator_internal-pitch-deg
+787	pitch-deg,attitude-indicator_internal-pitch-deg
+788	pitch-deg,attitude-indicator_internal-pitch-deg
+789	pitch-deg,attitude-indicator_internal-pitch-deg
+790	pitch-deg,attitude-indicator_internal-pitch-deg
+791	pitch-deg,attitude-indicator_internal-pitch-deg
+792	pitch-deg,attitude-indicator_internal-pitch-deg
+793	pitch-deg,attitude-indicator_internal-pitch-deg
+794	pitch-deg,attitude-indicator_internal-pitch-deg
+795	pitch-deg,attitude-indicator_internal-pitch-deg
+796	pitch-deg,attitude-indicator_internal-pitch-deg
+797	pitch-deg,attitude-indicator_internal-pitch-deg
+798	pitch-deg,attitude-indicator_internal-pitch-deg
+799	pitch-deg,attitude-indicator_internal-pitch-deg
+800	pitch-deg,attitude-indicator_internal-pitch-deg
+801	pitch-deg,attitude-indicator_internal-pitch-deg
+802	pitch-deg,attitude-indicator_internal-pitch-deg
+803	pitch-deg,attitude-indicator_internal-pitch-deg
+804	pitch-deg,attitude-indicator_internal-pitch-deg
+805	pitch-deg,attitude-indicator_internal-pitch-deg
+806	pitch-deg,attitude-indicator_internal-pitch-deg
+807	pitch-deg,attitude-indicator_internal-pitch-deg
+808	pitch-deg,attitude-indicator_internal-pitch-deg
+809	pitch-deg,attitude-indicator_internal-pitch-deg
+810	pitch-deg,attitude-indicator_internal-pitch-deg
+811	pitch-deg,attitude-indicator_internal-pitch-deg
+812	pitch-deg,attitude-indicator_internal-pitch-deg
+813	pitch-deg,attitude-indicator_internal-pitch-deg
+814	pitch-deg,attitude-indicator_internal-pitch-deg
+815	pitch-deg,attitude-indicator_internal-pitch-deg
+816	pitch-deg,attitude-indicator_internal-pitch-deg
+817	pitch-deg,attitude-indicator_internal-pitch-deg
+818	pitch-deg,attitude-indicator_internal-pitch-deg
+819	pitch-deg,attitude-indicator_internal-pitch-deg
+820	pitch-deg,attitude-indicator_internal-pitch-deg
+821	pitch-deg,attitude-indicator_internal-pitch-deg
+822	pitch-deg,attitude-indicator_internal-pitch-deg
+823	pitch-deg,attitude-indicator_internal-pitch-deg
+824	pitch-deg,attitude-indicator_internal-pitch-deg
+825	pitch-deg,attitude-indicator_internal-pitch-deg
+826	pitch-deg,attitude-indicator_internal-pitch-deg
+827	pitch-deg,attitude-indicator_internal-pitch-deg
+284	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+285	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+286	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+287	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+288	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+289	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+290	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+291	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+292	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+293	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+294	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+295	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+296	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+297	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+298	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+299	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+300	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+301	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+302	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+303	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+304	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+305	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+306	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+307	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+308	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+309	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+310	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+311	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+312	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+313	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+314	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+315	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+316	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+317	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+318	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+319	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+320	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
+321	magnetic-compass_indicated-heading-deg,turn-indicator_indicated-turn-rate
 ResultsEnd.
 Welcome to the Anomaly Detection Server.
 Please choose an option:
