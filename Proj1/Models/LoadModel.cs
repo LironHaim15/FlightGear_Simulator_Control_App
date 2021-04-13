@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Runtime;
 using System.Reflection;
+using OxyPlot;
 
 namespace Proj1.Models
 {
@@ -86,14 +87,29 @@ namespace Proj1.Models
                 // updth the anomlies
                 DataModel.Instance.Anomalies.Clear();
                 DataModel.Instance.AnomaliesList.Clear();
+                DataModel.Instance.GraphPoints.Clear();
+                // anomalis - have all the anomliy according to line
                 Dictionary<int, List<string>> anomalies = DataModel.Instance.Anomalies;
+                Dictionary<string, List<DataPoint>> pointsCorGraph = DataModel.Instance.GraphPoints;
+                // anomaliesList - have all the anomliy dicreption that Arranged by time 
                 List<string> anomaliesList = DataModel.Instance.AnomaliesList;
                 string line, str = "";
                 string names = null;
                 int num = -2;
                 StreamReader file = new StreamReader("output.txt");
-                // anomalis - have all the anomliy according to line
-                // anomaliesList - have all the anomliy dicreption that Arranged by time 
+
+                // get the threshold shape points from the output.txt files.
+                while ((line = file.ReadLine()) != null && line != "ThresholdStart.") ;
+                while ((line = file.ReadLine()) != null && line != "ThresholdEnd.")
+                {
+                    pointsCorGraph.Add(line, new List<DataPoint>());
+                    while((line = file.ReadLine()) != null && line != "done")
+                    {
+                        lineData = line.Split(',');
+                        pointsCorGraph.Last().Value.Add(new DataPoint(double.Parse(lineData[0]), double.Parse(lineData[1])));
+                    }
+                }
+
                 //sequences start time and end time
                 //read the anomleis from the output.txt
                 while ((line = file.ReadLine()) != null && line != "ResultsStart.") ;
