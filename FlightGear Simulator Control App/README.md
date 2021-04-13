@@ -154,13 +154,22 @@ Our code files are orginized in 4 main places:
 * Models files are located in Models folder.
 * `Line.cs`, `Point.cs` and `anomaly_detection_util.cs` are located in the folder forGrph.
 
+The code files responsibilities are:
+* Anomalies files are for the graphs and handling the displayed data on them.
+* Joystick files are for displaying the joystick and 2 sliders (throttle and rudder).
+* Playbar files are for the displaying the playbar and handling the control of the playback.
+* Dashboard files are for displaying the clocks and the dashboard data.
+* Settings files are for handling the files paths that are given at the beginning, their content.
+* Connect files are connection to FG related. 
+* Info files are for the User Instructions window.
+
 Full UML can be found within the project and a picture version is down below among the screenshots.
 
 In addition, the folder plugins is provided with 2 anomalies detection algorithms: `CS_SimpleDetector.dll` and `CS_HybridDetector.dll` (each of them specific requires the other dll file that is inside that folder.)
 
 
 ## GitHub Links
- [FlightGear Simulator Control App]()
+ [FlightGear Simulator Control App](https://github.com/LironHaim15/FlightGear_Simulator_Control_App/tree/FinalBranch)
 
 
 ## Video Demo
@@ -196,3 +205,5 @@ In addition, the folder plugins is provided with 2 anomalies detection algorithm
 ### UML
 [![UML](\screenshots\UML.png "UML.png")](https://ibb.co/mCyp5QR)
 
+## Credit
+Our plugins are based on Eliahu Khalastchi's provided code. It was slightly modified.
