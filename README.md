@@ -110,7 +110,7 @@ This method reads a text file named `input.txt` which is located in the app dire
    * second line: the features names divided by `','`. The names order should be as they show in the `playback_small.xml` file.
    * third lines and beyond: the content of whole learn data csv file. Each feature data is in the same order as the names above. The new line after the data ends should have the word `done` alone.
    * next lines after `done` will be the same as the learn data only now with the test data. And also after the data ends, write `done` in a new line. 
- * next line after `done` of the test date, will be "3".
+ * next line after `done` of the test data, will be "3".
  * next line: "4".
  * next line: "6".
   
