@@ -206,4 +206,5 @@ In addition, the folder plugins is provided with 2 anomalies detection algorithm
 [![UML](\screenshots\UML.png "UML.png")](https://ibb.co/mCyp5QR)
 
 ## Credit
+
 Our plugins are based on Eliahu Khalastchi's provided code. It was slightly modified.
